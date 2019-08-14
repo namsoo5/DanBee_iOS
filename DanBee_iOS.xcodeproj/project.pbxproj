@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,9 @@
 		06DC7CFA23042B1300B66E98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06DC7CF923042B1300B66E98 /* Assets.xcassets */; };
 		06DC7CFD23042B1300B66E98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06DC7CFB23042B1300B66E98 /* LaunchScreen.storyboard */; };
 		06DC7D0823042B1300B66E98 /* DanBee_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D0723042B1300B66E98 /* DanBee_iOSTests.swift */; };
+		06DC7D142304311200B66E98 /* NaverAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D132304311200B66E98 /* NaverAPIKey.swift */; };
+		53A7C252DF85794E1C12907D /* Pods_DanBee_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D33419F7B4F4C741FF483D /* Pods_DanBee_iOSTests.framework */; };
+		DD81D35270884E36741CB577 /* Pods_DanBee_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DF12FA07C1336385DC24B8 /* Pods_DanBee_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,14 @@
 		06DC7D0323042B1300B66E98 /* DanBee_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DanBee_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DC7D0723042B1300B66E98 /* DanBee_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanBee_iOSTests.swift; sourceTree = "<group>"; };
 		06DC7D0923042B1300B66E98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06DC7D132304311200B66E98 /* NaverAPIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverAPIKey.swift; sourceTree = "<group>"; };
+		06DC7D1723043AFF00B66E98 /* NMapsMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NMapsMap.framework; path = Pods/NMapsMap/framework/NMapsMap.framework; sourceTree = "<group>"; };
+		2177BEA901D82D445DA241D7 /* Pods-DanBee_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanBee_iOS.release.xcconfig"; path = "Target Support Files/Pods-DanBee_iOS/Pods-DanBee_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		40D33419F7B4F4C741FF483D /* Pods_DanBee_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DanBee_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56DF12FA07C1336385DC24B8 /* Pods_DanBee_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DanBee_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CEDB49495CC47A8EE116EA4 /* Pods-DanBee_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanBee_iOS.debug.xcconfig"; path = "Target Support Files/Pods-DanBee_iOS/Pods-DanBee_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		E33E6F194568435D63245067 /* Pods-DanBee_iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanBee_iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-DanBee_iOSTests/Pods-DanBee_iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		ED40346070E23A25128E1720 /* Pods-DanBee_iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanBee_iOSTests.release.xcconfig"; path = "Target Support Files/Pods-DanBee_iOSTests/Pods-DanBee_iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD81D35270884E36741CB577 /* Pods_DanBee_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53A7C252DF85794E1C12907D /* Pods_DanBee_iOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +75,8 @@
 				06DC7CF123042B1200B66E98 /* DanBee_iOS */,
 				06DC7D0623042B1300B66E98 /* DanBee_iOSTests */,
 				06DC7CF023042B1200B66E98 /* Products */,
+				5997FCAA31FD2B88496D4E14 /* Pods */,
+				DD1A5169D09C8130D981A7B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,11 +92,11 @@
 		06DC7CF123042B1200B66E98 /* DanBee_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				06DC7D162304318C00B66E98 /* StoryBoard */,
+				06DC7D152304314900B66E98 /* ViewController */,
+				06DC7D12230430F100B66E98 /* Key */,
 				06DC7CF223042B1200B66E98 /* AppDelegate.swift */,
-				06DC7CF423042B1200B66E98 /* ViewController.swift */,
-				06DC7CF623042B1200B66E98 /* Main.storyboard */,
 				06DC7CF923042B1300B66E98 /* Assets.xcassets */,
-				06DC7CFB23042B1300B66E98 /* LaunchScreen.storyboard */,
 				06DC7CFE23042B1300B66E98 /* Info.plist */,
 			);
 			path = DanBee_iOS;
@@ -96,6 +111,52 @@
 			path = DanBee_iOSTests;
 			sourceTree = "<group>";
 		};
+		06DC7D12230430F100B66E98 /* Key */ = {
+			isa = PBXGroup;
+			children = (
+				06DC7D132304311200B66E98 /* NaverAPIKey.swift */,
+			);
+			path = Key;
+			sourceTree = "<group>";
+		};
+		06DC7D152304314900B66E98 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				06DC7CF423042B1200B66E98 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		06DC7D162304318C00B66E98 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				06DC7CF623042B1200B66E98 /* Main.storyboard */,
+				06DC7CFB23042B1300B66E98 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		5997FCAA31FD2B88496D4E14 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6CEDB49495CC47A8EE116EA4 /* Pods-DanBee_iOS.debug.xcconfig */,
+				2177BEA901D82D445DA241D7 /* Pods-DanBee_iOS.release.xcconfig */,
+				E33E6F194568435D63245067 /* Pods-DanBee_iOSTests.debug.xcconfig */,
+				ED40346070E23A25128E1720 /* Pods-DanBee_iOSTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DD1A5169D09C8130D981A7B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56DF12FA07C1336385DC24B8 /* Pods_DanBee_iOS.framework */,
+				06DC7D1723043AFF00B66E98 /* NMapsMap.framework */,
+				40D33419F7B4F4C741FF483D /* Pods_DanBee_iOSTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +164,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06DC7D0C23042B1300B66E98 /* Build configuration list for PBXNativeTarget "DanBee_iOS" */;
 			buildPhases = (
+				E08A09D712A0BC3EA7025B27 /* [CP] Check Pods Manifest.lock */,
 				06DC7CEB23042B1200B66E98 /* Sources */,
 				06DC7CEC23042B1200B66E98 /* Frameworks */,
 				06DC7CED23042B1200B66E98 /* Resources */,
+				06ED6FA966C39A943F4565F6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -120,6 +183,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06DC7D0F23042B1300B66E98 /* Build configuration list for PBXNativeTarget "DanBee_iOSTests" */;
 			buildPhases = (
+				AF2808728E001D9B5FAFA251 /* [CP] Check Pods Manifest.lock */,
 				06DC7CFF23042B1300B66E98 /* Sources */,
 				06DC7D0023042B1300B66E98 /* Frameworks */,
 				06DC7D0123042B1300B66E98 /* Resources */,
@@ -192,11 +256,76 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06ED6FA966C39A943F4565F6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DanBee_iOS/Pods-DanBee_iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DanBee_iOS/Pods-DanBee_iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DanBee_iOS/Pods-DanBee_iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF2808728E001D9B5FAFA251 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DanBee_iOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E08A09D712A0BC3EA7025B27 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DanBee_iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		06DC7CEB23042B1200B66E98 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06DC7D142304311200B66E98 /* NaverAPIKey.swift in Sources */,
 				06DC7CF523042B1200B66E98 /* ViewController.swift in Sources */,
 				06DC7CF323042B1200B66E98 /* AppDelegate.swift in Sources */,
 			);
@@ -358,10 +487,15 @@
 		};
 		06DC7D0D23042B1300B66E98 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CEDB49495CC47A8EE116EA4 /* Pods-DanBee_iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7Z2CV7TB8R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/NMapsMap/framework",
+				);
 				INFOPLIST_FILE = DanBee_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -376,10 +510,15 @@
 		};
 		06DC7D0E23042B1300B66E98 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2177BEA901D82D445DA241D7 /* Pods-DanBee_iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7Z2CV7TB8R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/NMapsMap/framework",
+				);
 				INFOPLIST_FILE = DanBee_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -394,6 +533,7 @@
 		};
 		06DC7D1023042B1300B66E98 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E33E6F194568435D63245067 /* Pods-DanBee_iOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -415,6 +555,7 @@
 		};
 		06DC7D1123042B1300B66E98 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED40346070E23A25128E1720 /* Pods-DanBee_iOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

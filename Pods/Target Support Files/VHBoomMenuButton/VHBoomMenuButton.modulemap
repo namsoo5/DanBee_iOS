@@ -1,0 +1,6 @@
+framework module VHBoomMenuButton {
+  umbrella header "VHBoomMenuButton-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_DanBee_iOS {
+  umbrella header "Pods-DanBee_iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
