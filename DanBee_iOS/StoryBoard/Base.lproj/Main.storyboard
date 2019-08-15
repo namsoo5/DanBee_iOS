@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Delegate-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DanBee_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="DanBee_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,6 +44,9 @@
                                     <constraint firstAttribute="trailing" secondItem="a8b-ar-QG5" secondAttribute="trailing" constant="40" id="edv-gO-4gc"/>
                                     <constraint firstAttribute="bottom" secondItem="a8b-ar-QG5" secondAttribute="bottom" constant="50" id="prc-mR-1PW"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="1Zi-SE-BPD"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,7 +60,7 @@
                     </view>
                     <connections>
                         <outlet property="bmbMenu" destination="a8b-ar-QG5" id="p1C-12-eH2"/>
-                        <outlet property="naverMap" destination="KKO-tA-ryY" id="upW-gw-6Cj"/>
+                        <outlet property="naverMap" destination="KKO-tA-ryY" id="egm-Bi-fki"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
