@@ -7,16 +7,16 @@ PODS:
   - RxRelay (5.0.0):
     - RxSwift (~> 5)
   - RxSwift (5.0.0)
+  - SideMenu (6.2.1)
   - SwiftyJSON (4.3.0)
-  - VHBoomMenuButton/Swift (2.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.8.2)
   - NMapsMap (~> 3.2.0)
   - RxCocoa (~> 5.0)
   - RxSwift (~> 5.0)
+  - SideMenu (~> 6.0)
   - SwiftyJSON (~> 4.0)
-  - VHBoomMenuButton/Swift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -25,8 +25,8 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
+    - SideMenu
     - SwiftyJSON
-    - VHBoomMenuButton
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
@@ -34,9 +34,9 @@ SPEC CHECKSUMS:
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  SideMenu: 0b34a8145be9420bd4787d986bbf4723ebf913f9
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
-  VHBoomMenuButton: 77a7ae6742220b57b54eec28183fc123a3dd98ed
 
-PODFILE CHECKSUM: f89b7efc13dfeca32519ee28a86b393c5fcb9303
+PODFILE CHECKSUM: 1ea111263797eb938cc24ecb126046b17dd34bcb
 
 COCOAPODS: 1.7.0

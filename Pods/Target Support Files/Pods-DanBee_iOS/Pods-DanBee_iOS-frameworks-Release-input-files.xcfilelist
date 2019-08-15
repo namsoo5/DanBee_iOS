@@ -4,5 +4,5 @@ ${PODS_ROOT}/NMapsMap/framework/NMapsMap.framework
 ${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
 ${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
 ${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
+${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
-${BUILT_PRODUCTS_DIR}/VHBoomMenuButton/VHBoomMenuButton.framework

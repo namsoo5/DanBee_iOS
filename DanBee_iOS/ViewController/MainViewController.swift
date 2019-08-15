@@ -8,38 +8,26 @@
 
 import UIKit
 import NMapsMap
-import VHBoomMenuButton
 
 class MainViewController: UIViewController, NMFMapViewDelegate, CLLocationManagerDelegate {
     
-
+   
     @IBOutlet weak var naverMap: NMFNaverMapView!
-    @IBOutlet weak var bmbMenu: BoomMenuButton!
+    
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bombSet()
+        
         loactionSet()
+        
     }
 
 }
 
-extension MainViewController  {
+extension MainViewController {
     
-    func bombSet() {
-        bmbMenu.piecePlaceEnum = .dot_7_4
-        bmbMenu.buttonEnum = .textInsideCircle
-        bmbMenu.buttonPlaceEnum = .sc_7_4
-        bmbMenu.draggable = true
-        
-        for _ in 0..<bmbMenu.piecePlaceEnum.pieceNumber() {
-            let builder = TextInsideCircleButtonBuilder.init()
-            builder.normalText = "Text Inside"
-            bmbMenu.addBuilder(builder)
-        }
-        
-    }
+   
     
     //위치 초기화
     func loactionSet(){
