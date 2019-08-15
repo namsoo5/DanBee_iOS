@@ -55,7 +55,7 @@ public class BoomMenuButton: UIView, BoomButtonDelegate, BackgroundDelegate {
     /// Rect (in points) of shadow path of BMB.
     ///
     /// The default value is (2, 2, BMB.width - 4, BMB.height - 4).
-     public var shadowPathRect: CGRect! {
+    public var shadowPathRect: CGRect! {
         didSet {
             if shadowPathRect != oldValue {
                 setNeedsDisplay()
@@ -849,12 +849,10 @@ public class BoomMenuButton: UIView, BoomButtonDelegate, BackgroundDelegate {
     
     private func initializeDeviceOrientation() {
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
-        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.deviceOrientationDidChange(notification:)),
                                                name: UIDevice.orientationDidChangeNotification,
                                                object: nil)
-        
     }
     
     deinit {

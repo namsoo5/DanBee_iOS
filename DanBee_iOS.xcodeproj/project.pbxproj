@@ -41,6 +41,7 @@
 		06DC7D0923042B1300B66E98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06DC7D132304311200B66E98 /* NaverAPIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverAPIKey.swift; sourceTree = "<group>"; };
 		06DC7D1723043AFF00B66E98 /* NMapsMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NMapsMap.framework; path = Pods/NMapsMap/framework/NMapsMap.framework; sourceTree = "<group>"; };
+		06DC7D1923052C8800B66E98 /* VHBoomMenuButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VHBoomMenuButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2177BEA901D82D445DA241D7 /* Pods-DanBee_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanBee_iOS.release.xcconfig"; path = "Target Support Files/Pods-DanBee_iOS/Pods-DanBee_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		40D33419F7B4F4C741FF483D /* Pods_DanBee_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DanBee_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DF12FA07C1336385DC24B8 /* Pods_DanBee_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DanBee_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				56DF12FA07C1336385DC24B8 /* Pods_DanBee_iOS.framework */,
+				06DC7D1923052C8800B66E98 /* VHBoomMenuButton.framework */,
 				06DC7D1723043AFF00B66E98 /* NMapsMap.framework */,
 				40D33419F7B4F4C741FF483D /* Pods_DanBee_iOSTests.framework */,
 			);
