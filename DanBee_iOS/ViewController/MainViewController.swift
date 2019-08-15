@@ -20,6 +20,7 @@ class MainViewController: UIViewController, NMFMapViewDelegate, CLLocationManage
         super.viewDidLoad()
         
         loactionSet()
+        sideMenuButtonInit()
         
     }
 
@@ -27,7 +28,15 @@ class MainViewController: UIViewController, NMFMapViewDelegate, CLLocationManage
 
 extension MainViewController {
     
-   
+    func sideMenuButtonInit(){
+        let menuButton = UIBarButtonItem.init(title: "Menu", style: .plain, target: self, action: #selector(openSideMenu))
+        self.navigationItem.leftBarButtonItem = menuButton
+    }
+    
+    @objc func openSideMenu(){
+        guard let sideMenuVC = self.storyboard?.instantiateViewController(withIdentifier: "sideMenu") else { return }
+        self.present(sideMenuVC, animated: true, completion: nil)
+    }
     
     //위치 초기화
     func loactionSet(){
