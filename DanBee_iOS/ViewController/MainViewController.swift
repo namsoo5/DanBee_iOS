@@ -15,10 +15,12 @@ class MainViewController: UIViewController, NMFMapViewDelegate, CLLocationManage
     @IBOutlet weak var naverMap: NMFNaverMapView!
     
     let locationManager = CLLocationManager()
+    var locationOverlay: NMFLocationOverlay!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.naverMap.delegate = self
+        mapSet()
         loactionSet()
         sideMenuButtonInit()
         
@@ -37,6 +39,9 @@ extension MainViewController {
         guard let sideMenuVC = self.storyboard?.instantiateViewController(withIdentifier: "sideMenu") else { return }
         self.present(sideMenuVC, animated: true, completion: nil)
     }
+}
+
+extension MainViewController {
     
     //위치 초기화
     func loactionSet(){
@@ -61,10 +66,14 @@ extension MainViewController {
         let lng = locate.coordinate.longitude
         print("update! lat:\(lat), lng:\(lng)")
         
+        locationOverlay.location = NMGLatLng(lat: lat, lng: lng)
     }
     
     func mapSet() {
         naverMap.positionMode = .normal
+        self.locationOverlay = self.naverMap.mapView.locationOverlay
+        
+        
         
 //        let marker = NMFMarker()
 //        marker.position = NMGLatLng(lat: 37.5670135, lng: 126.9783740)
@@ -74,7 +83,5 @@ extension MainViewController {
 //        marker.iconTintColor = UIColor.red
 //        marker.iconPerspectiveEnabled = true
     }
-
- 
 }
 
