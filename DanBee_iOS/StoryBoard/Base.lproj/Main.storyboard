@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KKO-tA-ryY" customClass="NMFMapView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KKO-tA-ryY" customClass="NMFNaverMapView">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a8b-ar-QG5" customClass="BoomMenuButton" customModule="VHBoomMenuButton">
@@ -60,7 +60,7 @@
                     </view>
                     <connections>
                         <outlet property="bmbMenu" destination="a8b-ar-QG5" id="p1C-12-eH2"/>
-                        <outlet property="naverMap" destination="KKO-tA-ryY" id="egm-Bi-fki"/>
+                        <outlet property="naverMap" destination="KKO-tA-ryY" id="YBq-Hr-0QV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

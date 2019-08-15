@@ -10,5 +10,5 @@ import Foundation
 
 class NaverAPIKey {
     static let shared: NaverAPIKey = NaverAPIKey()
-    
+    let key = "spvsz6yuzq"
 }
