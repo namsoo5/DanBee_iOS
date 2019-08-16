@@ -35,7 +35,7 @@ struct SignUpService {
             case .success(let value):
                 let json = JSON(value)
                 let result = json["result"].intValue
-                if result == 2000 {
+                if result == 777 {
                     completion()
                 }
                 

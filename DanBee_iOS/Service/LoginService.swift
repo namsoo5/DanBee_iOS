@@ -18,7 +18,7 @@ struct LoginService {
         "Content-Type" : "application/json"
     ]
     
-    func getLoginResult(userid: String, pw: String, phone: String, gender: Int, birth: String, name: String, completion: @escaping () -> Void) {
+    func getLoginResult(userid: String, pw: String, completion: @escaping (_ b: Bool) -> Void) {
         
         let body: Parameters = [
             "userid": userid,
@@ -32,22 +32,17 @@ struct LoginService {
             case .success(let value):
                 let json = JSON(value)
                 let result = json["result"].intValue
-                if result == 2000 {
-                    let userInfo = json["data"].arrayValue
-                    print(userInfo)
+                print(result)
+                if result == 777 {
+                    let userInfo = json["data"].arrayValue[0]
+                    print(userInfo["userid"])
+                    completion(true)
+                }else{
+                    completion(false)
                 }
-                
             default:
                 return
             }
         }
     }
 }
-//"result"=>self::RESULT_SUCCESS,
-//"data"=>array(array(
-//"userid"=>$userid,
-//"phone"=>$db[0]->phone,
-//"name"=>$db[0]->name,
-//"gender"=>$db[0]->gender,
-//"birth"=>$db[0]->birth
-//))
