@@ -20,6 +20,9 @@
 		06DC7D282306989200B66E98 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D272306989200B66E98 /* SignUpViewController.swift */; };
 		06DC7D2C23069DEF00B66E98 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D2B23069DEF00B66E98 /* UIButton+Extension.swift */; };
 		06DC7D2F2306A1C000B66E98 /* SignUpTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D2E2306A1C000B66E98 /* SignUpTextViewModel.swift */; };
+		06DC7D312306EF7000B66E98 /* DanBeeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D302306EF7000B66E98 /* DanBeeAPI.swift */; };
+		06DC7D332306F07900B66E98 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D322306F07800B66E98 /* SignUpService.swift */; };
+		06DC7D352306F6D800B66E98 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D342306F6D800B66E98 /* LoginService.swift */; };
 		53A7C252DF85794E1C12907D /* Pods_DanBee_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D33419F7B4F4C741FF483D /* Pods_DanBee_iOSTests.framework */; };
 		DD81D35270884E36741CB577 /* Pods_DanBee_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DF12FA07C1336385DC24B8 /* Pods_DanBee_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +57,9 @@
 		06DC7D272306989200B66E98 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		06DC7D2B23069DEF00B66E98 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		06DC7D2E2306A1C000B66E98 /* SignUpTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTextViewModel.swift; sourceTree = "<group>"; };
+		06DC7D302306EF7000B66E98 /* DanBeeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanBeeAPI.swift; sourceTree = "<group>"; };
+		06DC7D322306F07800B66E98 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
+		06DC7D342306F6D800B66E98 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		2177BEA901D82D445DA241D7 /* Pods-DanBee_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanBee_iOS.release.xcconfig"; path = "Target Support Files/Pods-DanBee_iOS/Pods-DanBee_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		40D33419F7B4F4C741FF483D /* Pods_DanBee_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DanBee_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DF12FA07C1336385DC24B8 /* Pods_DanBee_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DanBee_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +166,7 @@
 		06DC7D232305869900B66E98 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				06DC7D302306EF7000B66E98 /* DanBeeAPI.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -167,6 +174,8 @@
 		06DC7D262306833600B66E98 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				06DC7D322306F07800B66E98 /* SignUpService.swift */,
+				06DC7D342306F6D800B66E98 /* LoginService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -382,10 +391,13 @@
 				06DC7D222305868B00B66E98 /* SideMenuTableViewCell.swift in Sources */,
 				06DC7D1E230584E400B66E98 /* SideMenuViewController.swift in Sources */,
 				06DC7D142304311200B66E98 /* NaverAPIKey.swift in Sources */,
+				06DC7D312306EF7000B66E98 /* DanBeeAPI.swift in Sources */,
 				06DC7D2C23069DEF00B66E98 /* UIButton+Extension.swift in Sources */,
+				06DC7D352306F6D800B66E98 /* LoginService.swift in Sources */,
 				06DC7D2F2306A1C000B66E98 /* SignUpTextViewModel.swift in Sources */,
 				06DC7CF523042B1200B66E98 /* MainViewController.swift in Sources */,
 				06DC7CF323042B1200B66E98 /* AppDelegate.swift in Sources */,
+				06DC7D332306F07900B66E98 /* SignUpService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
