@@ -13,15 +13,27 @@ class LoginViewController: UIViewController {
     
     
     @IBOutlet weak var autoLoginCheckBox: CheckboxButton!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var idTextField: UITextField!
+    @IBOutlet weak var pwTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         uiSet()
     
     }
     
-    func uiSet() {
-      
+    @IBAction func loginButtonClick(_ sender: Any) {
     }
     
+    @IBAction func signUpButtonClick(_ sender: Any) {
+    }
+    @IBAction func searchUserButtonClick(_ sender: Any) {
+    }
+}
 
+extension LoginViewController {
+    
+    func uiSet() {
+        
+    }
 }
