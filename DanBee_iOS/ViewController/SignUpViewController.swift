@@ -31,7 +31,9 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        uiSet()
+        bindInput()
+        bindOutPut()
     }
     
     @IBAction func signUpButtonClick(_ sender: Any) {
@@ -44,31 +46,64 @@ class SignUpViewController: UIViewController {
 extension SignUpViewController {
     
     func uiSet(){
-        
+        self.confirmPwLabel.isHidden = true
+        self.pwCheckColorView.isHidden = true
     }
     
     func bindInput() {
-        //id변경시 중복확인 다시누르도록
+        
         self.idTextField.rx.text.orEmpty
-            .debounce(RxTimeInterval.microseconds(5), scheduler: MainScheduler.instance) // 0.5sec
-            .subscribe(onNext: { text in
-                if self.textViewModel.idText != text {
-                    self.textViewModel.idVaild = false
-                    self.confirmIdButton.isEnabled = true
-                }
-                self.textViewModel.idText = text
-            })
-            .disposed(by: disposeBag)
+        .debounce(RxTimeInterval.microseconds(5), scheduler: MainScheduler.instance) // 0.5sec
+        .bind(to: self.textViewModel.idObservable)
+        .disposed(by: disposeBag)
         
         self.pwTextField.rx.text.orEmpty
-        .bind(to: self.textViewModel.pwText)
+        .debounce(RxTimeInterval.microseconds(5), scheduler: MainScheduler.instance) // 0.5sec
+        .bind(to: self.textViewModel.pwObservable)
         .disposed(by: disposeBag)
+        
+        self.confirmPwTextField.rx.text.orEmpty
+        .debounce(RxTimeInterval.microseconds(5), scheduler: MainScheduler.instance) // 0.5sec
+        .bind(to: self.textViewModel.pwCheckObservable)
+        .disposed(by: disposeBag)
+       
         
     }
     
     func bindOutPut(){
+        //빈칸이면 표시x
+        self.textViewModel.pwObservable
+            .subscribe(onNext: { s in
+                if s.isEmpty {
+                    self.pwCheckColorView.isHidden = true
+                }else {
+                    self.pwCheckColorView.isHidden = false
+                }
+            })
+        .disposed(by: disposeBag)
         
-        self.textViewModel.pwVaild
+        //빈칸이면 표시x
+        self.textViewModel.pwCheckObservable
+            .subscribe(onNext: { s in
+                if s.isEmpty {
+                    self.confirmPwLabel.isHidden = true
+                }else {
+                    self.confirmPwLabel.isHidden = false
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        //아이디 변경할시 다시 중복버튼 눌러야함
+        self.textViewModel.idVaildObservable
+            .subscribe(onNext: { b in
+                if b {
+                    self.confirmIdButton.isEnabled = true
+                }
+            })
+        .disposed(by: disposeBag)
+        
+        //패스워드 형식체크
+        self.textViewModel.pwVaildObservable
             .subscribe(onNext: { b in
                 if b {
                     self.pwCheckColorView.backgroundColor = UIColor.blue
@@ -78,17 +113,18 @@ extension SignUpViewController {
             })
         .disposed(by: disposeBag)
         
-        self.textViewModel.pwConfirmVaild
+        //재확인 라벨
+        self.textViewModel.pwCheckVaildObservable
             .subscribe(onNext: { b in
                 if b {
                     self.confirmPwLabel.text = "일치"
                     self.confirmPwLabel.textColor = UIColor.blue
                 } else {
-                    
                     self.confirmPwLabel.text = "불일치"
                     self.confirmPwLabel.textColor = UIColor.red
                 }
             })
+        .disposed(by: disposeBag)
     }
     
 }

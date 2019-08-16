@@ -12,32 +12,38 @@ import RxCocoa
 
 class TextViewModel {
     let disposeBag = DisposeBag()
-    let pwText: BehaviorSubject<String> = BehaviorSubject(value: "")
-    var idText = String()
-    let pwVaild: BehaviorSubject<Bool> = BehaviorSubject(value: false)
-    var idVaild = Bool()
-    private var confirmPw = String()
-    let pwConfirmVaild: BehaviorSubject<Bool> = BehaviorSubject(value: false)
+    let idObservable: BehaviorRelay<String> = BehaviorRelay(value: "")
+    let pwObservable: BehaviorRelay<String> = BehaviorRelay(value: "")
+    let pwCheckObservable: BehaviorRelay<String> = BehaviorRelay(value: "")
+    
+    let idVaildObservable: BehaviorSubject<Bool> = BehaviorSubject(value: false)
+    let pwVaildObservable: BehaviorSubject<Bool> = BehaviorSubject(value: false)
+    let pwCheckVaildObservable: BehaviorSubject<Bool> = BehaviorSubject(value: false)
+    
+    
     init() {
         setting()
     }
     
     
     func setting(){
-        
-        pwText.map(pwCheck)
-            .bind(to: pwVaild)
-            .disposed(by: disposeBag)
-        
-        
-        pwText.subscribe(onNext: { s in
-            self.confirmPw = s
+        //아이디변경시 무조건 false
+        idObservable.map({ _ in
+            return false
         })
+        .bind(to: idVaildObservable)
         .disposed(by: disposeBag)
         
-        pwText.map(confirmPw)
-            .bind(to: pwConfirmVaild)
-            .disposed(by: disposeBag)
+        //비번형식체크
+        pwObservable.map(pwCheck)
+        .bind(to: pwVaildObservable)
+        .disposed(by: disposeBag)
+     
+        //비번재확인
+        pwCheckObservable.map(samePwCheck)
+        .bind(to: pwCheckVaildObservable)
+        .disposed(by: disposeBag)
+        
     }
     
     func pwCheck(_ s: String) -> Bool {
@@ -48,11 +54,11 @@ class TextViewModel {
         }
     }
     
-    func confirmPw(_ s: String) -> Bool {
-        if s == self.confirmPw {
-            return true
-        }else {
+    func samePwCheck (_ s: String) -> Bool {
+        if s != pwObservable.value || pwObservable.value.isEmpty {
             return false
+        }else {
+            return true
         }
     }
     
