@@ -13,6 +13,7 @@ pod 'RxSwift', '~> 5.0'
 pod 'RxCocoa', '~> 5.0'
 pod 'SwiftyJSON', '~> 4.0'
 pod 'NMapsMap', '~> 3.2.0'
+pod 'CheckboxButton'
 
 
   target 'DanBee_iOSTests' do

@@ -16,10 +16,18 @@ class SideMenuViewController: UIViewController {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-
+        uiTableView()
         
     }
     
+    func uiTableView() {
+        self.tableView.separatorColor = UIColor.clear
+    }
+    
+    @IBAction func loginButtonClick(_ sender: Any) {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "Login") else {return}
+        self.present(nextVC, animated: true, completion: nil)
+    }
 }
 
 extension SideMenuViewController: UITableViewDataSource, UITableViewDelegate {

@@ -16,6 +16,7 @@
 		06DC7D142304311200B66E98 /* NaverAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D132304311200B66E98 /* NaverAPIKey.swift */; };
 		06DC7D1E230584E400B66E98 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D1D230584E400B66E98 /* SideMenuViewController.swift */; };
 		06DC7D222305868B00B66E98 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D212305868B00B66E98 /* SideMenuTableViewCell.swift */; };
+		06DC7D25230682EB00B66E98 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D24230682EB00B66E98 /* LoginViewController.swift */; };
 		53A7C252DF85794E1C12907D /* Pods_DanBee_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D33419F7B4F4C741FF483D /* Pods_DanBee_iOSTests.framework */; };
 		DD81D35270884E36741CB577 /* Pods_DanBee_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DF12FA07C1336385DC24B8 /* Pods_DanBee_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		06DC7D1923052C8800B66E98 /* VHBoomMenuButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VHBoomMenuButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DC7D1D230584E400B66E98 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SideMenuViewController.swift; path = DanBee_iOS/ViewController/SideMenuViewController.swift; sourceTree = SOURCE_ROOT; };
 		06DC7D212305868B00B66E98 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		06DC7D24230682EB00B66E98 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = DanBee_iOS/ViewController/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		2177BEA901D82D445DA241D7 /* Pods-DanBee_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanBee_iOS.release.xcconfig"; path = "Target Support Files/Pods-DanBee_iOS/Pods-DanBee_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		40D33419F7B4F4C741FF483D /* Pods_DanBee_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DanBee_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DF12FA07C1336385DC24B8 /* Pods_DanBee_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DanBee_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +99,7 @@
 		06DC7CF123042B1200B66E98 /* DanBee_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				06DC7D262306833600B66E98 /* Service */,
 				06DC7D232305869900B66E98 /* Model */,
 				06DC7D162304318C00B66E98 /* StoryBoard */,
 				06DC7D152304314900B66E98 /* ViewController */,
@@ -131,6 +134,7 @@
 				06DC7D212305868B00B66E98 /* SideMenuTableViewCell.swift */,
 				06DC7D1D230584E400B66E98 /* SideMenuViewController.swift */,
 				06DC7CF423042B1200B66E98 /* MainViewController.swift */,
+				06DC7D24230682EB00B66E98 /* LoginViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -149,6 +153,13 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		06DC7D262306833600B66E98 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		5997FCAA31FD2B88496D4E14 /* Pods */ = {
@@ -341,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06DC7D25230682EB00B66E98 /* LoginViewController.swift in Sources */,
 				06DC7D222305868B00B66E98 /* SideMenuTableViewCell.swift in Sources */,
 				06DC7D1E230584E400B66E98 /* SideMenuViewController.swift in Sources */,
 				06DC7D142304311200B66E98 /* NaverAPIKey.swift in Sources */,
