@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         uiSet()
+        backButtonInit()
     
     }
     
@@ -28,14 +29,12 @@ class LoginViewController: UIViewController {
         LoginService.shared.getLoginResult(userid: id, pw: pw){ b in
             if !b {
                 self.simpleAlert(title: "로그인 실패", msg: "아이디 혹은 비밀번호가 틀렸습니다.")
+            }else{
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }
     
-    @IBAction func signUpButtonClick(_ sender: Any) {
-    }
-    @IBAction func searchUserButtonClick(_ sender: Any) {
-    }
 }
 
 extension LoginViewController {
@@ -43,4 +42,14 @@ extension LoginViewController {
     func uiSet() {
         
     }
+    
+    func backButtonInit(){
+        let menuButton = UIBarButtonItem.init(title: "Back", style: .plain, target: self, action: #selector(back))
+        self.navigationItem.leftBarButtonItem = menuButton
+    }
+    
+    @objc func back(){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

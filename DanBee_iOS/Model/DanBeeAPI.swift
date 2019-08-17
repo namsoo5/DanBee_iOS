@@ -12,4 +12,5 @@ struct DanBeeAPI {
     static let homeURL = "http://3.17.25.223/api/"
     static let signUpURL = homeURL + "user/signup"
     static let loginURL = homeURL + "user/login"
+    static let checkIdURL = homeURL + "user/find/"
 }

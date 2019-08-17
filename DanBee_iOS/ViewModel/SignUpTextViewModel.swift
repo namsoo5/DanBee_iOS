@@ -47,11 +47,17 @@ class TextViewModel {
         .disposed(by: disposeBag)
      
         //비번재확인
-        pwCheckObservable.map(samePwCheck)
+        pwCheckObservable.map(samePwCheck2)
+        .bind(to: pwCheckVaildObservable)
+        .disposed(by: disposeBag)
+        
+        //비밀번호바뀔시 다시 확인
+        pwObservable.map(samePwCheck1)
         .bind(to: pwCheckVaildObservable)
         .disposed(by: disposeBag)
         
         Observable.combineLatest(idVaildObservable, pwVaildObservable, pwCheckVaildObservable, resultSelector: {$0 && $1 && $2 && true})
+            .distinctUntilChanged()
         .bind(to: buttonEnable)
         .disposed(by: disposeBag)
         
@@ -65,7 +71,15 @@ class TextViewModel {
         }
     }
     
-    func samePwCheck (_ s: String) -> Bool {
+    func samePwCheck1 (_ s: String) -> Bool {
+        if s != pwCheckObservable.value || pwCheckObservable.value.isEmpty {
+            return false
+        }else {
+            return true
+        }
+    }
+    
+    func samePwCheck2 (_ s: String) -> Bool {
         if s != pwObservable.value || pwObservable.value.isEmpty {
             return false
         }else {

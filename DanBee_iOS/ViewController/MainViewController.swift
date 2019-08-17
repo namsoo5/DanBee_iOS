@@ -23,7 +23,7 @@ class MainViewController: UIViewController, NMFMapViewDelegate, CLLocationManage
         mapSet()
         loactionSet()
         sideMenuButtonInit()
-        
+    
     }
 
 }

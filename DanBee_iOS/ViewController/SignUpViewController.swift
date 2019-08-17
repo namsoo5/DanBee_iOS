@@ -45,6 +45,12 @@ class SignUpViewController: UIViewController {
         let gender = self.textViewModel.gender
         let birth = self.textViewModel.birthObservable.value
         let name = self.textViewModel.nameObservable.value
+        
+        if birth.isEmpty || phone.isEmpty || name.isEmpty || gender == -1 {
+            self.simpleAlert(title: "확인", msg: "빈칸이 있는지 확인해주세요")
+            return
+        }
+        
         SignUpService.shared.getSignUpResult(userid: id, pw: pw, phone: phone, gender: gender, birth: birth, name: name){ b in
             if !b {
                 self.simpleAlert(title: "오류", msg: "알 수 없는 오류로 회원가입에 실패하였습니다.")
@@ -55,8 +61,17 @@ class SignUpViewController: UIViewController {
     
     @IBAction func confirmButtonClick(_ sender: Any) {
         
-        //성공시
-        self.textViewModel.idVaildObservable.asObserver().onNext(true)
+        //사용가능 아이디
+        let id = self.textViewModel.idObservable.value
+        CheckIdService.shared.getCheckIdResult(userid: id){ b in
+            if b{
+                self.textViewModel.idVaildObservable.asObserver().onNext(true)
+                self.simpleAlert(title: "사용 가능", msg: "사용 가능한 아이디입니다.")
+            }else {
+                 self.simpleAlert(title: "다시 입력해주세요", msg: "이미 존재하는 아이디입니다.")
+            }
+        }
+        
     }
     
     @IBAction func womanClick(_ sender: CheckboxButton) {
@@ -98,13 +113,11 @@ extension SignUpViewController {
         
         self.pwTextField.rx.text.orEmpty
             .debounce(RxTimeInterval.microseconds(5), scheduler: MainScheduler.instance) // 0.5sec
-            .distinctUntilChanged()
             .bind(to: self.textViewModel.pwObservable)
             .disposed(by: disposeBag)
         
         self.confirmPwTextField.rx.text.orEmpty
             .debounce(RxTimeInterval.microseconds(5), scheduler: MainScheduler.instance) // 0.5sec
-            .distinctUntilChanged()
             .bind(to: self.textViewModel.pwCheckObservable)
             .disposed(by: disposeBag)
         
@@ -188,12 +201,12 @@ extension SignUpViewController {
         //회원가입 가능상태
         self.textViewModel.buttonEnable
             .subscribe(onNext: { b in
-                if b {
-                    self.signUpButton.isEnabled = true
-                    self.signUpButton.backgroundColor = UIColor.danbeeColor1
-                }else {
+                if !b {
                     self.signUpButton.isEnabled = false
                     self.signUpButton.backgroundColor = UIColor.lightGray
+                }else{
+                    self.signUpButton.isEnabled = true
+                    self.signUpButton.backgroundColor = UIColor.danbeeColor1
                 }
             })
         .disposed(by: disposeBag)

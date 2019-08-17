@@ -11,7 +11,7 @@ import Foundation
 class UserInfo{
     static let shared = UserInfo()
     
-    var userid: String?
+    var userid = String()
     var name: String?
     var phone: String?
     var gender: Int?
