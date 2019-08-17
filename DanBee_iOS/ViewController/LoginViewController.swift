@@ -26,7 +26,6 @@ class LoginViewController: UIViewController {
         guard let id = self.idTextField.text else {return}
         guard let pw = self.pwTextField.text else {return}
         LoginService.shared.getLoginResult(userid: id, pw: pw){ b in
-            print(b)
             if !b {
                 self.simpleAlert(title: "로그인 실패", msg: "아이디 혹은 비밀번호가 틀렸습니다.")
             }

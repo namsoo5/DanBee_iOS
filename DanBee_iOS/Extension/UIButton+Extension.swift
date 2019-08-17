@@ -12,6 +12,11 @@ import UIKit
 extension UIButton {
     override open func awakeFromNib() {
         self.layer.cornerRadius = 8
+        
+        //일반 텍스트버튼은 적용안함
+        if self.tag != 10 {
+            self.backgroundColor = UIColor.danbeeColor1
+        }
     }
 }
 

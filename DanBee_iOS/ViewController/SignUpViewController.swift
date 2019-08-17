@@ -10,9 +10,10 @@ import UIKit
 import CheckboxButton
 import RxSwift
 import RxCocoa
+import RxOptional
 
 class SignUpViewController: UIViewController {
-
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var birthTextField: UITextField!
     @IBOutlet weak var idTextField: UITextField!
@@ -34,40 +35,94 @@ class SignUpViewController: UIViewController {
         uiSet()
         bindInput()
         bindOutPut()
+
     }
     
     @IBAction func signUpButtonClick(_ sender: Any) {
+        let id = self.textViewModel.idObservable.value
+        let pw = self.textViewModel.pwObservable.value
+        let phone = self.textViewModel.phoneNumberObservable.value
+        let gender = self.textViewModel.gender
+        let birth = self.textViewModel.birthObservable.value
+        let name = self.textViewModel.nameObservable.value
+        SignUpService.shared.getSignUpResult(userid: id, pw: pw, phone: phone, gender: gender, birth: birth, name: name){ b in
+            if !b {
+                self.simpleAlert(title: "오류", msg: "알 수 없는 오류로 회원가입에 실패하였습니다.")
+            }
+            
+        }
     }
     
     @IBAction func confirmButtonClick(_ sender: Any) {
+        
+        //성공시
+        self.textViewModel.idVaildObservable.asObserver().onNext(true)
+    }
+    
+    @IBAction func womanClick(_ sender: CheckboxButton) {
+        if sender.on {
+            self.manCheckBox.on = false
+            self.textViewModel.gender = 0
+        }
+    }
+    @IBAction func manClick(_ sender: CheckboxButton) {
+        if sender.on {
+            self.womanCheckBox.on = false
+            self.textViewModel.gender = 1
+        }
     }
 }
 
 extension SignUpViewController {
     
     func uiSet(){
+        //재확인라벨
         self.confirmPwLabel.isHidden = true
+        //패스워드 형식 확인컬러
         self.pwCheckColorView.isHidden = true
+        self.pwCheckColorView.layer.cornerRadius = 5
+        //회원가입버튼
+        self.signUpButton.isEnabled = false
+        self.signUpButton.backgroundColor = UIColor.lightGray
+        
     }
     
     func bindInput() {
         
+        
         self.idTextField.rx.text.orEmpty
-        .debounce(RxTimeInterval.microseconds(5), scheduler: MainScheduler.instance) // 0.5sec
-        .bind(to: self.textViewModel.idObservable)
-        .disposed(by: disposeBag)
+            .debounce(RxTimeInterval.microseconds(5), scheduler: MainScheduler.instance) // 0.5sec
+            .distinctUntilChanged()
+            .bind(to: self.textViewModel.idObservable)
+            .disposed(by: disposeBag)
         
         self.pwTextField.rx.text.orEmpty
-        .debounce(RxTimeInterval.microseconds(5), scheduler: MainScheduler.instance) // 0.5sec
-        .bind(to: self.textViewModel.pwObservable)
-        .disposed(by: disposeBag)
+            .debounce(RxTimeInterval.microseconds(5), scheduler: MainScheduler.instance) // 0.5sec
+            .distinctUntilChanged()
+            .bind(to: self.textViewModel.pwObservable)
+            .disposed(by: disposeBag)
         
         self.confirmPwTextField.rx.text.orEmpty
-        .debounce(RxTimeInterval.microseconds(5), scheduler: MainScheduler.instance) // 0.5sec
-        .bind(to: self.textViewModel.pwCheckObservable)
-        .disposed(by: disposeBag)
-       
+            .debounce(RxTimeInterval.microseconds(5), scheduler: MainScheduler.instance) // 0.5sec
+            .distinctUntilChanged()
+            .bind(to: self.textViewModel.pwCheckObservable)
+            .disposed(by: disposeBag)
         
+        self.phoneTextField.rx.text.orEmpty
+            .debounce(RxTimeInterval.microseconds(5), scheduler: MainScheduler.instance) // 0.5sec
+            .bind(to: self.textViewModel.phoneNumberObservable)
+            .disposed(by: disposeBag)
+        
+        self.birthTextField.rx.text.orEmpty
+            .debounce(RxTimeInterval.microseconds(5), scheduler: MainScheduler.instance) // 0.5sec
+            .bind(to: self.textViewModel.birthObservable)
+            .disposed(by: disposeBag)
+        
+        self.nameTextField.rx.text.orEmpty
+            .debounce(RxTimeInterval.microseconds(5), scheduler: MainScheduler.instance) // 0.5sec
+            .bind(to: self.textViewModel.nameObservable)
+            .disposed(by: disposeBag)
+
     }
     
     func bindOutPut(){
@@ -80,7 +135,7 @@ extension SignUpViewController {
                     self.pwCheckColorView.isHidden = false
                 }
             })
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
         
         //빈칸이면 표시x
         self.textViewModel.pwCheckObservable
@@ -96,11 +151,15 @@ extension SignUpViewController {
         //아이디 변경할시 다시 중복버튼 눌러야함
         self.textViewModel.idVaildObservable
             .subscribe(onNext: { b in
-                if b {
+                if !b {
                     self.confirmIdButton.isEnabled = true
+                    self.confirmIdButton.backgroundColor = UIColor.danbeeColor1
+                }else {
+                    self.confirmIdButton.isEnabled = false
+                    self.confirmIdButton.backgroundColor = UIColor.lightGray
                 }
             })
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
         
         //패스워드 형식체크
         self.textViewModel.pwVaildObservable
@@ -111,7 +170,7 @@ extension SignUpViewController {
                     self.pwCheckColorView.backgroundColor = UIColor.red
                 }
             })
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
         
         //재확인 라벨
         self.textViewModel.pwCheckVaildObservable
@@ -124,7 +183,23 @@ extension SignUpViewController {
                     self.confirmPwLabel.textColor = UIColor.red
                 }
             })
+            .disposed(by: disposeBag)
+        
+        //회원가입 가능상태
+        self.textViewModel.buttonEnable
+            .subscribe(onNext: { b in
+                if b {
+                    self.signUpButton.isEnabled = true
+                    self.signUpButton.backgroundColor = UIColor.danbeeColor1
+                }else {
+                    self.signUpButton.isEnabled = false
+                    self.signUpButton.backgroundColor = UIColor.lightGray
+                }
+            })
         .disposed(by: disposeBag)
+                
+                
+        
     }
     
 }

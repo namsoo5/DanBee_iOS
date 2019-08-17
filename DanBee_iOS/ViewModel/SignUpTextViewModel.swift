@@ -19,7 +19,14 @@ class TextViewModel {
     let idVaildObservable: BehaviorSubject<Bool> = BehaviorSubject(value: false)
     let pwVaildObservable: BehaviorSubject<Bool> = BehaviorSubject(value: false)
     let pwCheckVaildObservable: BehaviorSubject<Bool> = BehaviorSubject(value: false)
+
+    var gender = -1
     
+    let phoneNumberObservable: BehaviorRelay<String> = BehaviorRelay(value: "")
+    let birthObservable: BehaviorRelay<String> = BehaviorRelay(value: "")
+    let nameObservable: BehaviorRelay<String> = BehaviorRelay(value: "")
+    
+    let buttonEnable: BehaviorSubject<Bool> = BehaviorSubject(value: false)
     
     init() {
         setting()
@@ -42,6 +49,10 @@ class TextViewModel {
         //비번재확인
         pwCheckObservable.map(samePwCheck)
         .bind(to: pwCheckVaildObservable)
+        .disposed(by: disposeBag)
+        
+        Observable.combineLatest(idVaildObservable, pwVaildObservable, pwCheckVaildObservable, resultSelector: {$0 && $1 && $2 && true})
+        .bind(to: buttonEnable)
         .disposed(by: disposeBag)
         
     }

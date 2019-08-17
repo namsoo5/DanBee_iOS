@@ -17,7 +17,7 @@ struct SignUpService {
         "Content-Type" : "application/json"
     ]
     
-    func getSignUpResult(userid: String, pw: String, phone: String, gender: Int, birth: String, name: String, completion: @escaping () -> Void) {
+    func getSignUpResult(userid: String, pw: String, phone: String, gender: Int, birth: String, name: String, completion: @escaping (_ b: Bool) -> Void) {
         
         let body: Parameters = [
             "userid": userid,
@@ -36,7 +36,9 @@ struct SignUpService {
                 let json = JSON(value)
                 let result = json["result"].intValue
                 if result == 777 {
-                    completion()
+                    completion(true)
+                }else {
+                    completion(false)
                 }
                 
             default:

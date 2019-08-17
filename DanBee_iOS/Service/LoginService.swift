@@ -32,10 +32,13 @@ struct LoginService {
             case .success(let value):
                 let json = JSON(value)
                 let result = json["result"].intValue
-                print(result)
                 if result == 777 {
                     let userInfo = json["data"].arrayValue[0]
-                    print(userInfo["userid"])
+                    UserInfo.shared.name = userInfo["name"].stringValue
+                    UserInfo.shared.userid = userInfo["userid"].stringValue
+                    UserInfo.shared.phone = userInfo["phone"].stringValue
+                    UserInfo.shared.birth = userInfo["birth"].stringValue
+                    UserInfo.shared.gender = userInfo["gender"].intValue
                     completion(true)
                 }else{
                     completion(false)
