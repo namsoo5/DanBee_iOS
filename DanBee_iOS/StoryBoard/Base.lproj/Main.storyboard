@@ -131,6 +131,9 @@
                                     <constraint firstAttribute="height" constant="20" id="6UC-Ht-4gu"/>
                                 </constraints>
                                 <state key="normal" title="아이디 비빌번호 찾기"/>
+                                <connections>
+                                    <segue destination="iFW-8f-HFX" kind="presentation" id="cSw-kd-Uly"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -172,10 +175,10 @@
             </objects>
             <point key="canvasLocation" x="2586" y="27"/>
         </scene>
-        <!--View Controller-->
+        <!--Search User View Controller-->
         <scene sceneID="j3s-9l-h85">
             <objects>
-                <viewController id="iFW-8f-HFX" sceneMemberID="viewController">
+                <viewController id="iFW-8f-HFX" customClass="SearchUserViewController" customModule="DanBee_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dFf-Pw-hOh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -190,7 +193,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="xB4-DE-qcd">
                                 <rect key="frame" x="40" y="128" width="295" height="208"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8dZ-rY-NtG">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8dZ-rY-NtG">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="95T-hW-yQW"/>
@@ -199,7 +202,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ymT-tv-g0x">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ymT-tv-g0x">
                                         <rect key="frame" x="0.0" y="56" width="295" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="7ZN-O4-WLe"/>
@@ -208,7 +211,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ip9-kJ-0Pb">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="전화번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ip9-kJ-0Pb">
                                         <rect key="frame" x="0.0" y="112" width="295" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="8ji-3j-5AC"/>
@@ -217,7 +220,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zaN-U0-6WR">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="생년월일   예) 960210" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zaN-U0-6WR">
                                         <rect key="frame" x="0.0" y="168" width="295" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Ylv-6T-esZ"/>
@@ -246,6 +249,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="searchButtonClick:" destination="iFW-8f-HFX" eventType="touchUpInside" id="Biy-Fb-zrU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -262,6 +268,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ujY-EO-a2Q"/>
                     </view>
+                    <connections>
+                        <outlet property="birthTextField" destination="zaN-U0-6WR" id="wnX-kQ-50e"/>
+                        <outlet property="idTextField" destination="ymT-tv-g0x" id="57a-xd-f0d"/>
+                        <outlet property="nameTextField" destination="8dZ-rY-NtG" id="8K5-LR-3x8"/>
+                        <outlet property="phoneTextField" destination="ip9-kJ-0Pb" id="JUu-Zb-DaL"/>
+                        <outlet property="segmentButton" destination="9H1-y4-pmz" id="vJ8-dP-iaw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4wo-FZ-tuI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
