@@ -29,6 +29,7 @@
 		06DC7D3D2308015100B66E98 /* CheckIdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D3C2308015100B66E98 /* CheckIdService.swift */; };
 		06DC7D3F2309622000B66E98 /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D3E2309622000B66E98 /* SearchUserViewController.swift */; };
 		06DC7D412309A6DB00B66E98 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D402309A6DB00B66E98 /* SearchViewModel.swift */; };
+		06DC7D43230AA63A00B66E98 /* SearchUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D42230AA63A00B66E98 /* SearchUserService.swift */; };
 		53A7C252DF85794E1C12907D /* Pods_DanBee_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D33419F7B4F4C741FF483D /* Pods_DanBee_iOSTests.framework */; };
 		DD81D35270884E36741CB577 /* Pods_DanBee_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DF12FA07C1336385DC24B8 /* Pods_DanBee_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +73,7 @@
 		06DC7D3C2308015100B66E98 /* CheckIdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIdService.swift; sourceTree = "<group>"; };
 		06DC7D3E2309622000B66E98 /* SearchUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserViewController.swift; sourceTree = "<group>"; };
 		06DC7D402309A6DB00B66E98 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		06DC7D42230AA63A00B66E98 /* SearchUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserService.swift; sourceTree = "<group>"; };
 		2177BEA901D82D445DA241D7 /* Pods-DanBee_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanBee_iOS.release.xcconfig"; path = "Target Support Files/Pods-DanBee_iOS/Pods-DanBee_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		40D33419F7B4F4C741FF483D /* Pods_DanBee_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DanBee_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DF12FA07C1336385DC24B8 /* Pods_DanBee_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DanBee_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +193,7 @@
 				06DC7D322306F07800B66E98 /* SignUpService.swift */,
 				06DC7D342306F6D800B66E98 /* LoginService.swift */,
 				06DC7D3C2308015100B66E98 /* CheckIdService.swift */,
+				06DC7D42230AA63A00B66E98 /* SearchUserService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				06DC7D352306F6D800B66E98 /* LoginService.swift in Sources */,
 				06DC7D3B2307CB9A00B66E98 /* UIColor+Extension.swift in Sources */,
 				06DC7D2F2306A1C000B66E98 /* SignUpTextViewModel.swift in Sources */,
+				06DC7D43230AA63A00B66E98 /* SearchUserService.swift in Sources */,
 				06DC7D3D2308015100B66E98 /* CheckIdService.swift in Sources */,
 				06DC7CF523042B1200B66E98 /* MainViewController.swift in Sources */,
 				06DC7CF323042B1200B66E98 /* AppDelegate.swift in Sources */,
