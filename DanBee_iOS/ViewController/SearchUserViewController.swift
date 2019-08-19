@@ -27,6 +27,38 @@ class SearchUserViewController: UIViewController {
         uiSet()
     }
     @IBAction func searchButtonClick(_ sender: Any) {
+        guard let name = self.nameTextField.text else {return}
+        guard let phone = self.phoneTextField.text else {return}
+        if self.viewModel.segmentObservable.value == 0 {
+            SearchUserService.shared.getSearchIdResult(name: name, phone: phone){
+                id in
+                if id == "" {
+                    self.simpleAlert(title: "아이디", msg: id)
+                }else {
+                    self.simpleAlert(title: "아이디", msg: "존재하지 않는 정보 입니다.")
+                }
+            }
+        }else {
+            guard let id = self.idTextField.text else {return}
+            guard let birth = self.birthTextField.text else {return}
+            SearchUserService.shared.getSearchPwResult(userid: id, name: name, phone: phone, birth: birth){
+                b in
+                if b {
+                    /*
+                     
+                    정보잁치할시
+                     
+                    */
+                }else {
+                    /*
+                     
+                    불일치
+                     
+                    */
+                }
+            }
+        }
+        
     }
 }
 

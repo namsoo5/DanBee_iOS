@@ -8,8 +8,9 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 class SearchViewModel {
-    let segmentObservable:BehaviorSubject<Int> = BehaviorSubject(value: 0)
+    let segmentObservable:BehaviorRelay<Int> = BehaviorRelay(value: 0)
     
 }
