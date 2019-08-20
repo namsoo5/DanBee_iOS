@@ -163,6 +163,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CheckboxButton/CheckboxButton.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MaterialCard/MaterialCard.framework"
   install_framework "${PODS_ROOT}/NMapsMap/framework/NMapsMap.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework"
@@ -174,6 +175,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CheckboxButton/CheckboxButton.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MaterialCard/MaterialCard.framework"
   install_framework "${PODS_ROOT}/NMapsMap/framework/NMapsMap.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework"

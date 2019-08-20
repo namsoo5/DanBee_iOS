@@ -13,9 +13,9 @@ pod 'RxSwift', '~> 5.0'
 pod 'RxCocoa', '~> 5.0'
 pod 'SwiftyJSON', '~> 4.0'
 pod 'NMapsMap', '~> 3.2.0'
-pod 'CheckboxButton'
-pod 'RxOptional'
-
+pod 'CheckboxButton', '~> 3.1.1'
+pod 'RxOptional', '~> 4.0.0'
+pod 'MaterialCard', '~> 1.1.4'
 
   target 'DanBee_iOSTests' do
     inherit! :search_paths

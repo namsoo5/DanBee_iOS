@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		06DA1A83230BD2B200D87A98 /* ChangePwViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A82230BD2B200D87A98 /* ChangePwViewModel.swift */; };
 		06DA1A85230BDDB300D87A98 /* ChangePwService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A84230BDDB300D87A98 /* ChangePwService.swift */; };
+		06DA1A87230BF77900D87A98 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A86230BF77900D87A98 /* ProfileViewController.swift */; };
 		06DC7CF323042B1200B66E98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7CF223042B1200B66E98 /* AppDelegate.swift */; };
 		06DC7CF523042B1200B66E98 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7CF423042B1200B66E98 /* MainViewController.swift */; };
 		06DC7CF823042B1200B66E98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06DC7CF623042B1200B66E98 /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		06DA1A82230BD2B200D87A98 /* ChangePwViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePwViewModel.swift; sourceTree = "<group>"; };
 		06DA1A84230BDDB300D87A98 /* ChangePwService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePwService.swift; sourceTree = "<group>"; };
+		06DA1A86230BF77900D87A98 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		06DC7CEF23042B1200B66E98 /* DanBee_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DanBee_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DC7CF223042B1200B66E98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06DC7CF423042B1200B66E98 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				06DC7CF423042B1200B66E98 /* MainViewController.swift */,
 				06DC7D24230682EB00B66E98 /* LoginViewController.swift */,
 				06DC7D44230AB21200B66E98 /* ChangePwViewController.swift */,
+				06DA1A86230BF77900D87A98 /* ProfileViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				06DC7D2F2306A1C000B66E98 /* SignUpTextViewModel.swift in Sources */,
 				06DA1A83230BD2B200D87A98 /* ChangePwViewModel.swift in Sources */,
 				06DC7D43230AA63A00B66E98 /* SearchUserService.swift in Sources */,
+				06DA1A87230BF77900D87A98 /* ProfileViewController.swift in Sources */,
 				06DC7D3D2308015100B66E98 /* CheckIdService.swift in Sources */,
 				06DA1A85230BDDB300D87A98 /* ChangePwService.swift in Sources */,
 				06DC7CF523042B1200B66E98 /* MainViewController.swift in Sources */,

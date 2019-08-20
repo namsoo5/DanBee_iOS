@@ -14,7 +14,7 @@ class SideMenuViewController: UIViewController {
     @IBOutlet weak var loginImg: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     let menuList = ["QR코드","내정보","이용내역","공지사항/Q&A","사용방법"]
-    let menuImg = ["qrcode","profile","","notice",""]
+    let menuImg = ["qrcode","profile","history","notice","guide"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +41,7 @@ extension SideMenuViewController {
     
     func uiSet(){
         self.tableView.separatorColor = UIColor.clear
+        self.tableView.isScrollEnabled = false
         //login상태에따른 버튼유무
         if UserInfo.shared.userid.isEmpty {
             self.loginButton.setTitle("로그인", for: .normal)
@@ -67,5 +68,23 @@ extension SideMenuViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    //menu select
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case let index where index == 0 && UserInfo.shared.userid.isNotEmpty:
+            print("0menu")
+        case let index where index == 1 && UserInfo.shared.userid.isNotEmpty:
+            let nextVC:ProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: "Profile") as! ProfileViewController
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        case let index where index == 2 && UserInfo.shared.userid.isNotEmpty:
+            print("2menu")
+        case 3:
+            print("3menu")
+        case 4:
+            print("4menu")
+        default:
+            self.simpleAlert(title: "알림", msg: "로그인이 필요한 기능입니다.")
+        }
+    }
     
 }
