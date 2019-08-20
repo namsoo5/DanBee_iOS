@@ -15,4 +15,5 @@ struct DanBeeAPI {
     static let checkIdURL = homeURL + "user/find/"
     static let searchId = homeURL + "user/show&id/"
     static let searchPw = homeURL + "user/show&pw/"
+    static let changePw = homeURL + "user/change/"
 }

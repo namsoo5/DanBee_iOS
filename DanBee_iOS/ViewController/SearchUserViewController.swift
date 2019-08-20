@@ -26,6 +26,14 @@ class SearchUserViewController: UIViewController {
         bindOutput()
         uiSet()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ChangePw" {
+            let nextVC: ChangePwViewController = segue.destination as! ChangePwViewController
+            nextVC.userid = self.idTextField.text!
+        }
+    }
+    
     @IBAction func searchButtonClick(_ sender: Any) {
         guard let name = self.nameTextField.text else {return}
         guard let phone = self.phoneTextField.text else {return}
@@ -35,7 +43,7 @@ class SearchUserViewController: UIViewController {
                 if id == "" {
                     self.simpleAlert(title: "아이디", msg: id)
                 }else {
-                    self.simpleAlert(title: "아이디", msg: "존재하지 않는 정보 입니다.")
+                    self.simpleAlert(title: "실패", msg: "다시 한 번 확인해주세요.")
                 }
             }
         }else {
@@ -44,17 +52,9 @@ class SearchUserViewController: UIViewController {
             SearchUserService.shared.getSearchPwResult(userid: id, name: name, phone: phone, birth: birth){
                 b in
                 if b {
-                    /*
-                     
-                    정보잁치할시
-                     
-                    */
+                    self.performSegue(withIdentifier: "ChangePw", sender: self)
                 }else {
-                    /*
-                     
-                    불일치
-                     
-                    */
+                    self.simpleAlert(title: "실패", msg: "다시 한 번 확인해주세요.")
                 }
             }
         }

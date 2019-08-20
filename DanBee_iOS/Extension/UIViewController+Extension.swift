@@ -16,4 +16,14 @@ extension UIViewController {
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
+    
+    func toRootAlert(title: String, msg: String) {
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인",style: .cancel, handler: { action in self.navigationController?.popToRootViewController(animated: true)
+            
+        })
+        
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
 }
