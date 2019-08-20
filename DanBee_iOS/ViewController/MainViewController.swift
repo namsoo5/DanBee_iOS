@@ -23,6 +23,7 @@ class MainViewController: UIViewController, NMFMapViewDelegate, CLLocationManage
         mapSet()
         loactionSet()
         sideMenuButtonInit()
+        autoLogin()
     
     }
 
@@ -39,6 +40,19 @@ extension MainViewController {
         guard let sideMenuVC = self.storyboard?.instantiateViewController(withIdentifier: "sideMenu") else { return }
         self.present(sideMenuVC, animated: true, completion: nil)
     }
+    
+    func autoLogin() {
+        if let userid = UserDefaults.standard.string(forKey: "id") {
+            if let pw = UserDefaults.standard.string(forKey: "pw") {
+                LoginService.shared.getLoginResult(userid: userid, pw: pw){ b in
+                    if b {
+                        print("auto login")
+                    }
+                }
+            }
+        }
+    }
+    
 }
 
 extension MainViewController {

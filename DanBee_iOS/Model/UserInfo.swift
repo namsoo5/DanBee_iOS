@@ -18,4 +18,16 @@ class UserInfo{
     var birth: String?
     var kickid: Int?
     var time: String?
+    
+    func logout(){
+        UserDefaults.standard.removeObject(forKey: "id")
+        UserDefaults.standard.removeObject(forKey: "pw")
+        self.userid = ""
+        self.name = ""
+        self.phone = ""
+        self.gender = -1
+        self.birth = ""
+        self.kickid = -1
+        self.time = ""
+    }
 }

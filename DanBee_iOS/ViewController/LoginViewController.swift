@@ -30,6 +30,11 @@ class LoginViewController: UIViewController {
             if !b {
                 self.simpleAlert(title: "로그인 실패", msg: "아이디 혹은 비밀번호가 틀렸습니다.")
             }else{
+                //자동로그인
+                if self.autoLoginCheckBox.on{
+                    UserDefaults.standard.set(id, forKey: "id")
+                    UserDefaults.standard.set(pw, forKey: "pw")
+                }
                 self.dismiss(animated: true, completion: nil)
             }
         }
