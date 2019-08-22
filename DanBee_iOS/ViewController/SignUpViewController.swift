@@ -26,6 +26,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var confirmIdButton: UIButton!
     @IBOutlet weak var confirmPwLabel: UILabel!
     @IBOutlet weak var pwCheckColorView: UIView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     let disposeBag = DisposeBag()
     let textViewModel = TextViewModel()
@@ -50,8 +51,10 @@ class SignUpViewController: UIViewController {
             self.simpleAlert(title: "확인", msg: "빈칸이 있는지 확인해주세요")
             return
         }
+        self.indicator.startAnimating()
         
         SignUpService.shared.getSignUpResult(userid: id, pw: pw, phone: phone, gender: gender, birth: birth, name: name){ b in
+            self.indicator.stopAnimating()
             if !b {
                 self.simpleAlert(title: "오류", msg: "알 수 없는 오류로 회원가입에 실패하였습니다.")
             }else{

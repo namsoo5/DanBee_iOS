@@ -29,6 +29,7 @@ class LoginViewController: UIViewController {
         guard let pw = self.pwTextField.text else {return}
         self.indicator.startAnimating()
         LoginService.shared.getLoginResult(userid: id, pw: pw){ b in
+            self.indicator.stopAnimating()
             if !b {
                 self.simpleAlert(title: "로그인 실패", msg: "아이디 혹은 비밀번호가 틀렸습니다.")
             }else{
@@ -37,7 +38,6 @@ class LoginViewController: UIViewController {
                     UserDefaults.standard.set(id, forKey: "id")
                     UserDefaults.standard.set(pw, forKey: "pw")
                 }
-                self.indicator.stopAnimating()
                 self.dismiss(animated: true, completion: nil)
             }
         }

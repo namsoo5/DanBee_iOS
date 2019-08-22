@@ -139,7 +139,7 @@
                                     <segue destination="iFW-8f-HFX" kind="show" id="cSw-kd-Uly"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="N73-wt-U1q">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="N73-wt-U1q">
                                 <rect key="frame" x="167.5" y="313.5" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0zL-bJ-XeZ"/>
@@ -613,6 +613,10 @@
                                     <constraint firstAttribute="height" constant="10" id="df2-YW-4My"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ynL-60-cri">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -621,6 +625,7 @@
                             <constraint firstItem="LQe-ud-ali" firstAttribute="leading" secondItem="yjL-wU-qxf" secondAttribute="leading" id="6dX-kq-9ML"/>
                             <constraint firstItem="Hrl-jo-7tZ" firstAttribute="leading" secondItem="9cg-45-eky" secondAttribute="trailing" constant="16" id="741-lY-62T"/>
                             <constraint firstItem="9cg-45-eky" firstAttribute="leading" secondItem="lDt-uR-TS4" secondAttribute="trailing" constant="20" id="7WW-Gb-MpT"/>
+                            <constraint firstItem="ynL-60-cri" firstAttribute="centerY" secondItem="lEk-co-EMj" secondAttribute="centerY" id="B6T-a5-ZJH"/>
                             <constraint firstItem="I3b-tK-s8N" firstAttribute="leading" secondItem="AiA-G5-39C" secondAttribute="leading" id="Bth-Ws-UZM"/>
                             <constraint firstItem="AiA-G5-39C" firstAttribute="leading" secondItem="C5M-Uo-gPz" secondAttribute="leading" constant="16" id="Gmx-li-BMH"/>
                             <constraint firstItem="4RE-k1-2ft" firstAttribute="width" secondItem="LQe-ud-ali" secondAttribute="width" id="Ib2-48-lQE"/>
@@ -632,6 +637,7 @@
                             <constraint firstItem="ldu-po-Bxq" firstAttribute="centerX" secondItem="lEk-co-EMj" secondAttribute="centerX" id="ShT-WY-4pM"/>
                             <constraint firstItem="4RE-k1-2ft" firstAttribute="leading" secondItem="nEX-cB-U4o" secondAttribute="trailing" constant="30" id="TJT-g2-8hR"/>
                             <constraint firstItem="nEX-cB-U4o" firstAttribute="leading" secondItem="LQe-ud-ali" secondAttribute="trailing" constant="10" id="TUX-kl-HFa"/>
+                            <constraint firstItem="ynL-60-cri" firstAttribute="centerX" secondItem="lEk-co-EMj" secondAttribute="centerX" id="V70-aB-Ryr"/>
                             <constraint firstItem="9cg-45-eky" firstAttribute="top" secondItem="lDt-uR-TS4" secondAttribute="top" id="ZvM-AA-l32"/>
                             <constraint firstItem="lDt-uR-TS4" firstAttribute="leading" secondItem="C5M-Uo-gPz" secondAttribute="leading" constant="16" id="aEQ-TB-Y10"/>
                             <constraint firstItem="4RE-k1-2ft" firstAttribute="centerY" secondItem="LQe-ud-ali" secondAttribute="centerY" id="bTc-Fz-rJH"/>
@@ -654,6 +660,7 @@
                         <outlet property="confirmPwLabel" destination="Hrl-jo-7tZ" id="Mtv-Wd-OU4"/>
                         <outlet property="confirmPwTextField" destination="6PR-hB-y66" id="W8C-6B-zeq"/>
                         <outlet property="idTextField" destination="LZP-s1-KCJ" id="Q22-xV-UAu"/>
+                        <outlet property="indicator" destination="ynL-60-cri" id="jef-m4-6uk"/>
                         <outlet property="manCheckBox" destination="4RE-k1-2ft" id="gOB-ua-Kck"/>
                         <outlet property="nameTextField" destination="x2i-Ob-Osd" id="0SW-7i-UPs"/>
                         <outlet property="phoneTextField" destination="yjL-wU-qxf" id="DwF-fj-nRi"/>
