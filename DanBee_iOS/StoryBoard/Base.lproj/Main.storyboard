@@ -139,11 +139,20 @@
                                     <segue destination="iFW-8f-HFX" kind="show" id="cSw-kd-Uly"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="N73-wt-U1q">
+                                <rect key="frame" x="167.5" y="313.5" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0zL-bJ-XeZ"/>
+                                    <constraint firstAttribute="width" constant="40" id="iFd-Gs-MRf"/>
+                                </constraints>
+                                <color key="color" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="PTA-JF-uPF" firstAttribute="top" secondItem="IXn-Ka-5Zo" secondAttribute="bottom" constant="18" id="516-DC-4Aw"/>
                             <constraint firstItem="xHj-pU-8mz" firstAttribute="centerX" secondItem="BNj-97-MyP" secondAttribute="centerX" id="65R-8t-w6A"/>
+                            <constraint firstItem="N73-wt-U1q" firstAttribute="centerX" secondItem="BNj-97-MyP" secondAttribute="centerX" id="6KG-gp-W1o"/>
                             <constraint firstItem="P11-Mw-9fC" firstAttribute="centerX" secondItem="BNj-97-MyP" secondAttribute="centerX" id="AE5-9b-06v"/>
                             <constraint firstItem="IXn-Ka-5Zo" firstAttribute="leading" secondItem="zol-yC-W2h" secondAttribute="trailing" constant="10" id="AlG-yZ-LXq"/>
                             <constraint firstItem="PTA-JF-uPF" firstAttribute="height" secondItem="P11-Mw-9fC" secondAttribute="height" id="CJt-hQ-ROy"/>
@@ -154,6 +163,7 @@
                             <constraint firstItem="xHj-pU-8mz" firstAttribute="leading" secondItem="Pjf-Fy-eys" secondAttribute="leading" constant="70" id="IlE-YX-MFr"/>
                             <constraint firstItem="xHj-pU-8mz" firstAttribute="top" secondItem="R9c-R1-SJZ" secondAttribute="bottom" constant="20" id="Jm6-Ta-kC5"/>
                             <constraint firstItem="we2-DK-fBV" firstAttribute="top" secondItem="PTA-JF-uPF" secondAttribute="bottom" constant="10" id="L5Z-a1-XDE"/>
+                            <constraint firstItem="N73-wt-U1q" firstAttribute="centerY" secondItem="BNj-97-MyP" secondAttribute="centerY" id="Lxs-Kz-QGl"/>
                             <constraint firstItem="P11-Mw-9fC" firstAttribute="height" secondItem="xHj-pU-8mz" secondAttribute="height" id="MZd-nu-Eh5"/>
                             <constraint firstItem="PTA-JF-uPF" firstAttribute="width" secondItem="P11-Mw-9fC" secondAttribute="width" id="Snn-Me-ohT"/>
                             <constraint firstItem="we2-DK-fBV" firstAttribute="leading" secondItem="PTA-JF-uPF" secondAttribute="leading" id="Uei-n6-K7w"/>
@@ -171,6 +181,7 @@
                     <connections>
                         <outlet property="autoLoginCheckBox" destination="zol-yC-W2h" id="kws-fi-yJd"/>
                         <outlet property="idTextField" destination="xHj-pU-8mz" id="uwQ-dN-4sg"/>
+                        <outlet property="indicator" destination="N73-wt-U1q" id="9UH-Pz-Clu"/>
                         <outlet property="loginButton" destination="PTA-JF-uPF" id="8Wg-2G-zjc"/>
                         <outlet property="pwTextField" destination="P11-Mw-9fC" id="kjh-br-0Yc"/>
                     </connections>

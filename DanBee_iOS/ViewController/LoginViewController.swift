@@ -12,6 +12,7 @@ import CheckboxButton
 class LoginViewController: UIViewController {
     
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var autoLoginCheckBox: CheckboxButton!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var idTextField: UITextField!
@@ -26,6 +27,7 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonClick(_ sender: Any) {
         guard let id = self.idTextField.text else {return}
         guard let pw = self.pwTextField.text else {return}
+        self.indicator.startAnimating()
         LoginService.shared.getLoginResult(userid: id, pw: pw){ b in
             if !b {
                 self.simpleAlert(title: "로그인 실패", msg: "아이디 혹은 비밀번호가 틀렸습니다.")
@@ -35,6 +37,7 @@ class LoginViewController: UIViewController {
                     UserDefaults.standard.set(id, forKey: "id")
                     UserDefaults.standard.set(pw, forKey: "pw")
                 }
+                self.indicator.stopAnimating()
                 self.dismiss(animated: true, completion: nil)
             }
         }
