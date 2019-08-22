@@ -77,7 +77,8 @@ extension SideMenuViewController: UITableViewDataSource, UITableViewDelegate {
             let nextVC:ProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: "Profile") as! ProfileViewController
             self.navigationController?.pushViewController(nextVC, animated: true)
         case let index where index == 2 && UserInfo.shared.userid.isNotEmpty:
-            print("2menu")
+            let nextVC:HistoryViewController = self.storyboard?.instantiateViewController(withIdentifier: "History") as! HistoryViewController
+            self.navigationController?.pushViewController(nextVC, animated: true)
         case 3:
             print("3menu")
         case 4:
