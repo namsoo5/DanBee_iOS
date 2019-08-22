@@ -334,7 +334,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="EaH-Yh-VaJ"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="변경">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -355,11 +355,16 @@
                                 <color key="textColor" red="0.84157437089999998" green="0.223867327" blue="0.2744961977" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="U8c-EQ-oAs">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="F5a-zm-BVr" firstAttribute="top" secondItem="zOD-eX-caK" secondAttribute="bottom" constant="16" id="90J-vh-8mr"/>
                             <constraint firstItem="zOD-eX-caK" firstAttribute="leading" secondItem="s9Y-Cj-A56" secondAttribute="leading" constant="40" id="CMw-Og-pwo"/>
+                            <constraint firstItem="U8c-EQ-oAs" firstAttribute="centerY" secondItem="WSa-aQ-npD" secondAttribute="centerY" id="DeK-0U-oxk"/>
                             <constraint firstItem="F5a-zm-BVr" firstAttribute="leading" secondItem="s9Y-Cj-A56" secondAttribute="leading" constant="40" id="IYo-bd-Qfr"/>
                             <constraint firstItem="s9Y-Cj-A56" firstAttribute="trailing" secondItem="zOD-eX-caK" secondAttribute="trailing" constant="80" id="Lxl-Zm-oB6"/>
                             <constraint firstItem="Az0-rF-5px" firstAttribute="leading" secondItem="F5a-zm-BVr" secondAttribute="leading" id="MOS-bB-n1o"/>
@@ -371,11 +376,13 @@
                             <constraint firstItem="LVu-sm-lDz" firstAttribute="leading" secondItem="zOD-eX-caK" secondAttribute="trailing" constant="16" id="qTZ-XO-BDv"/>
                             <constraint firstItem="s9Y-Cj-A56" firstAttribute="trailing" secondItem="F5a-zm-BVr" secondAttribute="trailing" constant="80" id="ure-xC-RBq"/>
                             <constraint firstItem="Az0-rF-5px" firstAttribute="top" secondItem="F5a-zm-BVr" secondAttribute="bottom" constant="30" id="wCs-wp-oHf"/>
+                            <constraint firstItem="U8c-EQ-oAs" firstAttribute="centerX" secondItem="WSa-aQ-npD" secondAttribute="centerX" id="ycL-hN-O1Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="s9Y-Cj-A56"/>
                     </view>
                     <connections>
                         <outlet property="checkPwTextField" destination="F5a-zm-BVr" id="bHM-7B-5oP"/>
+                        <outlet property="indicator" destination="U8c-EQ-oAs" id="TRc-go-xKt"/>
                         <outlet property="pwColorLabel" destination="zEc-gj-1BQ" id="eQb-NF-K1U"/>
                         <outlet property="pwColorView" destination="LVu-sm-lDz" id="lFT-Gv-cez"/>
                         <outlet property="pwTextField" destination="zOD-eX-caK" id="kVG-g1-5iX"/>

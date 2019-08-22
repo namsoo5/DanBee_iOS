@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 class ChangePwViewController: UIViewController {
 
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var pwColorView: UIView!
     @IBOutlet weak var pwColorLabel: UILabel!
     @IBOutlet weak var checkPwTextField: UITextField!
@@ -28,8 +29,10 @@ class ChangePwViewController: UIViewController {
     
     @IBAction func changePwButtonClick(_ sender: Any) {
         if self.viewModel.buttonVaild.value {
+            self.indicator.startAnimating()
             let pw = self.pwTextField.text ?? ""
             ChangePwService.shared.getChangePwResult(id: self.userid, pw: pw){ b in
+                self.indicator.stopAnimating()
                 if b {
                     self.toRootAlert(title: "성공", msg: "비밀번호를 변경하였습니다.")
                     
