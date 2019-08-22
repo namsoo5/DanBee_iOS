@@ -24,6 +24,17 @@ class ProfileViewController: UIViewController {
     
     @IBAction func removeUserButtonClick(_ sender: Any) {
         
+        self.choiceAlert(title: "확인", msg: "정말 탈퇴 하시겠습니까?", okHandler: { action in
+            DeleteUserService.shared.getDeleteUserResult(userid: UserInfo.shared.userid){ b in
+                if b {
+                    UserInfo.shared.logout()
+                    self.toRootAlert(title: "확인", msg: "탈퇴 되었습니다.")
+                }else{
+                    self.simpleAlert(title: "실패", msg: "처리 도중 알 수 없는오류가 발생했습니다.")
+                }
+            }
+        })
+        
     }
   
     @IBAction func changePwButtonClick(_ sender: Any) {

@@ -26,4 +26,13 @@ extension UIViewController {
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
+    
+    func choiceAlert(title: String, msg: String, okHandler: ((UIAlertAction)->Void)? ) {
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인",style: .destructive, handler: okHandler )
+        let cancelAction = UIAlertAction(title: "취소",style: .cancel, handler: nil)
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
 }
