@@ -19,7 +19,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         uiSet()
-
+        userInfoSet()
     }
     
     @IBAction func removeUserButtonClick(_ sender: Any) {
@@ -48,7 +48,12 @@ extension ProfileViewController {
         self.userImg.layer.borderColor = UIColor.black.cgColor
         self.userImg.layer.cornerRadius = 45
         self.userImg.layer.borderWidth = 2
-        
+    }
+    
+    func userInfoSet(){
+        idLabel.text = UserInfo.shared.userid
+        birthLabel.text = UserInfo.shared.birth
+        phoneLabel.text = UserInfo.shared.phone
     }
     
 }
