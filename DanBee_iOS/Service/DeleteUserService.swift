@@ -1,8 +1,8 @@
 //
-//  ChangePwService.swift
+//  DeleteUserService.swift
 //  DanBee_iOS
 //
-//  Created by 남수김 on 20/08/2019.
+//  Created by 남수김 on 21/08/2019.
 //  Copyright © 2019 ns. All rights reserved.
 //
 
@@ -10,20 +10,15 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-struct ChangePwService {
-    static let shared = ChangePwService()
+class DeleteUserService {
+    static let shared = DeleteUserService()
     
-    let header: HTTPHeaders = [
-        "Content-Type" : "application/json"
-    ]
-    
-    func getChangePwResult(id: String, pw: String, completion: @escaping (_ b: Bool) -> Void) {
+    func getDeleteUserResult(userid: String, completion: @escaping (_: Bool) -> Void){
         
-        let url = DanBeeAPI.changePwURL+"\(id)/\(pw)"
+        let url = DanBeeAPI.deleteUserURL + "\(userid)"
         
-        Alamofire.request(url).responseJSON {
+        Alamofire.request(url).responseJSON{
             response in
-            
             switch response.result {
             case .success(let value):
                 let json = JSON(value)

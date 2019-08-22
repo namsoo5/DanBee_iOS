@@ -10,6 +10,7 @@
 		06DA1A83230BD2B200D87A98 /* ChangePwViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A82230BD2B200D87A98 /* ChangePwViewModel.swift */; };
 		06DA1A85230BDDB300D87A98 /* ChangePwService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A84230BDDB300D87A98 /* ChangePwService.swift */; };
 		06DA1A87230BF77900D87A98 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A86230BF77900D87A98 /* ProfileViewController.swift */; };
+		06DA1A89230D08A300D87A98 /* DeleteUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A88230D08A300D87A98 /* DeleteUserService.swift */; };
 		06DC7CF323042B1200B66E98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7CF223042B1200B66E98 /* AppDelegate.swift */; };
 		06DC7CF523042B1200B66E98 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7CF423042B1200B66E98 /* MainViewController.swift */; };
 		06DC7CF823042B1200B66E98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06DC7CF623042B1200B66E98 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		06DA1A82230BD2B200D87A98 /* ChangePwViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePwViewModel.swift; sourceTree = "<group>"; };
 		06DA1A84230BDDB300D87A98 /* ChangePwService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePwService.swift; sourceTree = "<group>"; };
 		06DA1A86230BF77900D87A98 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		06DA1A88230D08A300D87A98 /* DeleteUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserService.swift; sourceTree = "<group>"; };
 		06DC7CEF23042B1200B66E98 /* DanBee_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DanBee_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DC7CF223042B1200B66E98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06DC7CF423042B1200B66E98 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				06DC7D3C2308015100B66E98 /* CheckIdService.swift */,
 				06DC7D42230AA63A00B66E98 /* SearchUserService.swift */,
 				06DA1A84230BDDB300D87A98 /* ChangePwService.swift */,
+				06DA1A88230D08A300D87A98 /* DeleteUserService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				06DC7CF523042B1200B66E98 /* MainViewController.swift in Sources */,
 				06DC7CF323042B1200B66E98 /* AppDelegate.swift in Sources */,
 				06DC7D392307039100B66E98 /* UserInfo.swift in Sources */,
+				06DA1A89230D08A300D87A98 /* DeleteUserService.swift in Sources */,
 				06DC7D332306F07900B66E98 /* SignUpService.swift in Sources */,
 				06DC7D45230AB21200B66E98 /* ChangePwViewController.swift in Sources */,
 			);

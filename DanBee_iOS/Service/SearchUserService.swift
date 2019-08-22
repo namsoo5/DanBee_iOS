@@ -19,7 +19,7 @@ struct SearchUserService {
     
     func getSearchIdResult(name: String, phone: String, completion: @escaping (_ b: String) -> Void) {
         
-        let url = DanBeeAPI.searchId+"\(name)/\(phone)"
+        let url = DanBeeAPI.searchIdURL+"\(name)/\(phone)"
         
         Alamofire.request(url).responseJSON {
             response in
@@ -42,7 +42,7 @@ struct SearchUserService {
     
     func getSearchPwResult(userid: String, name: String, phone: String, birth: String, completion: @escaping (_ b: Bool) -> Void) {
         
-        let url = DanBeeAPI.searchPw+"\(userid)/\(name)/\(phone)/\(birth)"
+        let url = DanBeeAPI.searchPwURL+"\(userid)/\(name)/\(phone)/\(birth)"
         
         Alamofire.request(url).responseJSON {
             response in

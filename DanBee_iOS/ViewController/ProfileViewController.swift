@@ -23,6 +23,7 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func removeUserButtonClick(_ sender: Any) {
+        
     }
   
     @IBAction func changePwButtonClick(_ sender: Any) {
