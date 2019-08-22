@@ -12,6 +12,7 @@ import RxCocoa
 
 class SearchUserViewController: UIViewController {
 
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var birthTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
@@ -37,9 +38,13 @@ class SearchUserViewController: UIViewController {
     @IBAction func searchButtonClick(_ sender: Any) {
         guard let name = self.nameTextField.text else {return}
         guard let phone = self.phoneTextField.text else {return}
+        
+        self.indicator.startAnimating()
+        
         if self.viewModel.segmentObservable.value == 0 {
             SearchUserService.shared.getSearchIdResult(name: name, phone: phone){
                 id in
+                self.indicator.stopAnimating()
                 if id == "" {
                     self.simpleAlert(title: "아이디", msg: id)
                 }else {
@@ -51,6 +56,7 @@ class SearchUserViewController: UIViewController {
             guard let birth = self.birthTextField.text else {return}
             SearchUserService.shared.getSearchPwResult(userid: id, name: name, phone: phone, birth: birth){
                 b in
+                self.indicator.stopAnimating()
                 if b {
                     self.performSegue(withIdentifier: "ChangePw", sender: self)
                 }else {

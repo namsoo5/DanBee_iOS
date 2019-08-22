@@ -261,17 +261,23 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0Zc-mr-IEL"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="찾기">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="searchButtonClick:" destination="iFW-8f-HFX" eventType="touchUpInside" id="Biy-Fb-zrU"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="xUf-5L-mel">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ujY-EO-a2Q" firstAttribute="trailing" secondItem="xB4-DE-qcd" secondAttribute="trailing" constant="40" id="0kd-Jm-gBl"/>
+                            <constraint firstItem="xUf-5L-mel" firstAttribute="centerX" secondItem="dFf-Pw-hOh" secondAttribute="centerX" id="110-0p-ijx"/>
+                            <constraint firstItem="xUf-5L-mel" firstAttribute="centerY" secondItem="dFf-Pw-hOh" secondAttribute="centerY" id="1MX-sj-7Pg"/>
                             <constraint firstItem="7Zf-ry-YJ3" firstAttribute="top" secondItem="xB4-DE-qcd" secondAttribute="bottom" constant="24" id="2xt-4E-lD6"/>
                             <constraint firstItem="xB4-DE-qcd" firstAttribute="leading" secondItem="ujY-EO-a2Q" secondAttribute="leading" constant="40" id="DSx-gb-DEY"/>
                             <constraint firstItem="7Zf-ry-YJ3" firstAttribute="leading" secondItem="xB4-DE-qcd" secondAttribute="leading" id="RJp-PI-TiT"/>
@@ -286,6 +292,7 @@
                     <connections>
                         <outlet property="birthTextField" destination="zaN-U0-6WR" id="wnX-kQ-50e"/>
                         <outlet property="idTextField" destination="ymT-tv-g0x" id="57a-xd-f0d"/>
+                        <outlet property="indicator" destination="xUf-5L-mel" id="MkY-Vp-7Mp"/>
                         <outlet property="nameTextField" destination="8dZ-rY-NtG" id="8K5-LR-3x8"/>
                         <outlet property="phoneTextField" destination="ip9-kJ-0Pb" id="JUu-Zb-DaL"/>
                         <outlet property="segmentButton" destination="9H1-y4-pmz" id="vJ8-dP-iaw"/>
