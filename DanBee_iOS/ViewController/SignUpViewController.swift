@@ -54,6 +54,8 @@ class SignUpViewController: UIViewController {
         SignUpService.shared.getSignUpResult(userid: id, pw: pw, phone: phone, gender: gender, birth: birth, name: name){ b in
             if !b {
                 self.simpleAlert(title: "오류", msg: "알 수 없는 오류로 회원가입에 실패하였습니다.")
+            }else{
+                self.toRootAlert(title: "환영합니다", msg: "단비에 가입되셨습니다.")
             }
             
         }
