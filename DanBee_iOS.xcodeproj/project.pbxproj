@@ -15,6 +15,8 @@
 		06DA1A8D230E586400D87A98 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A8C230E586400D87A98 /* HistoryTableViewCell.swift */; };
 		06DA1A8F230E59E500D87A98 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A8E230E59E500D87A98 /* History.swift */; };
 		06DA1A91230E5B2D00D87A98 /* HistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A90230E5B2D00D87A98 /* HistoryService.swift */; };
+		06DA1A93230E785C00D87A98 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A92230E785C00D87A98 /* GuideViewController.swift */; };
+		06DA1A95230E7ADB00D87A98 /* GuideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A94230E7ADB00D87A98 /* GuideCollectionViewCell.swift */; };
 		06DC7CF323042B1200B66E98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7CF223042B1200B66E98 /* AppDelegate.swift */; };
 		06DC7CF523042B1200B66E98 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7CF423042B1200B66E98 /* MainViewController.swift */; };
 		06DC7CF823042B1200B66E98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06DC7CF623042B1200B66E98 /* Main.storyboard */; };
@@ -62,6 +64,8 @@
 		06DA1A8C230E586400D87A98 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		06DA1A8E230E59E500D87A98 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		06DA1A90230E5B2D00D87A98 /* HistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryService.swift; sourceTree = "<group>"; };
+		06DA1A92230E785C00D87A98 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		06DA1A94230E7ADB00D87A98 /* GuideCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideCollectionViewCell.swift; sourceTree = "<group>"; };
 		06DC7CEF23042B1200B66E98 /* DanBee_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DanBee_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DC7CF223042B1200B66E98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06DC7CF423042B1200B66E98 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +191,8 @@
 				06DA1A86230BF77900D87A98 /* ProfileViewController.swift */,
 				06DA1A8A230E583800D87A98 /* HistoryViewController.swift */,
 				06DA1A8C230E586400D87A98 /* HistoryTableViewCell.swift */,
+				06DA1A92230E785C00D87A98 /* GuideViewController.swift */,
+				06DA1A94230E7ADB00D87A98 /* GuideCollectionViewCell.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -435,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06DC7D25230682EB00B66E98 /* LoginViewController.swift in Sources */,
+				06DA1A95230E7ADB00D87A98 /* GuideCollectionViewCell.swift in Sources */,
 				06DC7D372307018C00B66E98 /* UIViewController+Extension.swift in Sources */,
 				06DA1A8D230E586400D87A98 /* HistoryTableViewCell.swift in Sources */,
 				06DC7D282306989200B66E98 /* SignUpViewController.swift in Sources */,
@@ -447,6 +454,7 @@
 				06DC7D2C23069DEF00B66E98 /* UIButton+Extension.swift in Sources */,
 				06DC7D352306F6D800B66E98 /* LoginService.swift in Sources */,
 				06DC7D3B2307CB9A00B66E98 /* UIColor+Extension.swift in Sources */,
+				06DA1A93230E785C00D87A98 /* GuideViewController.swift in Sources */,
 				06DC7D2F2306A1C000B66E98 /* SignUpTextViewModel.swift in Sources */,
 				06DA1A91230E5B2D00D87A98 /* HistoryService.swift in Sources */,
 				06DA1A8B230E583800D87A98 /* HistoryViewController.swift in Sources */,

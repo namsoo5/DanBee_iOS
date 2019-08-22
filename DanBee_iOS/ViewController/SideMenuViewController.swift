@@ -82,7 +82,8 @@ extension SideMenuViewController: UITableViewDataSource, UITableViewDelegate {
         case 3:
             print("3menu")
         case 4:
-            print("4menu")
+            let nextVC:GuideViewController = self.storyboard?.instantiateViewController(withIdentifier: "Guide") as! GuideViewController
+            self.navigationController?.pushViewController(nextVC, animated: true)
         default:
             self.simpleAlert(title: "알림", msg: "로그인이 필요한 기능입니다.")
         }
