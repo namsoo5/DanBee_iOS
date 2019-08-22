@@ -23,7 +23,7 @@ class ChangePwViewController: UIViewController {
         super.viewDidLoad()
         bindInput()
         bindOutput()
-     
+        uiSet()
     }
     
     @IBAction func changePwButtonClick(_ sender: Any) {
@@ -43,6 +43,11 @@ class ChangePwViewController: UIViewController {
 }
 
 extension ChangePwViewController {
+    
+    func uiSet() {
+        self.pwColorView.layer.cornerRadius = 5
+    }
+    
     func bindInput() {
         self.pwTextField.rx.text.orEmpty
         .bind(to: self.viewModel.pwObservable)
