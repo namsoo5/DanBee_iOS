@@ -841,6 +841,7 @@
                                                 <constraint firstItem="XQY-vg-0v4" firstAttribute="centerY" secondItem="nPd-30-WjQ" secondAttribute="centerY" id="vjn-n0-7KT"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                         <connections>
                                             <outlet property="dateLabel" destination="bux-iq-Zn3" id="L3x-nP-w8f"/>
                                             <outlet property="kickIdLabel" destination="hP5-LK-ttY" id="yEn-mr-L0C"/>
@@ -880,10 +881,10 @@
             </objects>
             <point key="canvasLocation" x="1648.8" y="1421.7391304347827"/>
         </scene>
-        <!--Guide View Controller-->
+        <!--사용방법-->
         <scene sceneID="o9R-ka-kjz">
             <objects>
-                <viewController storyboardIdentifier="Guide" id="ux9-a5-mic" customClass="GuideViewController" customModule="DanBee_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Guide" title="사용방법" id="ux9-a5-mic" customClass="GuideViewController" customModule="DanBee_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G7T-DS-xMl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -933,10 +934,10 @@
                         <constraints>
                             <constraint firstItem="tnn-zO-Q1U" firstAttribute="trailing" secondItem="dfl-AP-Vt6" secondAttribute="trailing" id="1Bz-kd-HxW"/>
                             <constraint firstItem="Su4-Bz-JAS" firstAttribute="top" secondItem="dfl-AP-Vt6" secondAttribute="bottom" constant="36" id="CbJ-kX-3G7"/>
+                            <constraint firstItem="dfl-AP-Vt6" firstAttribute="top" secondItem="tnn-zO-Q1U" secondAttribute="top" id="FQp-2I-Av6"/>
                             <constraint firstItem="tnn-zO-Q1U" firstAttribute="bottom" secondItem="Su4-Bz-JAS" secondAttribute="bottom" constant="50" id="Msu-Zk-xQS"/>
                             <constraint firstItem="Su4-Bz-JAS" firstAttribute="centerX" secondItem="G7T-DS-xMl" secondAttribute="centerX" id="bWE-z8-yMJ"/>
                             <constraint firstItem="dfl-AP-Vt6" firstAttribute="leading" secondItem="tnn-zO-Q1U" secondAttribute="leading" id="eeb-JA-0r8"/>
-                            <constraint firstItem="dfl-AP-Vt6" firstAttribute="top" secondItem="tnn-zO-Q1U" secondAttribute="top" id="uOm-HL-odg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tnn-zO-Q1U"/>
                     </view>

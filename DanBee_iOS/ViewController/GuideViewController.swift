@@ -9,36 +9,35 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import RxOptional
 
 class GuideViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     let imageSet = ["1","2","3","4","5"]
     
-    let indexObservable: BehaviorSubject<Int> = BehaviorSubject(value: 0)
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
-        bindInput()
+        bind()
        
     }
 }
 
 extension GuideViewController {
-    
-    func bindInput(){
-    
-
+    //인덱스변화에따른 페이지컨트롤 변화
+    func bind(){
+         self.collectionView.rx.didEndDragging.delay(RxTimeInterval.milliseconds(300), scheduler: MainScheduler.instance)
+            .subscribe(onNext: { b in
+                guard let indexPath = self.collectionView.indexPathsForVisibleItems.first else {return}
+                self.pageControl.currentPage = indexPath.item
+            })
+        .disposed(by: disposeBag)
     
     }
-    
-    func bindOutput(){
-        
-    }
+  
 }
 
 
@@ -66,11 +65,4 @@ extension GuideViewController: UICollectionViewDataSource, UICollectionViewDeleg
         return UIEdgeInsets(top: 10, left: 5, bottom: 0, right: 5)
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let current = self.collectionView.contentOffset.x
-        let width = self.collectionView.frame.size.width
-        let index = width / current
-        print(index)
-    }
-
 }
