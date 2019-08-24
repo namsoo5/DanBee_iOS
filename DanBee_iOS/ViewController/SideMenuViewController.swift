@@ -72,18 +72,24 @@ extension SideMenuViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case let index where index == 0 && UserInfo.shared.userid.isNotEmpty:
-            print("0menu")
+            let nextVC:QRCodeViewController = self.storyboard?.instantiateViewController(withIdentifier: "QRCode") as! QRCodeViewController
+            self.navigationController?.pushViewController(nextVC, animated: true)
+            
         case let index where index == 1 && UserInfo.shared.userid.isNotEmpty:
             let nextVC:ProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: "Profile") as! ProfileViewController
             self.navigationController?.pushViewController(nextVC, animated: true)
+            
         case let index where index == 2 && UserInfo.shared.userid.isNotEmpty:
             let nextVC:HistoryViewController = self.storyboard?.instantiateViewController(withIdentifier: "History") as! HistoryViewController
             self.navigationController?.pushViewController(nextVC, animated: true)
+            
         case 3:
             print("3menu")
+            
         case 4:
             let nextVC:GuideViewController = self.storyboard?.instantiateViewController(withIdentifier: "Guide") as! GuideViewController
             self.navigationController?.pushViewController(nextVC, animated: true)
+            
         default:
             self.simpleAlert(title: "알림", msg: "로그인이 필요한 기능입니다.")
         }
