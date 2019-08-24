@@ -18,6 +18,10 @@
 		06DA1A93230E785C00D87A98 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A92230E785C00D87A98 /* GuideViewController.swift */; };
 		06DA1A95230E7ADB00D87A98 /* GuideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A94230E7ADB00D87A98 /* GuideCollectionViewCell.swift */; };
 		06DA1A97230EA71400D87A98 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A96230EA71400D87A98 /* QRCodeViewController.swift */; };
+		06DA1A9923110DD800D87A98 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A9823110DD800D87A98 /* NoticeViewController.swift */; };
+		06DA1A9B231114FD00D87A98 /* NoticeTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A9A231114FD00D87A98 /* NoticeTitleTableViewCell.swift */; };
+		06DA1A9D2311152500D87A98 /* NoticeContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A9C2311152500D87A98 /* NoticeContentTableViewCell.swift */; };
+		06DA1A9F231119A200D87A98 /* Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A9E231119A200D87A98 /* Notice.swift */; };
 		06DC7CF323042B1200B66E98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7CF223042B1200B66E98 /* AppDelegate.swift */; };
 		06DC7CF523042B1200B66E98 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7CF423042B1200B66E98 /* MainViewController.swift */; };
 		06DC7CF823042B1200B66E98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06DC7CF623042B1200B66E98 /* Main.storyboard */; };
@@ -68,6 +72,10 @@
 		06DA1A92230E785C00D87A98 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		06DA1A94230E7ADB00D87A98 /* GuideCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideCollectionViewCell.swift; sourceTree = "<group>"; };
 		06DA1A96230EA71400D87A98 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		06DA1A9823110DD800D87A98 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		06DA1A9A231114FD00D87A98 /* NoticeTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTitleTableViewCell.swift; sourceTree = "<group>"; };
+		06DA1A9C2311152500D87A98 /* NoticeContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeContentTableViewCell.swift; sourceTree = "<group>"; };
+		06DA1A9E231119A200D87A98 /* Notice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notice.swift; sourceTree = "<group>"; };
 		06DC7CEF23042B1200B66E98 /* DanBee_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DanBee_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DC7CF223042B1200B66E98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06DC7CF423042B1200B66E98 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +196,9 @@
 				06DC7D272306989200B66E98 /* SignUpViewController.swift */,
 				06DC7D212305868B00B66E98 /* SideMenuTableViewCell.swift */,
 				06DC7D1D230584E400B66E98 /* SideMenuViewController.swift */,
+				06DA1A9823110DD800D87A98 /* NoticeViewController.swift */,
+				06DA1A9A231114FD00D87A98 /* NoticeTitleTableViewCell.swift */,
+				06DA1A9C2311152500D87A98 /* NoticeContentTableViewCell.swift */,
 				06DC7CF423042B1200B66E98 /* MainViewController.swift */,
 				06DC7D24230682EB00B66E98 /* LoginViewController.swift */,
 				06DC7D44230AB21200B66E98 /* ChangePwViewController.swift */,
@@ -215,6 +226,7 @@
 				06DC7D302306EF7000B66E98 /* DanBeeAPI.swift */,
 				06DC7D382307039100B66E98 /* UserInfo.swift */,
 				06DA1A8E230E59E500D87A98 /* History.swift */,
+				06DA1A9E231119A200D87A98 /* Notice.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -446,18 +458,21 @@
 				06DC7D25230682EB00B66E98 /* LoginViewController.swift in Sources */,
 				06DA1A95230E7ADB00D87A98 /* GuideCollectionViewCell.swift in Sources */,
 				06DC7D372307018C00B66E98 /* UIViewController+Extension.swift in Sources */,
+				06DA1A9B231114FD00D87A98 /* NoticeTitleTableViewCell.swift in Sources */,
 				06DA1A8D230E586400D87A98 /* HistoryTableViewCell.swift in Sources */,
 				06DC7D282306989200B66E98 /* SignUpViewController.swift in Sources */,
 				06DC7D222305868B00B66E98 /* SideMenuTableViewCell.swift in Sources */,
 				06DC7D1E230584E400B66E98 /* SideMenuViewController.swift in Sources */,
 				06DC7D3F2309622000B66E98 /* SearchUserViewController.swift in Sources */,
 				06DC7D412309A6DB00B66E98 /* SearchViewModel.swift in Sources */,
+				06DA1A9F231119A200D87A98 /* Notice.swift in Sources */,
 				06DC7D142304311200B66E98 /* NaverAPIKey.swift in Sources */,
 				06DC7D312306EF7000B66E98 /* DanBeeAPI.swift in Sources */,
 				06DC7D2C23069DEF00B66E98 /* UIButton+Extension.swift in Sources */,
 				06DC7D352306F6D800B66E98 /* LoginService.swift in Sources */,
 				06DC7D3B2307CB9A00B66E98 /* UIColor+Extension.swift in Sources */,
 				06DA1A93230E785C00D87A98 /* GuideViewController.swift in Sources */,
+				06DA1A9D2311152500D87A98 /* NoticeContentTableViewCell.swift in Sources */,
 				06DC7D2F2306A1C000B66E98 /* SignUpTextViewModel.swift in Sources */,
 				06DA1A91230E5B2D00D87A98 /* HistoryService.swift in Sources */,
 				06DA1A8B230E583800D87A98 /* HistoryViewController.swift in Sources */,
@@ -465,6 +480,7 @@
 				06DC7D43230AA63A00B66E98 /* SearchUserService.swift in Sources */,
 				06DA1A87230BF77900D87A98 /* ProfileViewController.swift in Sources */,
 				06DA1A8F230E59E500D87A98 /* History.swift in Sources */,
+				06DA1A9923110DD800D87A98 /* NoticeViewController.swift in Sources */,
 				06DC7D3D2308015100B66E98 /* CheckIdService.swift in Sources */,
 				06DA1A85230BDDB300D87A98 /* ChangePwService.swift in Sources */,
 				06DC7CF523042B1200B66E98 /* MainViewController.swift in Sources */,

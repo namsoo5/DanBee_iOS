@@ -84,7 +84,8 @@ extension SideMenuViewController: UITableViewDataSource, UITableViewDelegate {
             self.navigationController?.pushViewController(nextVC, animated: true)
             
         case 3:
-            print("3menu")
+            let nextVC:HistoryViewController = self.storyboard?.instantiateViewController(withIdentifier: "Notice") as! HistoryViewController
+            self.navigationController?.pushViewController(nextVC, animated: true)
             
         case 4:
             let nextVC:GuideViewController = self.storyboard?.instantiateViewController(withIdentifier: "Guide") as! GuideViewController
