@@ -10,6 +10,7 @@ import UIKit
 
 class NoticeTitleTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var arrowImg: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

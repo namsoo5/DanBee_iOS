@@ -12,11 +12,11 @@ struct Notice{
     let date: String
     let title: String
     let content: String
-    let open: Bool
+    var open = false
     
-    mutating func dateFormat() -> Substring{
+    mutating func dateFormat() -> String{
         guard let s = self.date.split(separator: " ").first else {return "??"}
         
-        return s
+        return String(s)
     }
 }
