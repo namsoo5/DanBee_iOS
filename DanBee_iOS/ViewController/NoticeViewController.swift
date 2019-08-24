@@ -10,8 +10,9 @@ import UIKit
 
 class NoticeViewController: UIViewController {
 
-    @IBOutlet weak var sementControl: UISegmentedControl!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     var items = [Notice]()
     
@@ -20,29 +21,51 @@ class NoticeViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         uiSet()
+        noticeRequest()
         
-        items.append(Notice(date: "2019-08-24", title: "title", content: "content", open: false))
-        items.append(Notice(date: "2019-08-23", title: "title1", content: "content1", open: false))
-        self.tableView.reloadData()
     }
     
-
+    @IBAction func segmentClick(_ sender: UISegmentedControl) {
+        self.indicator.startAnimating()
+        if sender.selectedSegmentIndex == 0{
+            NoticeService.shared.getNoticeResult(){ data in
+                self.items = data
+                self.tableView.reloadData()
+                self.indicator.stopAnimating()
+            }
+        }else{
+            NoticeService.shared.getQuestionResult(){ data in
+                self.items = data
+                self.tableView.reloadData()
+                self.indicator.stopAnimating()
+            }
+        }
+    }
 }
 
 extension NoticeViewController {
     func uiSet() {
-        self.sementControl.tintColor = UIColor.danbeeColor1
+        self.segmentControl.tintColor = UIColor.danbeeColor1
         let textAttribute = [NSAttributedString.Key.foregroundColor: UIColor.black]
-        self.sementControl.setTitleTextAttributes(textAttribute, for: .normal)
+        self.segmentControl.setTitleTextAttributes(textAttribute, for: .normal)
         
         self.tableView.separatorColor = UIColor.clear
+    }
+    
+    func noticeRequest(){
+        self.indicator.startAnimating()
+        NoticeService.shared.getNoticeResult(){ data in
+            self.items = data
+            self.tableView.reloadData()
+            self.indicator.stopAnimating()
+        }
     }
 }
 
 extension NoticeViewController: UITableViewDataSource, UITableViewDelegate {
     //MARK: - section수
     func numberOfSections(in tableView: UITableView) -> Int {
-        return items.count
+        return self.items.count
     }
     
     //MARK: cell수

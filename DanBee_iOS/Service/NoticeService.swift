@@ -13,7 +13,7 @@ import SwiftyJSON
 class NoticeService {
     static let shared = NoticeService()
     
-    func getNoticeResult(userid: String, completion: @escaping (_: [Notice]) -> Void){
+    func getNoticeResult(completion: @escaping (_: [Notice]) -> Void){
         
         let url = DanBeeAPI.noticeURL
         
@@ -41,7 +41,7 @@ class NoticeService {
             }
         }
     }
-    func getQuestionResult(userid: String, completion: @escaping (_: [Notice]) -> Void){
+    func getQuestionResult(completion: @escaping (_: [Notice]) -> Void){
         
         let url = DanBeeAPI.questionURL
         
@@ -55,7 +55,6 @@ class NoticeService {
                     let datas = json["data"].arrayValue
                     var items = [Notice]()
                     for data in datas{
-                        
                         let time = data["time"].stringValue
                         let title = data["title"].stringValue
                         let content = data["content"].stringValue

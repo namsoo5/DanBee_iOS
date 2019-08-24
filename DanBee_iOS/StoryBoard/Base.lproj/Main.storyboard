@@ -961,10 +961,13 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PmC-Mq-cii">
                                 <rect key="frame" x="40" y="70" width="295" height="29"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="공지사항"/>
+                                    <segment title="FAQ"/>
                                 </segments>
                                 <color key="tintColor" red="0.96862745100000003" green="0.83921568629999999" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentClick:" destination="06m-iW-NSH" eventType="valueChanged" id="lEK-IG-MKg"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Jh-Fm-DzJ">
                                 <rect key="frame" x="0.0" y="124" width="375" height="543"/>
@@ -979,7 +982,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKE-Pu-2VO">
                                                     <rect key="frame" x="31" y="20" width="292" height="19.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1034,21 +1037,22 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="content" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fHl-P6-gnQ">
-                                                    <rect key="frame" x="16" y="63.5" width="343" height="171.5"/>
+                                                    <rect key="frame" x="31" y="63.5" width="313" height="171.5"/>
                                                     <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.96862745100000003" green="0.83921568629999999" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="g8U-rg-D8o" firstAttribute="leading" secondItem="yUq-4C-5Ex" secondAttribute="leadingMargin" constant="16" id="99R-RD-3z3"/>
-                                                <constraint firstItem="fHl-P6-gnQ" firstAttribute="leading" secondItem="yUq-4C-5Ex" secondAttribute="leading" constant="16" id="HSB-Dw-v2R"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="fHl-P6-gnQ" secondAttribute="bottom" constant="4" id="HqH-dX-KhY"/>
                                                 <constraint firstItem="oUo-WU-hu4" firstAttribute="leading" secondItem="g8U-rg-D8o" secondAttribute="leading" id="Upl-ow-FqY"/>
+                                                <constraint firstItem="fHl-P6-gnQ" firstAttribute="leading" secondItem="yUq-4C-5Ex" secondAttribute="leadingMargin" constant="16" id="ZLi-NB-WKf"/>
                                                 <constraint firstItem="g8U-rg-D8o" firstAttribute="top" secondItem="yUq-4C-5Ex" secondAttribute="topMargin" constant="4" id="d7K-VE-Ix9"/>
                                                 <constraint firstItem="oUo-WU-hu4" firstAttribute="top" secondItem="g8U-rg-D8o" secondAttribute="bottom" constant="4" id="dDW-A2-d9H"/>
                                                 <constraint firstItem="fHl-P6-gnQ" firstAttribute="top" secondItem="oUo-WU-hu4" secondAttribute="bottom" constant="8" id="fIy-3x-2OC"/>
-                                                <constraint firstAttribute="trailing" secondItem="fHl-P6-gnQ" secondAttribute="trailing" constant="16" id="feh-gs-sbf"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="fHl-P6-gnQ" secondAttribute="trailing" constant="16" id="vHD-0A-eb1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1059,14 +1063,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gwY-gj-u7x">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="PmC-Mq-cii" firstAttribute="top" secondItem="6KY-mR-PEl" secondAttribute="top" constant="50" id="0Y0-kf-mJE"/>
                             <constraint firstItem="6KY-mR-PEl" firstAttribute="bottom" secondItem="3Jh-Fm-DzJ" secondAttribute="bottom" id="DCe-xB-eqS"/>
+                            <constraint firstItem="gwY-gj-u7x" firstAttribute="centerY" secondItem="g3p-wL-ris" secondAttribute="centerY" id="JdY-L7-yAA"/>
                             <constraint firstItem="PmC-Mq-cii" firstAttribute="leading" secondItem="6KY-mR-PEl" secondAttribute="leading" constant="40" id="Kfr-vb-rQU"/>
                             <constraint firstItem="3Jh-Fm-DzJ" firstAttribute="leading" secondItem="6KY-mR-PEl" secondAttribute="leading" id="Xcq-5L-e2Z"/>
                             <constraint firstItem="6KY-mR-PEl" firstAttribute="trailing" secondItem="3Jh-Fm-DzJ" secondAttribute="trailing" id="dI0-Ja-Nl0"/>
+                            <constraint firstItem="gwY-gj-u7x" firstAttribute="centerX" secondItem="g3p-wL-ris" secondAttribute="centerX" id="gcg-O7-lGS"/>
                             <constraint firstItem="3Jh-Fm-DzJ" firstAttribute="top" secondItem="PmC-Mq-cii" secondAttribute="bottom" constant="26" id="kgj-7o-h5Y"/>
                             <constraint firstItem="6KY-mR-PEl" firstAttribute="trailing" secondItem="PmC-Mq-cii" secondAttribute="trailing" constant="40" id="s7r-EN-KbD"/>
                         </constraints>
@@ -1074,7 +1084,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="F9B-9X-4RB"/>
                     <connections>
-                        <outlet property="sementControl" destination="PmC-Mq-cii" id="rfD-VG-3zj"/>
+                        <outlet property="indicator" destination="gwY-gj-u7x" id="FDB-Sg-Vbh"/>
+                        <outlet property="segmentControl" destination="PmC-Mq-cii" id="rfD-VG-3zj"/>
                         <outlet property="tableView" destination="3Jh-Fm-DzJ" id="bJV-PX-QJA"/>
                     </connections>
                 </viewController>
