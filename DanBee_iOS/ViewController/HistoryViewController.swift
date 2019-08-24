@@ -46,9 +46,13 @@ extension HistoryViewController: UITableViewDataSource {
         guard let cell: HistoryTableViewCell = tableView.dequeueReusableCell(withIdentifier: "history", for: indexPath) as? HistoryTableViewCell else {fatalError()}
         
         //역순정렬
-        cell.kickIdLabel.text = "\(items[self.items.count - indexPath.row - 1].kickid)"
-        cell.dateLabel.text = items[self.items.count - indexPath.row - 1].dateFormatter()
-        cell.useTimeLabel.text = items[self.items.count - indexPath.row - 1].useTimeFormatter()
+        var count  = self.items.count - indexPath.row - 1
+        if count < 0 {
+            count = 0
+        }
+        cell.kickIdLabel.text = "\(items[count].kickid)"
+        cell.dateLabel.text = items[count].dateFormatter()
+        cell.useTimeLabel.text = items[count].useTimeFormatter()
         return cell
     }
     

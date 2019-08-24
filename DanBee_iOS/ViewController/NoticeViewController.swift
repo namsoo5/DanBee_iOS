@@ -107,10 +107,4 @@ extension NoticeViewController: UITableViewDataSource, UITableViewDelegate {
             return 250
         }
     }
-    
-    
-    
-    
-    
-    
 }

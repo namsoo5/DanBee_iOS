@@ -22,6 +22,7 @@
 		06DA1A9B231114FD00D87A98 /* NoticeTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A9A231114FD00D87A98 /* NoticeTitleTableViewCell.swift */; };
 		06DA1A9D2311152500D87A98 /* NoticeContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A9C2311152500D87A98 /* NoticeContentTableViewCell.swift */; };
 		06DA1A9F231119A200D87A98 /* Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A9E231119A200D87A98 /* Notice.swift */; };
+		06DA1AA123112E3300D87A98 /* NoticeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1AA023112E3300D87A98 /* NoticeService.swift */; };
 		06DC7CF323042B1200B66E98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7CF223042B1200B66E98 /* AppDelegate.swift */; };
 		06DC7CF523042B1200B66E98 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7CF423042B1200B66E98 /* MainViewController.swift */; };
 		06DC7CF823042B1200B66E98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06DC7CF623042B1200B66E98 /* Main.storyboard */; };
@@ -76,6 +77,7 @@
 		06DA1A9A231114FD00D87A98 /* NoticeTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTitleTableViewCell.swift; sourceTree = "<group>"; };
 		06DA1A9C2311152500D87A98 /* NoticeContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeContentTableViewCell.swift; sourceTree = "<group>"; };
 		06DA1A9E231119A200D87A98 /* Notice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notice.swift; sourceTree = "<group>"; };
+		06DA1AA023112E3300D87A98 /* NoticeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeService.swift; sourceTree = "<group>"; };
 		06DC7CEF23042B1200B66E98 /* DanBee_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DanBee_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DC7CF223042B1200B66E98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06DC7CF423042B1200B66E98 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				06DA1A84230BDDB300D87A98 /* ChangePwService.swift */,
 				06DA1A88230D08A300D87A98 /* DeleteUserService.swift */,
 				06DA1A90230E5B2D00D87A98 /* HistoryService.swift */,
+				06DA1AA023112E3300D87A98 /* NoticeService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				06DA1A9F231119A200D87A98 /* Notice.swift in Sources */,
 				06DC7D142304311200B66E98 /* NaverAPIKey.swift in Sources */,
 				06DC7D312306EF7000B66E98 /* DanBeeAPI.swift in Sources */,
+				06DA1AA123112E3300D87A98 /* NoticeService.swift in Sources */,
 				06DC7D2C23069DEF00B66E98 /* UIButton+Extension.swift in Sources */,
 				06DC7D352306F6D800B66E98 /* LoginService.swift in Sources */,
 				06DC7D3B2307CB9A00B66E98 /* UIColor+Extension.swift in Sources */,
