@@ -39,7 +39,7 @@ class SignUpViewController: UIViewController {
 
     }
     
-    @IBAction func signUpButtonClick(_ sender: Any) {
+    @IBAction func signUpButtonClick(_ sender: UIButton) {
         let id = self.textViewModel.idObservable.value
         let pw = self.textViewModel.pwObservable.value
         let phone = self.textViewModel.phoneNumberObservable.value
@@ -52,9 +52,10 @@ class SignUpViewController: UIViewController {
             return
         }
         self.indicator.startAnimating()
-        
+        sender.isEnabled = false
         SignUpService.shared.getSignUpResult(userid: id, pw: pw, phone: phone, gender: gender, birth: birth, name: name){ b in
             self.indicator.stopAnimating()
+            self.signUpButton.isEnabled = true
             if !b {
                 self.simpleAlert(title: "오류", msg: "알 수 없는 오류로 회원가입에 실패하였습니다.")
             }else{
