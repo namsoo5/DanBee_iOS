@@ -16,38 +16,39 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
+        guard let captureDevice = AVCaptureDevice.default(for: .video) else {return}
         
-        if let captureDevice = captureDevice {
-                print("captureDevice ")
-            do {
-                print("captureDevice excute")
-                captureSession = AVCaptureSession()
-                
-                // CaptureSession needs an input to capture Data from
-                let input = try AVCaptureDeviceInput(device: captureDevice)
-                captureSession?.addInput(input)
-                
-                // CaptureSession needs and output to transfer Data to
-                let captureMetadataOutput = AVCaptureMetadataOutput()
-                
-                //We tell our Output the expected Meta-data type
-                captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-                captureMetadataOutput.metadataObjectTypes = [.code128, .qr, .ean13, .ean8, .code39, .upce, .aztec, .pdf417]
-                
-                //영역지정
-                videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
-                videoPreviewLayer?.videoGravity = .resizeAspectFill
-                videoPreviewLayer?.frame = view.layer.bounds
-                view.layer.addSublayer(videoPreviewLayer!)
-                
-                captureSession?.startRunning()
-                
+        do {
+            print("captureDevice excute")
+            captureSession = AVCaptureSession()
+            
+            // CaptureSession needs an input to capture Data from
+            
+            let input = try AVCaptureDeviceInput(device: captureDevice)
+            if captureSession!.canAddInput(input) {
+                captureSession!.addInput(input)
             }
-            catch {
-                print("CaptureSession Error")
-            }
+            
+            // CaptureSession needs and output to transfer Data to
+            let captureMetadataOutput = AVCaptureMetadataOutput()
+            
+            //We tell our Output the expected Meta-data type
+            captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+            captureMetadataOutput.metadataObjectTypes = [.qr]
+            
+            //영역지정
+            videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
+            videoPreviewLayer?.videoGravity = .resizeAspectFill
+            videoPreviewLayer?.frame = view.layer.bounds
+            view.layer.addSublayer(videoPreviewLayer!)
+            
+            captureSession?.startRunning()
+            
         }
+        catch {
+            print("CaptureSession Error")
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
