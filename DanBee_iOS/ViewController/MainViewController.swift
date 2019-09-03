@@ -42,6 +42,8 @@ extension MainViewController {
     }
     
     func autoLogin() {
+        // Review: [Refactoring] UserDefaults 의 Key를 String literal 로 접근하는 것보단 enum 으로 접근하는건 어떨가요?
+        // https://github.com/ramprasadios/ShooppingCart/blob/4fab73251b43aca6ad0a377b3ae0d79547ed236e/Alzahrani/Alzahrani/Utilities/DefaultsManager.swift
         if let userid = UserDefaults.standard.string(forKey: "id") {
             if let pw = UserDefaults.standard.string(forKey: "pw") {
                 LoginService.shared.getLoginResult(userid: userid, pw: pw){ b in
@@ -61,6 +63,18 @@ extension MainViewController {
     func loactionSet(){
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest    //정확도
+        // Review: [사용성] Localtion 접근 권한 상태를 확인하고 요청하는 것이 좋지 않을까요?
+        /*switch CLLocationManager.authorizationStatus() {
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+            break
+            
+        case .restricted, .denied:
+            break
+            
+        case .authorizedWhenInUse, .authorizedAlways:
+            break
+        }*/
         locationManager.requestWhenInUseAuthorization()    //권한요청
         locationManager.distanceFilter = 20    //해당거리이동시 업데이트
         locationManager.startUpdatingLocation()    //위치정보 업데이트시작

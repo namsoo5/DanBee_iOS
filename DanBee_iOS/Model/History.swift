@@ -17,6 +17,8 @@ struct History {
     
     //사용시간 연산
     mutating func useTimeFormatter() -> String {
+        // Review: [Refactoring] DateFormatter의 코드에 중복이 보입니다.
+        // 별도의 Util class로 만들어서 날짜 데이터를 제공하는 것이 좋을 것 같습니다!
         let format = DateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss"
         

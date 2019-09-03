@@ -70,6 +70,7 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             return
         }
         
+        // Review: [Refactoring] 강제 캐스팅은 좋지 않습니다!
         let metaDataObject = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
         guard let StringCodeValue = metaDataObject.stringValue else {
             return
