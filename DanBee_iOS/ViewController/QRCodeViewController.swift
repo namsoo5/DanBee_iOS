@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Alamofire
 
 class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
@@ -93,7 +94,7 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     }
     
     func found(code: String) {
-        print(code)
+        
     }
     
     override var prefersStatusBarHidden: Bool {
