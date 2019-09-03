@@ -10,85 +10,98 @@ import UIKit
 import AVFoundation
 
 class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
-    var captureSession:AVCaptureSession?
-    var videoPreviewLayer:AVCaptureVideoPreviewLayer?
+    
+    var captureSession: AVCaptureSession!
+    var previewLayer: AVCaptureVideoPreviewLayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        guard let captureDevice = AVCaptureDevice.default(for: .video) else {return}
+        
+        view.backgroundColor = UIColor.black
+        captureSession = AVCaptureSession()
+        
+        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
+        let videoInput: AVCaptureDeviceInput
         
         do {
-            print("captureDevice excute")
-            captureSession = AVCaptureSession()
-            
-            // CaptureSession needs an input to capture Data from
-            
-            let input = try AVCaptureDeviceInput(device: captureDevice)
-            if captureSession!.canAddInput(input) {
-                captureSession!.addInput(input)
-            }
-            
-            // CaptureSession needs and output to transfer Data to
-            let captureMetadataOutput = AVCaptureMetadataOutput()
-            
-            //We tell our Output the expected Meta-data type
-            captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-            captureMetadataOutput.metadataObjectTypes = [.qr]
-            
-            //영역지정
-            videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
-            videoPreviewLayer?.videoGravity = .resizeAspectFill
-            videoPreviewLayer?.frame = view.layer.bounds
-            view.layer.addSublayer(videoPreviewLayer!)
-            
-            captureSession?.startRunning()
-            
-        }
-        catch {
-            print("CaptureSession Error")
+            videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
+        } catch {
+            return
         }
         
+        if (captureSession.canAddInput(videoInput)) {
+            captureSession.addInput(videoInput)
+        } else {
+            failed()
+            return
+        }
+        
+        let metadataOutput = AVCaptureMetadataOutput()
+        
+        if (captureSession.canAddOutput(metadataOutput)) {
+            captureSession.addOutput(metadataOutput)
+            
+            metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+            metadataOutput.metadataObjectTypes = [.qr]
+        } else {
+            failed()
+            return
+        }
+        
+        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        previewLayer.frame = view.layer.bounds
+        previewLayer.videoGravity = .resizeAspectFill
+        view.layer.addSublayer(previewLayer)
+        
+        captureSession.startRunning()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        captureSession?.startRunning()
+    func failed() {
+        let ac = UIAlertController(title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+        captureSession = nil
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        captureSession?.stopRunning()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if (captureSession?.isRunning == false) {
+            captureSession.startRunning()
+        }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if (captureSession?.isRunning == true) {
+            captureSession.stopRunning()
+        }
+    }
     
-    // MARK: - AVCaptureMetadataOutputObjectsDelegate
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        captureSession.stopRunning()
         
-        captureSession?.stopRunning()
-        
-        
-        if metadataObjects.count == 0 {
-            print("no objects returned")
-            return
+        if let metadataObject = metadataObjects.first {
+            guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
+            guard let stringValue = readableObject.stringValue else { return }
+            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+            found(code: stringValue)
         }
         
-        let metaDataObject = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
-        guard let StringCodeValue = metaDataObject.stringValue else {
-            return
-        }
-        
-        //transformedMetaDataObject returns layer coordinates/height/width from visual properties
-        guard let _ = self.videoPreviewLayer?.transformedMetadataObject(for: metaDataObject) else {
-            return
-        }
-        
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        qrRequest(StringCodeValue)
-        
+        dismiss(animated: true)
     }
     
-    func qrRequest(_ url: String){
-        print(url)
+    func found(code: String) {
+        print(code)
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
     
 }
