@@ -20,4 +20,5 @@ struct DanBeeAPI {
     static let historyURL = homeURL + "history/user/"
     static let noticeURL = homeURL + "notice/list"
     static let questionURL = homeURL + "question/list"
+    static let lendURL = homeURL + "kick/lend/"
 }

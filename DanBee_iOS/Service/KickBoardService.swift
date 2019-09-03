@@ -1,5 +1,5 @@
 //
-//  QRCodeService.swift
+//  KickBoardService.swift
 //  DanBee_iOS
 //
 //  Created by 남수김 on 03/09/2019.
@@ -10,8 +10,8 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class QRCodeService {
-    static let shared = QRCodeService()
+class KickBoardService {
+    static let shared = KickBoardService()
     
     func getQRCodeResult(suburl: String, completion: @escaping (_: Int) -> Void){
         
@@ -26,6 +26,25 @@ class QRCodeService {
                 if result == 777 {
                     UserInfo.shared.time = json["time"].stringValue
                 }
+                completion(result)
+                
+            default:
+                return
+            }
+        }
+    }
+    
+    func getLendResult(completion: @escaping (_: Int) -> Void){
+        
+        let url = DanBeeAPI.lendURL + "\(UserInfo.shared.userid)"
+        
+        Alamofire.request(url).responseJSON{
+            response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                let result = json["result"].intValue
+        
                 completion(result)
                 
             default:

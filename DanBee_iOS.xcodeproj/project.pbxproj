@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		060E4C6D231E297B00969D86 /* QRCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060E4C6C231E297B00969D86 /* QRCodeService.swift */; };
+		060E4C6F231E34CC00969D86 /* KickBoardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060E4C6E231E34CC00969D86 /* KickBoardService.swift */; };
 		06DA1A83230BD2B200D87A98 /* ChangePwViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A82230BD2B200D87A98 /* ChangePwViewModel.swift */; };
 		06DA1A85230BDDB300D87A98 /* ChangePwService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A84230BDDB300D87A98 /* ChangePwService.swift */; };
 		06DA1A87230BF77900D87A98 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A86230BF77900D87A98 /* ProfileViewController.swift */; };
@@ -63,7 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		060E4C6C231E297B00969D86 /* QRCodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeService.swift; sourceTree = "<group>"; };
+		060E4C6E231E34CC00969D86 /* KickBoardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KickBoardService.swift; sourceTree = "<group>"; };
 		06DA1A82230BD2B200D87A98 /* ChangePwViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePwViewModel.swift; sourceTree = "<group>"; };
 		06DA1A84230BDDB300D87A98 /* ChangePwService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePwService.swift; sourceTree = "<group>"; };
 		06DA1A86230BF77900D87A98 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -246,7 +246,7 @@
 				06DA1A88230D08A300D87A98 /* DeleteUserService.swift */,
 				06DA1A90230E5B2D00D87A98 /* HistoryService.swift */,
 				06DA1AA023112E3300D87A98 /* NoticeService.swift */,
-				060E4C6C231E297B00969D86 /* QRCodeService.swift */,
+				060E4C6E231E34CC00969D86 /* KickBoardService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -493,7 +493,7 @@
 				06DC7CF523042B1200B66E98 /* MainViewController.swift in Sources */,
 				06DC7CF323042B1200B66E98 /* AppDelegate.swift in Sources */,
 				06DC7D392307039100B66E98 /* UserInfo.swift in Sources */,
-				060E4C6D231E297B00969D86 /* QRCodeService.swift in Sources */,
+				060E4C6F231E34CC00969D86 /* KickBoardService.swift in Sources */,
 				06DA1A89230D08A300D87A98 /* DeleteUserService.swift in Sources */,
 				06DA1A97230EA71400D87A98 /* QRCodeViewController.swift in Sources */,
 				06DC7D332306F07900B66E98 /* SignUpService.swift in Sources */,
