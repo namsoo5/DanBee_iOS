@@ -12,13 +12,10 @@ import NMapsMap
 class MainViewController: UIViewController, NMFMapViewDelegate, CLLocationManagerDelegate {
     
    
-    @IBOutlet weak var borrowStateView: UIView!
     @IBOutlet weak var naverMap: NMFNaverMapView!
-    @IBOutlet weak var timeLabel: UILabel!
     
     let locationManager = CLLocationManager()
     var locationOverlay: NMFLocationOverlay!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,16 +26,7 @@ class MainViewController: UIViewController, NMFMapViewDelegate, CLLocationManage
         autoLogin()
     
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-    }
 
-    @IBAction func lendButtonClick(_ sender: Any) {
-        print("반납하였습니다.")
-
-        
-    }
 }
 
 extension MainViewController {

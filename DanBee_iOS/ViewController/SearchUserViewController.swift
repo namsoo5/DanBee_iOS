@@ -30,6 +30,7 @@ class SearchUserViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ChangePw" {
+            // swiftlitn:disable force_cast
             let nextVC: ChangePwViewController = segue.destination as! ChangePwViewController
             nextVC.userid = self.idTextField.text!
         }

@@ -7,21 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		060E4C6F231E34CC00969D86 /* KickBoardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060E4C6E231E34CC00969D86 /* KickBoardService.swift */; };
 		06DA1A83230BD2B200D87A98 /* ChangePwViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A82230BD2B200D87A98 /* ChangePwViewModel.swift */; };
 		06DA1A85230BDDB300D87A98 /* ChangePwService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A84230BDDB300D87A98 /* ChangePwService.swift */; };
 		06DA1A87230BF77900D87A98 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A86230BF77900D87A98 /* ProfileViewController.swift */; };
 		06DA1A89230D08A300D87A98 /* DeleteUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A88230D08A300D87A98 /* DeleteUserService.swift */; };
 		06DA1A8B230E583800D87A98 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A8A230E583800D87A98 /* HistoryViewController.swift */; };
-		06DA1A8D230E586400D87A98 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A8C230E586400D87A98 /* HistoryTableViewCell.swift */; };
 		06DA1A8F230E59E500D87A98 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A8E230E59E500D87A98 /* History.swift */; };
 		06DA1A91230E5B2D00D87A98 /* HistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A90230E5B2D00D87A98 /* HistoryService.swift */; };
 		06DA1A93230E785C00D87A98 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A92230E785C00D87A98 /* GuideViewController.swift */; };
-		06DA1A95230E7ADB00D87A98 /* GuideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A94230E7ADB00D87A98 /* GuideCollectionViewCell.swift */; };
 		06DA1A97230EA71400D87A98 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A96230EA71400D87A98 /* QRCodeViewController.swift */; };
 		06DA1A9923110DD800D87A98 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A9823110DD800D87A98 /* NoticeViewController.swift */; };
-		06DA1A9B231114FD00D87A98 /* NoticeTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A9A231114FD00D87A98 /* NoticeTitleTableViewCell.swift */; };
-		06DA1A9D2311152500D87A98 /* NoticeContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A9C2311152500D87A98 /* NoticeContentTableViewCell.swift */; };
 		06DA1A9F231119A200D87A98 /* Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A9E231119A200D87A98 /* Notice.swift */; };
 		06DA1AA123112E3300D87A98 /* NoticeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1AA023112E3300D87A98 /* NoticeService.swift */; };
 		06DC7CF323042B1200B66E98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7CF223042B1200B66E98 /* AppDelegate.swift */; };
@@ -32,7 +27,6 @@
 		06DC7D0823042B1300B66E98 /* DanBee_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D0723042B1300B66E98 /* DanBee_iOSTests.swift */; };
 		06DC7D142304311200B66E98 /* NaverAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D132304311200B66E98 /* NaverAPIKey.swift */; };
 		06DC7D1E230584E400B66E98 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D1D230584E400B66E98 /* SideMenuViewController.swift */; };
-		06DC7D222305868B00B66E98 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D212305868B00B66E98 /* SideMenuTableViewCell.swift */; };
 		06DC7D25230682EB00B66E98 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D24230682EB00B66E98 /* LoginViewController.swift */; };
 		06DC7D282306989200B66E98 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D272306989200B66E98 /* SignUpViewController.swift */; };
 		06DC7D2C23069DEF00B66E98 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D2B23069DEF00B66E98 /* UIButton+Extension.swift */; };
@@ -49,6 +43,12 @@
 		06DC7D43230AA63A00B66E98 /* SearchUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D42230AA63A00B66E98 /* SearchUserService.swift */; };
 		06DC7D45230AB21200B66E98 /* ChangePwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC7D44230AB21200B66E98 /* ChangePwViewController.swift */; };
 		53A7C252DF85794E1C12907D /* Pods_DanBee_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D33419F7B4F4C741FF483D /* Pods_DanBee_iOSTests.framework */; };
+		BD090F5D23141CD300318FBF /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BD090F5C23141CD300318FBF /* .swiftlint.yml */; };
+		BDC658B0231E8C7800BF4A25 /* NoticeContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC658AB231E8C7800BF4A25 /* NoticeContentTableViewCell.swift */; };
+		BDC658B1231E8C7800BF4A25 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC658AC231E8C7800BF4A25 /* SideMenuTableViewCell.swift */; };
+		BDC658B2231E8C7800BF4A25 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC658AD231E8C7800BF4A25 /* HistoryTableViewCell.swift */; };
+		BDC658B3231E8C7800BF4A25 /* GuideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC658AE231E8C7800BF4A25 /* GuideCollectionViewCell.swift */; };
+		BDC658B4231E8C7800BF4A25 /* NoticeTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC658AF231E8C7800BF4A25 /* NoticeTitleTableViewCell.swift */; };
 		DD81D35270884E36741CB577 /* Pods_DanBee_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DF12FA07C1336385DC24B8 /* Pods_DanBee_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,21 +63,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		060E4C6E231E34CC00969D86 /* KickBoardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KickBoardService.swift; sourceTree = "<group>"; };
 		06DA1A82230BD2B200D87A98 /* ChangePwViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePwViewModel.swift; sourceTree = "<group>"; };
 		06DA1A84230BDDB300D87A98 /* ChangePwService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePwService.swift; sourceTree = "<group>"; };
 		06DA1A86230BF77900D87A98 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		06DA1A88230D08A300D87A98 /* DeleteUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserService.swift; sourceTree = "<group>"; };
 		06DA1A8A230E583800D87A98 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
-		06DA1A8C230E586400D87A98 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		06DA1A8E230E59E500D87A98 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		06DA1A90230E5B2D00D87A98 /* HistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryService.swift; sourceTree = "<group>"; };
 		06DA1A92230E785C00D87A98 /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
-		06DA1A94230E7ADB00D87A98 /* GuideCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideCollectionViewCell.swift; sourceTree = "<group>"; };
 		06DA1A96230EA71400D87A98 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		06DA1A9823110DD800D87A98 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
-		06DA1A9A231114FD00D87A98 /* NoticeTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTitleTableViewCell.swift; sourceTree = "<group>"; };
-		06DA1A9C2311152500D87A98 /* NoticeContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeContentTableViewCell.swift; sourceTree = "<group>"; };
 		06DA1A9E231119A200D87A98 /* Notice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notice.swift; sourceTree = "<group>"; };
 		06DA1AA023112E3300D87A98 /* NoticeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeService.swift; sourceTree = "<group>"; };
 		06DC7CEF23042B1200B66E98 /* DanBee_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DanBee_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,7 +89,6 @@
 		06DC7D1723043AFF00B66E98 /* NMapsMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NMapsMap.framework; path = Pods/NMapsMap/framework/NMapsMap.framework; sourceTree = "<group>"; };
 		06DC7D1923052C8800B66E98 /* VHBoomMenuButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VHBoomMenuButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DC7D1D230584E400B66E98 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SideMenuViewController.swift; path = DanBee_iOS/ViewController/SideMenuViewController.swift; sourceTree = SOURCE_ROOT; };
-		06DC7D212305868B00B66E98 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		06DC7D24230682EB00B66E98 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = DanBee_iOS/ViewController/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		06DC7D272306989200B66E98 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		06DC7D2B23069DEF00B66E98 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -114,6 +108,12 @@
 		40D33419F7B4F4C741FF483D /* Pods_DanBee_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DanBee_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DF12FA07C1336385DC24B8 /* Pods_DanBee_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DanBee_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CEDB49495CC47A8EE116EA4 /* Pods-DanBee_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanBee_iOS.debug.xcconfig"; path = "Target Support Files/Pods-DanBee_iOS/Pods-DanBee_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		BD090F5C23141CD300318FBF /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		BDC658AB231E8C7800BF4A25 /* NoticeContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeContentTableViewCell.swift; sourceTree = "<group>"; };
+		BDC658AC231E8C7800BF4A25 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		BDC658AD231E8C7800BF4A25 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		BDC658AE231E8C7800BF4A25 /* GuideCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideCollectionViewCell.swift; sourceTree = "<group>"; };
+		BDC658AF231E8C7800BF4A25 /* NoticeTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeTitleTableViewCell.swift; sourceTree = "<group>"; };
 		E33E6F194568435D63245067 /* Pods-DanBee_iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanBee_iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-DanBee_iOSTests/Pods-DanBee_iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED40346070E23A25128E1720 /* Pods-DanBee_iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DanBee_iOSTests.release.xcconfig"; path = "Target Support Files/Pods-DanBee_iOSTests/Pods-DanBee_iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +141,7 @@
 		06DC7CE623042B1200B66E98 = {
 			isa = PBXGroup;
 			children = (
+				BD090F5C23141CD300318FBF /* .swiftlint.yml */,
 				06DC7CF123042B1200B66E98 /* DanBee_iOS */,
 				06DC7D0623042B1300B66E98 /* DanBee_iOSTests */,
 				06DC7CF023042B1200B66E98 /* Products */,
@@ -195,22 +196,22 @@
 		06DC7D152304314900B66E98 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				BDC658AE231E8C7800BF4A25 /* GuideCollectionViewCell.swift */,
+				BDC658AD231E8C7800BF4A25 /* HistoryTableViewCell.swift */,
+				BDC658AB231E8C7800BF4A25 /* NoticeContentTableViewCell.swift */,
+				BDC658AF231E8C7800BF4A25 /* NoticeTitleTableViewCell.swift */,
+				BDC658AC231E8C7800BF4A25 /* SideMenuTableViewCell.swift */,
 				06DA1A96230EA71400D87A98 /* QRCodeViewController.swift */,
 				06DC7D3E2309622000B66E98 /* SearchUserViewController.swift */,
 				06DC7D272306989200B66E98 /* SignUpViewController.swift */,
-				06DC7D212305868B00B66E98 /* SideMenuTableViewCell.swift */,
 				06DC7D1D230584E400B66E98 /* SideMenuViewController.swift */,
 				06DA1A9823110DD800D87A98 /* NoticeViewController.swift */,
-				06DA1A9A231114FD00D87A98 /* NoticeTitleTableViewCell.swift */,
-				06DA1A9C2311152500D87A98 /* NoticeContentTableViewCell.swift */,
 				06DC7CF423042B1200B66E98 /* MainViewController.swift */,
 				06DC7D24230682EB00B66E98 /* LoginViewController.swift */,
 				06DC7D44230AB21200B66E98 /* ChangePwViewController.swift */,
 				06DA1A86230BF77900D87A98 /* ProfileViewController.swift */,
 				06DA1A8A230E583800D87A98 /* HistoryViewController.swift */,
-				06DA1A8C230E586400D87A98 /* HistoryTableViewCell.swift */,
 				06DA1A92230E785C00D87A98 /* GuideViewController.swift */,
-				06DA1A94230E7ADB00D87A98 /* GuideCollectionViewCell.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -246,7 +247,6 @@
 				06DA1A88230D08A300D87A98 /* DeleteUserService.swift */,
 				06DA1A90230E5B2D00D87A98 /* HistoryService.swift */,
 				06DA1AA023112E3300D87A98 /* NoticeService.swift */,
-				060E4C6E231E34CC00969D86 /* KickBoardService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -305,6 +305,8 @@
 				06DC7CEC23042B1200B66E98 /* Frameworks */,
 				06DC7CED23042B1200B66E98 /* Resources */,
 				06ED6FA966C39A943F4565F6 /* [CP] Embed Pods Frameworks */,
+				BD090F5A23141C5B00318FBF /* Review */,
+				BD090F5B23141C8400318FBF /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -377,6 +379,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD090F5D23141CD300318FBF /* .swiftlint.yml in Resources */,
 				06DC7CFD23042B1300B66E98 /* LaunchScreen.storyboard in Resources */,
 				06DC7CFA23042B1300B66E98 /* Assets.xcassets in Resources */,
 				06DC7CF823042B1200B66E98 /* Main.storyboard in Resources */,
@@ -401,9 +404,34 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DanBee_iOS/Pods-DanBee_iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DanBee_iOS/Pods-DanBee_iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CheckboxButton/CheckboxButton.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialCard/MaterialCard.framework",
+				"${PODS_ROOT}/NMapsMap/framework/NMapsMap.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DanBee_iOS/Pods-DanBee_iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CheckboxButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialCard.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NMapsMap.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -431,6 +459,42 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		BD090F5A23141C5B00318FBF /* Review */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Review;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nTAGS=\"Review:\"\nERRORTAG=\"ERROR:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$|($ERRORTAG).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\" | perl -p -e \"s/($ERRORTAG)/ error: \\$1/\"\n";
+		};
+		BD090F5B23141C8400318FBF /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		E08A09D712A0BC3EA7025B27 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -461,25 +525,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDC658B4231E8C7800BF4A25 /* NoticeTitleTableViewCell.swift in Sources */,
 				06DC7D25230682EB00B66E98 /* LoginViewController.swift in Sources */,
-				06DA1A95230E7ADB00D87A98 /* GuideCollectionViewCell.swift in Sources */,
 				06DC7D372307018C00B66E98 /* UIViewController+Extension.swift in Sources */,
-				06DA1A9B231114FD00D87A98 /* NoticeTitleTableViewCell.swift in Sources */,
-				06DA1A8D230E586400D87A98 /* HistoryTableViewCell.swift in Sources */,
 				06DC7D282306989200B66E98 /* SignUpViewController.swift in Sources */,
-				06DC7D222305868B00B66E98 /* SideMenuTableViewCell.swift in Sources */,
 				06DC7D1E230584E400B66E98 /* SideMenuViewController.swift in Sources */,
 				06DC7D3F2309622000B66E98 /* SearchUserViewController.swift in Sources */,
 				06DC7D412309A6DB00B66E98 /* SearchViewModel.swift in Sources */,
+				BDC658B3231E8C7800BF4A25 /* GuideCollectionViewCell.swift in Sources */,
 				06DA1A9F231119A200D87A98 /* Notice.swift in Sources */,
 				06DC7D142304311200B66E98 /* NaverAPIKey.swift in Sources */,
 				06DC7D312306EF7000B66E98 /* DanBeeAPI.swift in Sources */,
+				BDC658B1231E8C7800BF4A25 /* SideMenuTableViewCell.swift in Sources */,
 				06DA1AA123112E3300D87A98 /* NoticeService.swift in Sources */,
 				06DC7D2C23069DEF00B66E98 /* UIButton+Extension.swift in Sources */,
 				06DC7D352306F6D800B66E98 /* LoginService.swift in Sources */,
 				06DC7D3B2307CB9A00B66E98 /* UIColor+Extension.swift in Sources */,
 				06DA1A93230E785C00D87A98 /* GuideViewController.swift in Sources */,
-				06DA1A9D2311152500D87A98 /* NoticeContentTableViewCell.swift in Sources */,
 				06DC7D2F2306A1C000B66E98 /* SignUpTextViewModel.swift in Sources */,
 				06DA1A91230E5B2D00D87A98 /* HistoryService.swift in Sources */,
 				06DA1A8B230E583800D87A98 /* HistoryViewController.swift in Sources */,
@@ -488,12 +550,13 @@
 				06DA1A87230BF77900D87A98 /* ProfileViewController.swift in Sources */,
 				06DA1A8F230E59E500D87A98 /* History.swift in Sources */,
 				06DA1A9923110DD800D87A98 /* NoticeViewController.swift in Sources */,
+				BDC658B0231E8C7800BF4A25 /* NoticeContentTableViewCell.swift in Sources */,
 				06DC7D3D2308015100B66E98 /* CheckIdService.swift in Sources */,
 				06DA1A85230BDDB300D87A98 /* ChangePwService.swift in Sources */,
+				BDC658B2231E8C7800BF4A25 /* HistoryTableViewCell.swift in Sources */,
 				06DC7CF523042B1200B66E98 /* MainViewController.swift in Sources */,
 				06DC7CF323042B1200B66E98 /* AppDelegate.swift in Sources */,
 				06DC7D392307039100B66E98 /* UserInfo.swift in Sources */,
-				060E4C6F231E34CC00969D86 /* KickBoardService.swift in Sources */,
 				06DA1A89230D08A300D87A98 /* DeleteUserService.swift in Sources */,
 				06DA1A97230EA71400D87A98 /* QRCodeViewController.swift in Sources */,
 				06DC7D332306F07900B66E98 /* SignUpService.swift in Sources */,
@@ -662,7 +725,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7Z2CV7TB8R;
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/NMapsMap/framework",
@@ -686,7 +748,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7Z2CV7TB8R;
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/NMapsMap/framework",
