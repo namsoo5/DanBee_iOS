@@ -11,6 +11,8 @@ import UIKit
 
 extension UIViewController {
     func simpleAlert(title: String, msg: String) {
+        // Review: [Refactoring] UIAlertController 코드의 중복이 보입니다.
+        // UIAlertController 객체를 만들어주는 Factory 로 제공하는 것이 좋아보입니다!
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "확인",style: .cancel, handler: nil)
         alert.addAction(okAction)

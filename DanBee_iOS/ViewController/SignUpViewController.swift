@@ -47,6 +47,7 @@ class SignUpViewController: UIViewController {
         let birth = self.textViewModel.birthObservable.value
         let name = self.textViewModel.nameObservable.value
         
+        // Review: [Refactoring] Presenter의 로직은 ViewModel에서 판단하는 것이 좋습니다.
         if birth.isEmpty || phone.isEmpty || name.isEmpty || gender == -1 {
             self.simpleAlert(title: "확인", msg: "빈칸이 있는지 확인해주세요")
             return
@@ -112,6 +113,8 @@ extension SignUpViewController {
         
         
         self.idTextField.rx.text.orEmpty
+            // Review: [사용성] microseconds 은 너무 작지 않나요? ㅎㅎ
+            // RxTimeInterval.milliseconds(500) 아마 이걸 의도하신 것 같네요 ㅎ
             .debounce(RxTimeInterval.microseconds(5), scheduler: MainScheduler.instance) // 0.5sec
             .distinctUntilChanged()
             .bind(to: self.textViewModel.idObservable)

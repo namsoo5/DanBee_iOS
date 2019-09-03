@@ -8,112 +8,87 @@
 
 import UIKit
 import AVFoundation
-import Alamofire
 
 class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
-    
-    var captureSession: AVCaptureSession!
-    var previewLayer: AVCaptureVideoPreviewLayer!
+    var captureSession:AVCaptureSession?
+    var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
         
-        view.backgroundColor = UIColor.black
-        captureSession = AVCaptureSession()
-        
-        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
-        let videoInput: AVCaptureDeviceInput
-        
-        do {
-            videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
-        } catch {
-            return
-        }
-        
-        if (captureSession.canAddInput(videoInput)) {
-            captureSession.addInput(videoInput)
-        } else {
-            failed()
-            return
-        }
-        
-        let metadataOutput = AVCaptureMetadataOutput()
-        
-        if (captureSession.canAddOutput(metadataOutput)) {
-            captureSession.addOutput(metadataOutput)
-            
-            metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-            metadataOutput.metadataObjectTypes = [.qr]
-        } else {
-            failed()
-            return
-        }
-        
-        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        previewLayer.frame = view.layer.bounds
-        previewLayer.videoGravity = .resizeAspectFill
-        view.layer.addSublayer(previewLayer)
-        
-        captureSession.startRunning()
-    }
-    
-    func failed() {
-        let ac = UIAlertController(title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
-        present(ac, animated: true)
-        captureSession = nil
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        if (captureSession?.isRunning == false) {
-            captureSession.startRunning()
-        }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        if (captureSession?.isRunning == true) {
-            captureSession.stopRunning()
-        }
-    }
-    
-    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        captureSession.stopRunning()
-        
-        if let metadataObject = metadataObjects.first {
-            guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
-            guard let stringValue = readableObject.stringValue else { return }
-            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-            found(code: stringValue)
-        }
-        
-        dismiss(animated: true)
-    }
-    
-    func found(code: String) {
-        KickBoardService.shared.getQRCodeResult(suburl: code) { result in
-            
-            switch result {
-            case 777:
-                self.toRootAlert(title: "대여성공", msg: "단비가 성공적으로 대여되었습니다.")
-            case 804:
-                self.toRootAlert(title: "대여실패", msg: "이 단비는 누군가가 빌린상태입니다.")
-            default:
-                self.toRootAlert(title: "대여실패", msg: "통신도중 알수없는 오류가 발생하였습니다 다시 시도해주세요.")
+        if let captureDevice = captureDevice {
+                print("captureDevice ")
+            do {
+                print("captureDevice excute")
+                captureSession = AVCaptureSession()
+                
+                // CaptureSession needs an input to capture Data from
+                let input = try AVCaptureDeviceInput(device: captureDevice)
+                captureSession?.addInput(input)
+                
+                // CaptureSession needs and output to transfer Data to
+                let captureMetadataOutput = AVCaptureMetadataOutput()
+                
+                //We tell our Output the expected Meta-data type
+                captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+                captureMetadataOutput.metadataObjectTypes = [.code128, .qr, .ean13, .ean8, .code39, .upce, .aztec, .pdf417]
+                
+                //영역지정
+                videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
+                videoPreviewLayer?.videoGravity = .resizeAspectFill
+                videoPreviewLayer?.frame = view.layer.bounds
+                view.layer.addSublayer(videoPreviewLayer!)
+                
+                captureSession?.startRunning()
+                
             }
-            
+            catch {
+                print("CaptureSession Error")
+            }
         }
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return true
+    override func viewDidAppear(_ animated: Bool) {
+        captureSession?.startRunning()
     }
     
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portrait
+    override func viewDidDisappear(_ animated: Bool) {
+        captureSession?.stopRunning()
     }
+    
+    
+    // MARK: - AVCaptureMetadataOutputObjectsDelegate
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        
+        captureSession?.stopRunning()
+        
+        
+        if metadataObjects.count == 0 {
+            print("no objects returned")
+            return
+        }
+        
+        // Review: [Refactoring] 강제 캐스팅은 좋지 않습니다!
+        let metaDataObject = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
+        guard let StringCodeValue = metaDataObject.stringValue else {
+            return
+        }
+        
+        //transformedMetaDataObject returns layer coordinates/height/width from visual properties
+        guard let _ = self.videoPreviewLayer?.transformedMetadataObject(for: metaDataObject) else {
+            return
+        }
+        
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        qrRequest(StringCodeValue)
+        
+    }
+    
+    func qrRequest(_ url: String){
+        print(url)
+    }
+    
     
 }
