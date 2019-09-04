@@ -149,7 +149,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7NS-P2-rhu">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7NS-P2-rhu">
                                 <rect key="frame" x="253" y="450.5" width="52" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="gV8-Qs-RgL"/>
@@ -161,7 +161,7 @@
                                     <segue destination="DlH-9z-jwL" kind="show" id="hu6-qA-2aF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="we2-DK-fBV">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="we2-DK-fBV">
                                 <rect key="frame" x="70" y="450.5" width="125" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="6UC-Ht-4gu"/>

@@ -20,7 +20,7 @@ class UserInfo{
     var birth: String?
     var kickid: Int?
     var time: String?
-    var state = false
+    let stateViewVisibleObservable: BehaviorSubject<Bool> = BehaviorSubject(value: true)
     
     func logout(){
         UserDefaults.standard.removeObject(forKey: "id")
@@ -32,6 +32,6 @@ class UserInfo{
         self.birth = ""
         self.kickid = -1
         self.time = ""
-        self.state = false
+        UserInfo.shared.stateViewVisibleObservable.onNext(true)
     }
 }

@@ -23,7 +23,7 @@ class MainViewController: UIViewController, NMFMapViewDelegate, CLLocationManage
     let locationManager = CLLocationManager()
     var locationOverlay: NMFLocationOverlay!
     
-    let stateViewVisibleObservable: BehaviorSubject<Bool> = BehaviorSubject(value: false)
+    
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -38,17 +38,17 @@ class MainViewController: UIViewController, NMFMapViewDelegate, CLLocationManage
     }
 
     @IBAction func lendButtonClick(_ sender: Any) {
-       
         KickBoardService.shared.getLendResult{ result in
             
             switch result {
-            case 777:
-                UserInfo.shared.state = false
+            case 777:                UserInfo.shared.stateViewVisibleObservable.onNext(true)
+                
                 self.simpleAlert(title: "반납성공", msg: """
 성공적으로 반납하였습니다.
 단비를 이용해주셔서 감사합니다.
 """)
             default:
+                UserInfo.shared.stateViewVisibleObservable.onNext(false)
                 self.simpleAlert(title: "반납실패", msg:"반납하는 도중 알 수 없는 오류가 발생했습니다.")
                 
             }
@@ -91,12 +91,9 @@ extension MainViewController {
     }
     
     func bind(){
-        self.stateViewVisibleObservable
+        UserInfo.shared.stateViewVisibleObservable
             .bind(to: self.borrowStateView.rx.isHidden)
             .disposed(by: disposeBag)
-        
-        self.stateViewVisibleObservable
-            .onNext(UserInfo.shared.state)
     }
     
 }
