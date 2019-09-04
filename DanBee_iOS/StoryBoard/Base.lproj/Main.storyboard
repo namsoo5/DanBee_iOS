@@ -22,17 +22,17 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3LJ-o9-yZo">
-                                <rect key="frame" x="20" y="124" width="335" height="50"/>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3LJ-o9-yZo" customClass="MaterialCard">
+                                <rect key="frame" x="0.0" y="74" width="375" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVk-uk-4O0">
-                                        <rect key="frame" x="20" y="14.5" width="42" height="21"/>
+                                        <rect key="frame" x="20" y="9.5" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qr-lM-HTc">
-                                        <rect key="frame" x="259" y="10" width="52" height="30"/>
+                                        <rect key="frame" x="299" y="5" width="52" height="30"/>
                                         <state key="normal" title="반납하기">
                                             <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                         </state>
@@ -44,7 +44,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="8qr-lM-HTc" secondAttribute="trailing" constant="24" id="NM4-TG-Jt4"/>
-                                    <constraint firstAttribute="height" constant="50" id="WyQ-Wb-bPc"/>
+                                    <constraint firstAttribute="height" constant="40" id="WyQ-Wb-bPc"/>
                                     <constraint firstItem="KVk-uk-4O0" firstAttribute="centerY" secondItem="3LJ-o9-yZo" secondAttribute="centerY" id="gDs-rR-hMr"/>
                                     <constraint firstItem="8qr-lM-HTc" firstAttribute="centerY" secondItem="3LJ-o9-yZo" secondAttribute="centerY" id="jJe-rB-Nau"/>
                                     <constraint firstItem="KVk-uk-4O0" firstAttribute="leading" secondItem="3LJ-o9-yZo" secondAttribute="leading" constant="20" id="kR6-4x-Y0E"/>
@@ -53,20 +53,20 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="3LJ-o9-yZo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0Jl-qn-CiK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3LJ-o9-yZo" secondAttribute="trailing" constant="20" id="7b9-iH-oYb"/>
+                            <constraint firstItem="3LJ-o9-yZo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0Jl-qn-CiK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3LJ-o9-yZo" secondAttribute="trailing" id="7b9-iH-oYb"/>
                             <constraint firstItem="KKO-tA-ryY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7c4-Cx-Nkd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KKO-tA-ryY" secondAttribute="bottom" id="RUr-yV-35C"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KKO-tA-ryY" secondAttribute="trailing" id="cNh-zq-QJk"/>
                             <constraint firstItem="KKO-tA-ryY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jge-xF-97Y"/>
                             <constraint firstItem="3LJ-o9-yZo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q72-Tb-MqP"/>
-                            <constraint firstItem="3LJ-o9-yZo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="qwA-Mj-mb8"/>
+                            <constraint firstItem="3LJ-o9-yZo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="qwA-Mj-mb8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="8b2-Ol-5C5"/>
                     <connections>
-                        <outlet property="borrowStateView" destination="3LJ-o9-yZo" id="aVk-Si-MiT"/>
+                        <outlet property="borrowStateView" destination="3LJ-o9-yZo" id="Uc1-3U-Yj9"/>
                         <outlet property="naverMap" destination="KKO-tA-ryY" id="YBq-Hr-0QV"/>
                         <outlet property="timeLabel" destination="KVk-uk-4O0" id="77P-Oi-t0s"/>
                     </connections>
@@ -771,7 +771,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3Z-iA-R9d">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3Z-iA-R9d">
                                 <rect key="frame" x="82" y="597" width="39" height="30"/>
                                 <state key="normal" title="로그인">
                                     <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>

@@ -112,33 +112,33 @@ extension SignUpViewController {
         
         
         self.idTextField.rx.text.orEmpty
-            .debounce(RxTimeInterval.microseconds(5), scheduler: MainScheduler.instance) // 0.5sec
+            .debounce(RxTimeInterval.milliseconds(500), scheduler: MainScheduler.instance) // 0.5sec
             .distinctUntilChanged()
             .bind(to: self.textViewModel.idObservable)
             .disposed(by: disposeBag)
         
         self.pwTextField.rx.text.orEmpty
-            .debounce(RxTimeInterval.microseconds(5), scheduler: MainScheduler.instance) // 0.5sec
+            .debounce(RxTimeInterval.milliseconds(500), scheduler: MainScheduler.instance) // 0.5sec
             .bind(to: self.textViewModel.pwObservable)
             .disposed(by: disposeBag)
         
         self.confirmPwTextField.rx.text.orEmpty
-            .debounce(RxTimeInterval.microseconds(5), scheduler: MainScheduler.instance) // 0.5sec
+            .debounce(RxTimeInterval.milliseconds(500), scheduler: MainScheduler.instance) // 0.5sec
             .bind(to: self.textViewModel.pwCheckObservable)
             .disposed(by: disposeBag)
         
         self.phoneTextField.rx.text.orEmpty
-            .debounce(RxTimeInterval.microseconds(5), scheduler: MainScheduler.instance) // 0.5sec
+            .debounce(RxTimeInterval.milliseconds(500), scheduler: MainScheduler.instance) // 0.5sec
             .bind(to: self.textViewModel.phoneNumberObservable)
             .disposed(by: disposeBag)
         
         self.birthTextField.rx.text.orEmpty
-            .debounce(RxTimeInterval.microseconds(5), scheduler: MainScheduler.instance) // 0.5sec
+            .debounce(RxTimeInterval.milliseconds(500), scheduler: MainScheduler.instance) // 0.5sec
             .bind(to: self.textViewModel.birthObservable)
             .disposed(by: disposeBag)
         
         self.nameTextField.rx.text.orEmpty
-            .debounce(RxTimeInterval.microseconds(5), scheduler: MainScheduler.instance) // 0.5sec
+            .debounce(RxTimeInterval.milliseconds(500), scheduler: MainScheduler.instance) // 0.5sec
             .bind(to: self.textViewModel.nameObservable)
             .disposed(by: disposeBag)
 

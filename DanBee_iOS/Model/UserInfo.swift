@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 class UserInfo{
     private init() { }
@@ -19,6 +20,7 @@ class UserInfo{
     var birth: String?
     var kickid: Int?
     var time: String?
+    var state = false
     
     func logout(){
         UserDefaults.standard.removeObject(forKey: "id")
@@ -30,5 +32,6 @@ class UserInfo{
         self.birth = ""
         self.kickid = -1
         self.time = ""
+        self.state = false
     }
 }

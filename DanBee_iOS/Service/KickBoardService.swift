@@ -26,6 +26,7 @@ class KickBoardService {
                 let result = json["result"].intValue
                 if result == 777 {
                     UserInfo.shared.time = json["time"].stringValue
+                    UserInfo.shared.state = true
                 }
                 completion(result)
                 
@@ -45,7 +46,7 @@ class KickBoardService {
             case .success(let value):
                 let json = JSON(value)
                 let result = json["result"].intValue
-        
+                
                 completion(result)
                 
             default:

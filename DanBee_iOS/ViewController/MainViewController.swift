@@ -8,17 +8,23 @@
 
 import UIKit
 import NMapsMap
+import MaterialCard
+import RxSwift
+import RxCocoa
 
 class MainViewController: UIViewController, NMFMapViewDelegate, CLLocationManagerDelegate {
     
    
-    @IBOutlet weak var borrowStateView: UIView!
+    
+    @IBOutlet weak var borrowStateView: MaterialCard!
     @IBOutlet weak var naverMap: NMFNaverMapView!
     @IBOutlet weak var timeLabel: UILabel!
     
     let locationManager = CLLocationManager()
     var locationOverlay: NMFLocationOverlay!
     
+    let stateViewVisibleObservable: BehaviorSubject<Bool> = BehaviorSubject(value: false)
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,16 +33,27 @@ class MainViewController: UIViewController, NMFMapViewDelegate, CLLocationManage
         loactionSet()
         sideMenuButtonInit()
         autoLogin()
-    
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
+        borrowViewSet()
+        bind()
     }
 
     @IBAction func lendButtonClick(_ sender: Any) {
-        print("반납하였습니다.")
-
+       
+        KickBoardService.shared.getLendResult{ result in
+            
+            switch result {
+            case 777:
+                UserInfo.shared.state = false
+                self.simpleAlert(title: "반납성공", msg: """
+성공적으로 반납하였습니다.
+단비를 이용해주셔서 감사합니다.
+""")
+            default:
+                self.simpleAlert(title: "반납실패", msg:"반납하는 도중 알 수 없는 오류가 발생했습니다.")
+                
+            }
+            
+        }
         
     }
 }
@@ -63,6 +80,23 @@ extension MainViewController {
                 }
             }
         }
+    }
+    
+    func borrowViewSet(){
+        self.borrowStateView.backgroundColor = .danbeeColor1
+        self.borrowStateView.layer.cornerRadius = 20
+        self.borrowStateView.layer.borderWidth = 2
+        self.borrowStateView.layer.borderColor = UIColor.lightGray.cgColor
+        self.timeLabel.text = UserInfo.shared.time
+    }
+    
+    func bind(){
+        self.stateViewVisibleObservable
+            .bind(to: self.borrowStateView.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        self.stateViewVisibleObservable
+            .onNext(UserInfo.shared.state)
     }
     
 }
