@@ -54,6 +54,7 @@ extension GuideViewController: UICollectionViewDataSource, UICollectionViewDeleg
     
     //아이템 크기
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // Review: [사용성] self.view.frame.width 아닌 collectionView.frame.width 로 설정하는 것이 맞지 않을까요?
         let width = self.view.frame.width - 10
         let height = self.view.frame.height - 96
         

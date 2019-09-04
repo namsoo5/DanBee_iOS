@@ -14,6 +14,7 @@ struct Notice{
     let content: String
     var open = false
     
+    // Review: [Refactoring] mutating 키워드는 불필요 보입니다!
     mutating func dateFormat() -> String{
         guard let s = self.date.split(separator: " ").first else {return "??"}
         

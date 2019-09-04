@@ -70,6 +70,7 @@ extension NoticeViewController: UITableViewDataSource, UITableViewDelegate {
     
     //MARK: cell수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Review: [Refactoring] 1+1 연산과 같은 코드는 추후에 변경되면서 깨지기 쉬운 코드가 될 수 있습니다.
         if items[section].open == true {
             return 1 + 1
         }else{
@@ -79,7 +80,6 @@ extension NoticeViewController: UITableViewDataSource, UITableViewDelegate {
     
     //MARK: cell구현
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if indexPath.row == 0 {
             let cell: NoticeTitleTableViewCell = tableView.dequeueReusableCell(withIdentifier: "noticeTitle", for: indexPath) as! NoticeTitleTableViewCell
             
@@ -103,6 +103,8 @@ extension NoticeViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.cellForRow(at: indexPath) as? NoticeTitleTableViewCell else {return}
         guard let index = tableView.indexPath(for: cell) else { return }
         
+        // Review: [Refactoring] row == 0 와 같이 Expandable Cell의 상태를 관리하는 것보단
+        // collapse 와 같이 DataModel을 만드는 것은 어떨까요?
         if index.row == indexPath.row {
             if index.row == 0 {
                 if items[indexPath.section].open == true {

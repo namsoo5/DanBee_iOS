@@ -62,7 +62,7 @@ extension SideMenuViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        // swiftlitn:disable force_cast
         let cell: SideMenuTableViewCell = tableView.dequeueReusableCell(withIdentifier: "menu", for: indexPath) as! SideMenuTableViewCell
         
         cell.menuLabel.text = menuList[indexPath.row]
