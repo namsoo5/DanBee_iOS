@@ -89,7 +89,6 @@ extension SearchUserViewController{
     func bindOutput(){
         // Review: [Refactoring] MainThread 임이 보장되지 않습니다.
         // Observable Error 가 발생하면 Event Stream이 끊어집니다.
-        
         self.viewModel.segmentObservable
             .subscribe(onNext: { index in
                 if index == 0 {
