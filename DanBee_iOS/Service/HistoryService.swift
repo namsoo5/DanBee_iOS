@@ -24,9 +24,10 @@ class HistoryService {
             case .success(let value):
                 let json = JSON(value)
                 let result = json["result"].intValue
+                var items = [History]()
                 if result == 777 {
                     let datas = json["data"].arrayValue
-                    var items = [History]()
+                    
                     for data in datas{
                         
                         let start = data["start"].stringValue
@@ -36,10 +37,8 @@ class HistoryService {
                         let id = data["id"].intValue
                         items.append( History(start: start, end: end, kickid: kickid, userid: userid, id: id) )
                     }
-                    
-                    completion(items)
-                    
                 }
+                 completion(items)
                 
             default:
                 return

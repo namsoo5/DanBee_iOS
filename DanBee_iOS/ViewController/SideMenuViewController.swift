@@ -35,6 +35,7 @@ class SideMenuViewController: UIViewController {
             self.dismiss(animated: true)
         }
     }
+
 }
 
 extension SideMenuViewController {
@@ -51,6 +52,7 @@ extension SideMenuViewController {
             self.loginImg.image = UIImage(named: "lock")
         }
     }
+    
 }
 
 extension SideMenuViewController: UITableViewDataSource, UITableViewDelegate {
@@ -95,5 +97,6 @@ extension SideMenuViewController: UITableViewDataSource, UITableViewDelegate {
             self.simpleAlert(title: "알림", msg: "로그인이 필요한 기능입니다.")
         }
     }
+    
     
 }
