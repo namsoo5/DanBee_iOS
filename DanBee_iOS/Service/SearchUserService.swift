@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 struct SearchUserService {
+    private init() { }
     static let shared = SearchUserService()
     
     let header: HTTPHeaders = [

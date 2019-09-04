@@ -12,6 +12,7 @@ import Alamofire
 import SwiftyJSON
 
 struct LoginService {
+    private init() { }
     static let shared = LoginService()
     
     let header: HTTPHeaders = [

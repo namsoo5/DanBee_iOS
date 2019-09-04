@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 struct CheckIdService {
+    private init() { }
     static let shared = CheckIdService()
     
     let header: HTTPHeaders = [

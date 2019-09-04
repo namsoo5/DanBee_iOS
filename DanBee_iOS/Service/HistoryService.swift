@@ -12,6 +12,7 @@ import Alamofire
 import SwiftyJSON
 
 class HistoryService {
+    private init() { }
     static let shared = HistoryService()
     
     func getHistoryResult(userid: String, completion: @escaping (_: [History]) -> Void){

@@ -9,6 +9,7 @@
 import Foundation
 
 class UserInfo{
+    private init() { }
     static let shared = UserInfo()
     
     var userid = String()

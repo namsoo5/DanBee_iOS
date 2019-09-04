@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 struct ChangePwService {
+    private init() { }
     static let shared = ChangePwService()
     
     let header: HTTPHeaders = [

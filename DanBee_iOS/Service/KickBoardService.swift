@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 class KickBoardService {
+    private init() { }
     static let shared = KickBoardService()
     
     func getQRCodeResult(suburl: String, completion: @escaping (_: Int) -> Void){

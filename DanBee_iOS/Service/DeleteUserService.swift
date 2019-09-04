@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 class DeleteUserService {
+    private init() { }
     static let shared = DeleteUserService()
     
     func getDeleteUserResult(userid: String, completion: @escaping (_: Bool) -> Void){

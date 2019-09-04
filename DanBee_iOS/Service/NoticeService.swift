@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 class NoticeService {
+    private init() { }
     static let shared = NoticeService()
     
     func getNoticeResult(completion: @escaping (_: [Notice]) -> Void){
