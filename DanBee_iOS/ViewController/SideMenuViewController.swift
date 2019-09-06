@@ -72,8 +72,12 @@ extension SideMenuViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case let index where index == 0 && UserInfo.shared.userid.isNotEmpty:
-            let nextVC:QRCodeViewController = self.storyboard?.instantiateViewController(withIdentifier: "QRCode") as! QRCodeViewController
-            self.navigationController?.pushViewController(nextVC, animated: true)
+            if UserInfo.shared.kickid == -1 {
+                let nextVC:QRCodeViewController = self.storyboard?.instantiateViewController(withIdentifier: "QRCode") as! QRCodeViewController
+                self.navigationController?.pushViewController(nextVC, animated: true)
+            }else{
+                self.simpleAlert(title: "확인", msg: "이미 대여중입니다.")
+            }
             
         case let index where index == 1 && UserInfo.shared.userid.isNotEmpty:
             let nextVC:ProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: "Profile") as! ProfileViewController

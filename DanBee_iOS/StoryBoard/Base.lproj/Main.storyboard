@@ -1127,10 +1127,13 @@
             </objects>
             <point key="canvasLocation" x="2440.8000000000002" y="1421.7391304347827"/>
         </scene>
-        <!--Code View Controller-->
+        <!-- QR코드를 인식해주세요-->
         <scene sceneID="YH2-Vt-LOs">
             <objects>
                 <viewController storyboardIdentifier="QRCode" id="l8e-Ki-Nw6" customClass="QRCodeViewController" customModule="DanBee_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <string key="title" base64-UTF8="YES">
+ElFS7L2U65Oc66W8IOyduOyLne2VtOyjvOyEuOyalA
+</string>
                     <view key="view" contentMode="scaleToFill" id="VMC-9B-z1f">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

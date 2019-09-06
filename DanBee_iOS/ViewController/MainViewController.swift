@@ -41,8 +41,9 @@ class MainViewController: UIViewController, NMFMapViewDelegate, CLLocationManage
         KickBoardService.shared.getLendResult{ result in
             
             switch result {
-            case 777:                UserInfo.shared.stateViewVisibleObservable.onNext(true)
-                
+            case 777:
+                UserInfo.shared.stateViewVisibleObservable.onNext(true)
+                UserInfo.shared.kickid = -1
                 self.simpleAlert(title: "반납성공", msg: """
 성공적으로 반납하였습니다.
 단비를 이용해주셔서 감사합니다.
@@ -87,13 +88,16 @@ extension MainViewController {
         self.borrowStateView.layer.cornerRadius = 20
         self.borrowStateView.layer.borderWidth = 2
         self.borrowStateView.layer.borderColor = UIColor.lightGray.cgColor
-        self.timeLabel.text = UserInfo.shared.time
     }
     
     func bind(){
         UserInfo.shared.stateViewVisibleObservable
             .bind(to: self.borrowStateView.rx.isHidden)
             .disposed(by: disposeBag)
+        
+        UserInfo.shared.timeTextObservable
+        .bind(to: self.timeLabel.rx.text)
+        .disposed(by: disposeBag)
     }
     
 }

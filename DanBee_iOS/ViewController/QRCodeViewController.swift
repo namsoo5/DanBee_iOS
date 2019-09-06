@@ -94,10 +94,12 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     }
     
     func found(code: String) {
+        
         KickBoardService.shared.getQRCodeResult(suburl: code) { result in
             
             switch result {
             case 777:
+                UserInfo.shared.stateViewVisibleObservable.onNext(false)
                 self.toRootAlert(title: "대여성공", msg: "단비가 성공적으로 대여되었습니다.")
             case 804:
                 self.toRootAlert(title: "대여실패", msg: "이 단비는 누군가가 빌린상태입니다.")

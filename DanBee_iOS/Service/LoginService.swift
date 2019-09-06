@@ -40,10 +40,43 @@ struct LoginService {
                     UserInfo.shared.phone = userInfo["phone"].stringValue
                     UserInfo.shared.birth = userInfo["birth"].stringValue
                     UserInfo.shared.gender = userInfo["gender"].intValue
+                    
+                    self.getStateResult(userid: UserInfo.shared.userid)
+                    
                     completion(true)
                 }else{
                     completion(false)
                 }
+            default:
+                return
+            }
+        }
+    }
+    
+    func getStateResult(userid: String) {
+        
+        let url = DanBeeAPI.userStateURL + userid
+        
+        Alamofire.request(url).responseJSON {
+            response in
+            
+            switch response.result{
+            case .success(let value):
+                let json = JSON(value)
+                let result = json["result"].intValue
+                
+                if result == 777 {
+                    let kickid = json["kickid"].intValue
+                    let time = json["time"].stringValue
+                    UserInfo.shared.kickid = kickid
+                    UserInfo.shared.timeTextObservable.onNext(time)
+                    if kickid != -1 {
+                        UserInfo.shared.stateViewVisibleObservable.onNext(false)
+                    }
+                }else{
+                    UserInfo.shared.kickid = -1
+                }
+                
             default:
                 return
             }
