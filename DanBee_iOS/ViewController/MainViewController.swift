@@ -19,6 +19,7 @@ class MainViewController: UIViewController, NMFMapViewDelegate, CLLocationManage
     @IBOutlet weak var borrowStateView: MaterialCard!
     @IBOutlet weak var naverMap: NMFNaverMapView!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var lendButton: UIButton!
     
     let locationManager = CLLocationManager()
     var locationOverlay: NMFLocationOverlay!
@@ -87,7 +88,10 @@ extension MainViewController {
         self.borrowStateView.backgroundColor = .danbeeColor1
         self.borrowStateView.layer.cornerRadius = 20
         self.borrowStateView.layer.borderWidth = 2
-        self.borrowStateView.layer.borderColor = UIColor.lightGray.cgColor
+        self.borrowStateView.layer.borderColor = UIColor.danbeeColor2.cgColor
+        
+        self.lendButton.layer.cornerRadius = 26
+        self.lendButton.backgroundColor = UIColor.danbeeColor2
     }
     
     func bind(){

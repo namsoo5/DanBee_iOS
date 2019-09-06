@@ -23,31 +23,44 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3LJ-o9-yZo" customClass="MaterialCard">
-                                <rect key="frame" x="0.0" y="74" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="74" width="375" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVk-uk-4O0">
-                                        <rect key="frame" x="20" y="9.5" width="42" height="21"/>
+                                        <rect key="frame" x="20" y="31" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qr-lM-HTc">
-                                        <rect key="frame" x="299" y="5" width="52" height="30"/>
+                                        <rect key="frame" x="299" y="4" width="52" height="52"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="52" id="RN4-n2-yff"/>
+                                            <constraint firstAttribute="height" constant="52" id="vJx-ed-QCS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                         <state key="normal" title="반납하기">
-                                            <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="lendButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G89-a3-4CI"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시작시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdq-YN-66j">
+                                        <rect key="frame" x="20" y="10" width="45" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.83921568629999999" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="Fdq-YN-66j" firstAttribute="top" secondItem="3LJ-o9-yZo" secondAttribute="top" constant="10" id="78L-UM-CSZ"/>
                                     <constraint firstAttribute="trailing" secondItem="8qr-lM-HTc" secondAttribute="trailing" constant="24" id="NM4-TG-Jt4"/>
-                                    <constraint firstAttribute="height" constant="40" id="WyQ-Wb-bPc"/>
-                                    <constraint firstItem="KVk-uk-4O0" firstAttribute="centerY" secondItem="3LJ-o9-yZo" secondAttribute="centerY" id="gDs-rR-hMr"/>
+                                    <constraint firstAttribute="height" constant="60" id="WyQ-Wb-bPc"/>
+                                    <constraint firstItem="Fdq-YN-66j" firstAttribute="leading" secondItem="3LJ-o9-yZo" secondAttribute="leading" constant="20" id="agn-qW-cD1"/>
                                     <constraint firstItem="8qr-lM-HTc" firstAttribute="centerY" secondItem="3LJ-o9-yZo" secondAttribute="centerY" id="jJe-rB-Nau"/>
                                     <constraint firstItem="KVk-uk-4O0" firstAttribute="leading" secondItem="3LJ-o9-yZo" secondAttribute="leading" constant="20" id="kR6-4x-Y0E"/>
+                                    <constraint firstItem="KVk-uk-4O0" firstAttribute="top" secondItem="Fdq-YN-66j" secondAttribute="bottom" constant="5" id="lM3-ZZ-oZj"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -67,6 +80,7 @@
                     <navigationItem key="navigationItem" id="8b2-Ol-5C5"/>
                     <connections>
                         <outlet property="borrowStateView" destination="3LJ-o9-yZo" id="Uc1-3U-Yj9"/>
+                        <outlet property="lendButton" destination="8qr-lM-HTc" id="CUs-b9-2nh"/>
                         <outlet property="naverMap" destination="KKO-tA-ryY" id="YBq-Hr-0QV"/>
                         <outlet property="timeLabel" destination="KVk-uk-4O0" id="77P-Oi-t0s"/>
                     </connections>

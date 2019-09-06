@@ -25,8 +25,8 @@ class KickBoardService {
                 let json = JSON(value)
                 let result = json["result"].intValue
                 if result == 777 {
-                    UserInfo.shared.time = json["time"].stringValue
-        
+                    let time = json["time"].stringValue
+                    UserInfo.shared.timeTextObservable.onNext(time)
                 }
                 completion(result)
                 
