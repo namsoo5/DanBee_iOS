@@ -22,6 +22,7 @@ class NoticeViewController: UIViewController {
         self.tableView.dataSource = self
         uiSet()
         noticeRequest()
+        writeNoticeButtonSet()
         
     }
     
@@ -59,6 +60,18 @@ extension NoticeViewController {
             self.tableView.reloadData()
             self.indicator.stopAnimating()
         }
+    }
+    
+    func writeNoticeButtonSet(){
+        if UserInfo.shared.isAdmin {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(writeNoticeButtonClick))
+        }
+    }
+    
+    @objc func writeNoticeButtonClick(){
+        guard let nextVC: NoticeWriteViewController = self.storyboard?.instantiateViewController(withIdentifier: "noticeWirte") as? NoticeWriteViewController else {return}
+        
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }
 

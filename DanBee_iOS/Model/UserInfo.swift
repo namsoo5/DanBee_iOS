@@ -9,16 +9,28 @@
 import Foundation
 import RxSwift
 
+let admin = ["jh"]
 class UserInfo{
     private init() { }
     static let shared = UserInfo()
     
-    var userid = String()
+    var userid = String() {
+        willSet{
+            for name in admin{
+                if name == newValue{
+                    isAdmin = true
+                    break
+                }
+            }
+        }
+    }
     var name: String?
     var phone: String?
     var gender: Int?
     var birth: String?
     var kickid: Int?
+    var isAdmin = false
+    
     let stateViewVisibleObservable: BehaviorSubject<Bool> = BehaviorSubject(value: true)
     let timeTextObservable: BehaviorSubject<String> = BehaviorSubject(value: "")
     
@@ -32,6 +44,7 @@ class UserInfo{
         self.gender = -1
         self.birth = ""
         self.kickid = -1
+        self.isAdmin = false
         UserInfo.shared.stateViewVisibleObservable.onNext(true)
     }
 }

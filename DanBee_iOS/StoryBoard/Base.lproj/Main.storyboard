@@ -1141,6 +1141,21 @@
             </objects>
             <point key="canvasLocation" x="2440.8000000000002" y="1421.7391304347827"/>
         </scene>
+        <!--Notice Write View Controller-->
+        <scene sceneID="X5C-Sc-MTw">
+            <objects>
+                <viewController storyboardIdentifier="noticeWirte" id="jRB-gn-J9r" customClass="NoticeWriteViewController" customModule="DanBee_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nEX-Na-XWX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Bpn-W7-9Q0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JLB-U6-IK4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2438" y="2096"/>
+        </scene>
         <!-- QR코드를 인식해주세요-->
         <scene sceneID="YH2-Vt-LOs">
             <objects>

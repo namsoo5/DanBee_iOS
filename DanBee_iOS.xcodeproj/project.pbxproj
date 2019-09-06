@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		060E4C6F231E34CC00969D86 /* KickBoardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060E4C6E231E34CC00969D86 /* KickBoardService.swift */; };
+		060E4C752322566700969D86 /* NoticeWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060E4C742322566700969D86 /* NoticeWriteViewController.swift */; };
 		06DA1A83230BD2B200D87A98 /* ChangePwViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A82230BD2B200D87A98 /* ChangePwViewModel.swift */; };
 		06DA1A85230BDDB300D87A98 /* ChangePwService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A84230BDDB300D87A98 /* ChangePwService.swift */; };
 		06DA1A87230BF77900D87A98 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A86230BF77900D87A98 /* ProfileViewController.swift */; };
@@ -64,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		060E4C6E231E34CC00969D86 /* KickBoardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KickBoardService.swift; sourceTree = "<group>"; };
+		060E4C742322566700969D86 /* NoticeWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeWriteViewController.swift; sourceTree = "<group>"; };
 		06DA1A82230BD2B200D87A98 /* ChangePwViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePwViewModel.swift; sourceTree = "<group>"; };
 		06DA1A84230BDDB300D87A98 /* ChangePwService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePwService.swift; sourceTree = "<group>"; };
 		06DA1A86230BF77900D87A98 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				06DA1A9823110DD800D87A98 /* NoticeViewController.swift */,
 				06DA1A9A231114FD00D87A98 /* NoticeTitleTableViewCell.swift */,
 				06DA1A9C2311152500D87A98 /* NoticeContentTableViewCell.swift */,
+				060E4C742322566700969D86 /* NoticeWriteViewController.swift */,
 				06DC7CF423042B1200B66E98 /* MainViewController.swift */,
 				06DC7D24230682EB00B66E98 /* LoginViewController.swift */,
 				06DC7D44230AB21200B66E98 /* ChangePwViewController.swift */,
@@ -479,6 +482,7 @@
 				06DC7D352306F6D800B66E98 /* LoginService.swift in Sources */,
 				06DC7D3B2307CB9A00B66E98 /* UIColor+Extension.swift in Sources */,
 				06DA1A93230E785C00D87A98 /* GuideViewController.swift in Sources */,
+				060E4C752322566700969D86 /* NoticeWriteViewController.swift in Sources */,
 				06DA1A9D2311152500D87A98 /* NoticeContentTableViewCell.swift in Sources */,
 				06DC7D2F2306A1C000B66E98 /* SignUpTextViewModel.swift in Sources */,
 				06DA1A91230E5B2D00D87A98 /* HistoryService.swift in Sources */,
