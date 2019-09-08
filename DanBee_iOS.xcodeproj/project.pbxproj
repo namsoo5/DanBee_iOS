@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		060E4C6F231E34CC00969D86 /* KickBoardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060E4C6E231E34CC00969D86 /* KickBoardService.swift */; };
 		060E4C752322566700969D86 /* NoticeWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060E4C742322566700969D86 /* NoticeWriteViewController.swift */; };
+		060E4C96232514AC00969D86 /* MaterialCard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060E4C95232514AC00969D86 /* MaterialCard+Extension.swift */; };
 		06DA1A83230BD2B200D87A98 /* ChangePwViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A82230BD2B200D87A98 /* ChangePwViewModel.swift */; };
 		06DA1A85230BDDB300D87A98 /* ChangePwService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A84230BDDB300D87A98 /* ChangePwService.swift */; };
 		06DA1A87230BF77900D87A98 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DA1A86230BF77900D87A98 /* ProfileViewController.swift */; };
@@ -66,6 +67,7 @@
 /* Begin PBXFileReference section */
 		060E4C6E231E34CC00969D86 /* KickBoardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KickBoardService.swift; sourceTree = "<group>"; };
 		060E4C742322566700969D86 /* NoticeWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeWriteViewController.swift; sourceTree = "<group>"; };
+		060E4C95232514AC00969D86 /* MaterialCard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MaterialCard+Extension.swift"; sourceTree = "<group>"; };
 		06DA1A82230BD2B200D87A98 /* ChangePwViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePwViewModel.swift; sourceTree = "<group>"; };
 		06DA1A84230BDDB300D87A98 /* ChangePwService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePwService.swift; sourceTree = "<group>"; };
 		06DA1A86230BF77900D87A98 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				06DC7D2B23069DEF00B66E98 /* UIButton+Extension.swift */,
 				06DC7D362307018C00B66E98 /* UIViewController+Extension.swift */,
 				06DC7D3A2307CB9A00B66E98 /* UIColor+Extension.swift */,
+				060E4C95232514AC00969D86 /* MaterialCard+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				06DA1A8F230E59E500D87A98 /* History.swift in Sources */,
 				06DA1A9923110DD800D87A98 /* NoticeViewController.swift in Sources */,
 				06DC7D3D2308015100B66E98 /* CheckIdService.swift in Sources */,
+				060E4C96232514AC00969D86 /* MaterialCard+Extension.swift in Sources */,
 				06DA1A85230BDDB300D87A98 /* ChangePwService.swift in Sources */,
 				06DC7CF523042B1200B66E98 /* MainViewController.swift in Sources */,
 				06DC7CF323042B1200B66E98 /* AppDelegate.swift in Sources */,

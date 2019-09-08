@@ -9,11 +9,12 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import MaterialCard
 
 class GuideViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
-    let imageSet = ["1","2","3","4","5"]
+    let imageSet = ["guide1","guide2","guide3","guide4","guide5"]
     
     let disposeBag = DisposeBag()
     
@@ -49,13 +50,17 @@ extension GuideViewController: UICollectionViewDataSource, UICollectionViewDeleg
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell: GuideCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "guide", for: indexPath) as? GuideCollectionViewCell else{fatalError()}
+        let img = UIImage(named: imageSet[indexPath.item])
+        cell.guideImg.image = img
+        cell.cardView.backgroundColor = UIColor.danbeeColor1
+        
         return cell
     }
     
     //아이템 크기
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.view.frame.width - 10
-        let height = self.view.frame.height - 96
+        let height = self.view.frame.height - 286
         
         return CGSize(width: width, height: height)
     }

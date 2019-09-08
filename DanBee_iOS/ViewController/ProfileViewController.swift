@@ -58,11 +58,3 @@ extension ProfileViewController {
     
 }
 
-extension MaterialCard {
-    public override func awakeFromNib() {
-        self.cornerRadius = 8
-        self.shadowOffsetHeight = 2
-        self.shadowOffsetWidth = 1
-        self.shadowOpacity = 0.5
-    }
-}

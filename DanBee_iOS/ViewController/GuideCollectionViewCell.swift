@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import MaterialCard
 
 class GuideCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var guideImg: UIImageView!
+    @IBOutlet weak var cardView: MaterialCard!
     
 }
