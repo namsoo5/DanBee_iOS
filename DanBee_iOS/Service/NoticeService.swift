@@ -69,4 +69,45 @@ class NoticeService {
             }
         }
     }
+    
+    func getWriteResult(type: Int, title: String, content: String, completion: @escaping(_: Bool)-> Void ) {
+        
+        let header: HTTPHeaders = [
+            "Content-Type" : "application/json"
+        ]
+        
+        let url = type == 0 ? DanBeeAPI.noticeWriteURL : DanBeeAPI.questionWriteURL
+        
+        let noticeBody: Parameters = [
+            "title": title,
+            "content": content
+        ]
+        
+        let questionBody: Parameters = [
+            "userid": UserInfo.shared.userid,
+            "title": title,
+            "content": content
+        ]
+        
+        let body = type == 0 ? noticeBody : questionBody
+        
+        Alamofire.request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON {
+            response in
+            
+            switch response.result{
+            case .success(let value):
+                let json = JSON(value)
+                let result = json["result"].intValue
+                
+                if result == 777{
+                    completion(true)
+                }else{
+                    completion(false)
+                }
+            default:
+                completion(false)
+            }
+        }
+        
+    }
 }

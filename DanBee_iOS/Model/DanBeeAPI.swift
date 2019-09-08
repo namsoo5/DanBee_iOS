@@ -22,4 +22,6 @@ struct DanBeeAPI {
     static let questionURL = homeURL + "question/list"
     static let lendURL = homeURL + "kick/lend/"
     static let userStateURL = homeURL + "user/state/"
+    static let noticeWriteURL = homeURL + "notice/insert"
+    static let questionWriteURL = homeURL + "question/new"
 }
