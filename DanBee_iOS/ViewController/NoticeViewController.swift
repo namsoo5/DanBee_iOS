@@ -150,7 +150,8 @@ extension NoticeViewController: UITableViewDataSource, UITableViewDelegate {
             return 250
         }
     }
-    
+    //MARK: - 삭제기능
+    //관리자 삭제가능
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         if UserInfo.shared.isAdmin {
             return true
@@ -159,10 +160,12 @@ extension NoticeViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    //삭제기능추가
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
     
+    //삭제처리
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
@@ -173,6 +176,7 @@ extension NoticeViewController: UITableViewDataSource, UITableViewDelegate {
                 action in
                 
                 let type = self.segmentControl.selectedSegmentIndex
+                self.indicator.startAnimating()
                 NoticeService.shared.getDeleteResult(type: type, id: id){
                     result in
                     if result {
@@ -181,6 +185,7 @@ extension NoticeViewController: UITableViewDataSource, UITableViewDelegate {
                     }else{
                         self.simpleAlert(title: "실패", msg: "처리중 알 수 없는 오류가 발생했습니다.")
                     }
+                    self.indicator.stopAnimating()
                 }
             })
             

@@ -21,9 +21,6 @@ class NoticeWriteViewController: UIViewController {
         
     }
     
-    
-    
-    
 }
 
 extension NoticeWriteViewController{
