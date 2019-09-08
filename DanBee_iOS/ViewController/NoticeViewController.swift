@@ -21,9 +21,25 @@ class NoticeViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         uiSet()
-        noticeRequest()
         writeNoticeButtonSet()
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.indicator.startAnimating()
+        if self.segmentControl.selectedSegmentIndex == 0{
+            NoticeService.shared.getNoticeResult(){ data in
+                self.items = data
+                self.tableView.reloadData()
+                self.indicator.stopAnimating()
+            }
+        }else{
+            NoticeService.shared.getQuestionResult(){ data in
+                self.items = data
+                self.tableView.reloadData()
+                self.indicator.stopAnimating()
+            }
+        }
     }
     
     @IBAction func segmentClick(_ sender: UISegmentedControl) {
@@ -51,15 +67,6 @@ extension NoticeViewController {
         self.segmentControl.setTitleTextAttributes(textAttribute, for: .normal)
         
         self.tableView.separatorColor = UIColor.clear
-    }
-    
-    func noticeRequest(){
-        self.indicator.startAnimating()
-        NoticeService.shared.getNoticeResult(){ data in
-            self.items = data
-            self.tableView.reloadData()
-            self.indicator.stopAnimating()
-        }
     }
     
     func writeNoticeButtonSet(){
