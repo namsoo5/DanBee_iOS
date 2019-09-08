@@ -1149,46 +1149,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aR1-cy-aBH">
-                                <rect key="frame" x="34" y="104" width="35" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aR1-cy-aBH">
+                                <rect key="frame" x="30" y="118" width="35" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="usr-UC-2OU">
-                                <rect key="frame" x="67" y="142" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="usr-UC-2OU">
+                                <rect key="frame" x="30" y="161" width="315" height="44"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="5Rs-Nv-UEF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlC-Md-6cA">
-                                <rect key="frame" x="34" y="341" width="35" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlC-Md-6cA">
+                                <rect key="frame" x="30" y="245" width="35" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="t25-85-fqo">
-                                <rect key="frame" x="67" y="373" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="t25-85-fqo">
+                                <rect key="frame" x="30" y="288" width="315" height="200"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="khF-fJ-Zv6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="81W-PZ-vBK">
+                                <rect key="frame" x="117.5" y="50" width="140" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="jnb-ti-C3u"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="공지사항"/>
+                                    <segment title="FAQ"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="usr-UC-2OU" firstAttribute="leading" secondItem="aR1-cy-aBH" secondAttribute="leading" id="23E-jD-RI6"/>
+                            <constraint firstItem="81W-PZ-vBK" firstAttribute="centerX" secondItem="nEX-Na-XWX" secondAttribute="centerX" id="3yR-D0-Uvd"/>
+                            <constraint firstItem="usr-UC-2OU" firstAttribute="firstBaseline" secondItem="aR1-cy-aBH" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="6uf-EU-mxb"/>
+                            <constraint firstItem="81W-PZ-vBK" firstAttribute="top" secondItem="Bpn-W7-9Q0" secondAttribute="top" constant="30" id="CeK-iF-vpa"/>
+                            <constraint firstItem="ZlC-Md-6cA" firstAttribute="top" secondItem="usr-UC-2OU" secondAttribute="bottom" constant="40" id="Tqb-oI-MHe"/>
+                            <constraint firstItem="Bpn-W7-9Q0" firstAttribute="trailing" secondItem="t25-85-fqo" secondAttribute="trailing" constant="30" id="UH1-o1-gBA"/>
+                            <constraint firstItem="t25-85-fqo" firstAttribute="firstBaseline" secondItem="ZlC-Md-6cA" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="Xgr-VG-HbW"/>
+                            <constraint firstItem="Bpn-W7-9Q0" firstAttribute="trailing" secondItem="usr-UC-2OU" secondAttribute="trailing" constant="30" id="beF-NV-zeE"/>
+                            <constraint firstItem="ZlC-Md-6cA" firstAttribute="leading" secondItem="aR1-cy-aBH" secondAttribute="leading" id="cIr-7V-bJb"/>
+                            <constraint firstItem="aR1-cy-aBH" firstAttribute="leading" secondItem="Bpn-W7-9Q0" secondAttribute="leading" constant="30" id="eLc-da-oQE"/>
+                            <constraint firstItem="aR1-cy-aBH" firstAttribute="top" secondItem="81W-PZ-vBK" secondAttribute="bottom" constant="40" id="jEi-S5-fSp"/>
+                            <constraint firstItem="t25-85-fqo" firstAttribute="leading" secondItem="ZlC-Md-6cA" secondAttribute="leading" id="u22-zq-ppo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Bpn-W7-9Q0"/>
                     </view>
                     <connections>
                         <outlet property="contentTextView" destination="t25-85-fqo" id="hgX-Gp-X0F"/>
+                        <outlet property="segmentControl" destination="81W-PZ-vBK" id="ntp-cC-pUe"/>
                         <outlet property="titleTextView" destination="usr-UC-2OU" id="mav-Wh-biB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JLB-U6-IK4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2438" y="2096"/>
+            <point key="canvasLocation" x="2437.5999999999999" y="2095.5022488755626"/>
         </scene>
         <!-- QR코드를 인식해주세요-->
         <scene sceneID="YH2-Vt-LOs">
