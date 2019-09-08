@@ -36,9 +36,12 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func popAlert(title: String, msg: String, handler: ((UIAlertAction)->Void)? ){
+    func popAlert(title: String, msg: String){
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "확인",style: .default, handler: handler )
+        let okAction = UIAlertAction(title: "확인",style: .default, handler: {
+            action in
+            self.navigationController?.popViewController(animated: true)
+        } )
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }

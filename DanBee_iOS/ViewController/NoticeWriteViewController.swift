@@ -53,14 +53,13 @@ extension NoticeWriteViewController{
         NoticeService.shared.getWriteResult(type: type, title: title, content: content){
             result in
             if result {
-                self.popAlert(title: "작성완료", msg: "성공적으로 작성하였습니다.", handler: {
-                    action in
-                    self.navigationController?.popViewController(animated: true)
-                })
+                self.popAlert(title: "작성완료", msg: "성공적으로 작성하였습니다.")
             }else{
-                self.popAlert(title: "작성실표", msg: "통신중 알 수 없는 오류가 발생했습니다.", handler: nil)
+                self.popAlert(title: "작성실표", msg: "통신중 알 수 없는 오류가 발생했습니다.")
             }
             
         }
     }
+    
+    
 }
