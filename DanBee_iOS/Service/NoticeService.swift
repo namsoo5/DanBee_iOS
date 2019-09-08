@@ -28,11 +28,11 @@ class NoticeService {
                     let datas = json["data"].arrayValue
                     var items = [Notice]()
                     for data in datas{
-            
+                        let id = data["id"].intValue
                         let time = data["time"].stringValue
                         let title = data["title"].stringValue
                         let content = data["content"].stringValue
-                        items.append( Notice(date: time, title: title, content: content, open: false) )
+                        items.append( Notice(id: id, date: time, title: title, content: content, open: false) )
                     }
                     completion(items)
                 }
@@ -56,10 +56,11 @@ class NoticeService {
                     let datas = json["data"].arrayValue
                     var items = [Notice]()
                     for data in datas{
+                        let id = data["id"].intValue
                         let time = data["time"].stringValue
                         let title = data["title"].stringValue
                         let content = data["content"].stringValue
-                        items.append( Notice(date: time, title: title, content: content, open: false) )
+                        items.append( Notice(id: id, date: time, title: title, content: content, open: false) )
                     }
                     completion(items)
                 }
@@ -90,6 +91,38 @@ class NoticeService {
         ]
         
         let body = type == 0 ? noticeBody : questionBody
+        
+        Alamofire.request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON {
+            response in
+            
+            switch response.result{
+            case .success(let value):
+                let json = JSON(value)
+                let result = json["result"].intValue
+                
+                if result == 777{
+                    completion(true)
+                }else{
+                    completion(false)
+                }
+            default:
+                completion(false)
+            }
+        }
+        
+    }
+    
+    func getDeleteResult(type: Int, id: Int, completion: @escaping(_: Bool)->Void ){
+        
+        let header: HTTPHeaders = [
+            "Content-Type" : "application/json"
+        ]
+        
+        let url = type == 0 ? DanBeeAPI.noticeDeleteURL : DanBeeAPI.questionDeleteURL
+        
+        let body: Parameters = [
+            "id": id
+        ]
         
         Alamofire.request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON {
             response in

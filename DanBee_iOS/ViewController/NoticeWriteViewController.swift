@@ -55,7 +55,7 @@ extension NoticeWriteViewController{
             if result {
                 self.popAlert(title: "작성완료", msg: "성공적으로 작성하였습니다.")
             }else{
-                self.popAlert(title: "작성실표", msg: "통신중 알 수 없는 오류가 발생했습니다.")
+                self.popAlert(title: "작성실표", msg: "쳐리중 알 수 없는 오류가 발생했습니다.")
             }
             
         }

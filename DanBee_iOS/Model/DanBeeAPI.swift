@@ -24,4 +24,6 @@ struct DanBeeAPI {
     static let userStateURL = homeURL + "user/state/"
     static let noticeWriteURL = homeURL + "notice/insert"
     static let questionWriteURL = homeURL + "question/new"
+    static let noticeDeleteURL = homeURL + "notice/delete"
+    static let questionDeleteURL = homeURL + "question/delete"
 }

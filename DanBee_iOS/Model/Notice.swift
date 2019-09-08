@@ -9,6 +9,7 @@
 import Foundation
 
 struct Notice{
+    let id: Int
     let date: String
     let title: String
     let content: String
