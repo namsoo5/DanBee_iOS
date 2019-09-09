@@ -11,6 +11,7 @@ import MaterialCard
 
 class GuideCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var guideImg: UIImageView!
     @IBOutlet weak var cardView: MaterialCard!
     

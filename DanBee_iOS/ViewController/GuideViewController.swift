@@ -15,6 +15,7 @@ class GuideViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     let imageSet = ["guide1","guide2","guide3","guide4","guide5"]
+    let textSet = ["단비에서 킥보드 찾기", "회원가입 / 로그인 하기", "QR코드 찍고 단비 시작하기", "안전하게 단비 즐기기", "주차 후 반납버튼 누르기"]
     
     let disposeBag = DisposeBag()
     
@@ -52,7 +53,12 @@ extension GuideViewController: UICollectionViewDataSource, UICollectionViewDeleg
         guard let cell: GuideCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "guide", for: indexPath) as? GuideCollectionViewCell else{fatalError()}
         let img = UIImage(named: imageSet[indexPath.item])
         cell.guideImg.image = img
+        cell.textLabel.text = textSet[indexPath.item]
+        cell.textLabel.sizeToFit()
         cell.cardView.backgroundColor = UIColor.danbeeColor1
+        cell.cardView.layer.cornerRadius = 15
+        cell.cardView.layer.shadowOpacity = 0.5
+        cell.cardView.layer.shadowOffset = CGSize(width: 1, height: 2)
         
         return cell
     }
