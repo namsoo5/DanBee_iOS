@@ -1212,13 +1212,18 @@
                                     <segment title="FAQ"/>
                                 </segments>
                             </segmentedControl>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="23q-0f-thN">
+                                <rect key="frame" x="169" y="238.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="usr-UC-2OU" firstAttribute="leading" secondItem="aR1-cy-aBH" secondAttribute="leading" id="23E-jD-RI6"/>
                             <constraint firstItem="81W-PZ-vBK" firstAttribute="centerX" secondItem="nEX-Na-XWX" secondAttribute="centerX" id="3yR-D0-Uvd"/>
+                            <constraint firstItem="23q-0f-thN" firstAttribute="centerY" secondItem="ZlC-Md-6cA" secondAttribute="centerY" id="4YE-gN-fn3"/>
                             <constraint firstItem="usr-UC-2OU" firstAttribute="firstBaseline" secondItem="aR1-cy-aBH" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="6uf-EU-mxb"/>
                             <constraint firstItem="81W-PZ-vBK" firstAttribute="top" secondItem="Bpn-W7-9Q0" secondAttribute="top" constant="30" id="CeK-iF-vpa"/>
+                            <constraint firstItem="23q-0f-thN" firstAttribute="centerX" secondItem="nEX-Na-XWX" secondAttribute="centerX" id="McG-tR-Jfm"/>
                             <constraint firstItem="ZlC-Md-6cA" firstAttribute="top" secondItem="usr-UC-2OU" secondAttribute="bottom" constant="40" id="Tqb-oI-MHe"/>
                             <constraint firstItem="Bpn-W7-9Q0" firstAttribute="trailing" secondItem="t25-85-fqo" secondAttribute="trailing" constant="30" id="UH1-o1-gBA"/>
                             <constraint firstItem="t25-85-fqo" firstAttribute="firstBaseline" secondItem="ZlC-Md-6cA" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="Xgr-VG-HbW"/>
@@ -1232,6 +1237,7 @@
                     </view>
                     <connections>
                         <outlet property="contentTextView" destination="t25-85-fqo" id="hgX-Gp-X0F"/>
+                        <outlet property="indicator" destination="23q-0f-thN" id="xN5-pi-Rhe"/>
                         <outlet property="segmentControl" destination="81W-PZ-vBK" id="ntp-cC-pUe"/>
                         <outlet property="titleTextView" destination="usr-UC-2OU" id="mav-Wh-biB"/>
                     </connections>

@@ -13,6 +13,7 @@ class NoticeWriteViewController: UIViewController {
     @IBOutlet weak var titleTextView: UITextView!
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +47,7 @@ extension NoticeWriteViewController{
         guard let title = self.titleTextView.text else{return}
         guard let content = self.contentTextView.text else {return}
         let type = self.segmentControl.selectedSegmentIndex
-        
+        self.indicator.startAnimating()
         NoticeService.shared.getWriteResult(type: type, title: title, content: content){
             result in
             if result {
@@ -54,7 +55,7 @@ extension NoticeWriteViewController{
             }else{
                 self.popAlert(title: "작성실표", msg: "쳐리중 알 수 없는 오류가 발생했습니다.")
             }
-            
+            self.indicator.stopAnimating()
         }
     }
     
