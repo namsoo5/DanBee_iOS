@@ -27,6 +27,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var confirmPwLabel: UILabel!
     @IBOutlet weak var pwCheckColorView: UIView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet var imgTopLayout: UIView!
     
     let disposeBag = DisposeBag()
     let textViewModel = TextViewModel()
@@ -37,6 +38,33 @@ class SignUpViewController: UIViewController {
         bindInput()
         bindOutPut()
 
+        //MARK: - 키보드 애니메이션
+        //observer등록
+        NotificationCenter.default.addObserver(self, selector: #selector(textViewMoveUp), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(textViewMoveDown), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        //observer해제
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func textViewMoveUp(_ notification: NSNotification){
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.imgTopLayout.transform = CGAffineTransform(translationX: 0, y: -120)
+        })
+        
+    }
+    
+    @objc func textViewMoveDown(_ notification: NSNotification){
+        self.imgTopLayout.transform = .identity
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     @IBAction func signUpButtonClick(_ sender: UIButton) {
@@ -216,8 +244,6 @@ extension SignUpViewController {
                 }
             })
         .disposed(by: disposeBag)
-                
-                
         
     }
     

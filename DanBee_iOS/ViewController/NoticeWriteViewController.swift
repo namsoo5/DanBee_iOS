@@ -18,10 +18,9 @@ class NoticeWriteViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        contentTextView.delegate = self
         uiSet()
         
-    
+        //MARK: - 키보드 애니메이션
         //observer등록
         NotificationCenter.default.addObserver(self, selector: #selector(textViewMoveUp), name: UIResponder.keyboardWillShowNotification, object: nil)
         

@@ -722,6 +722,7 @@
                         <outlet property="confirmPwLabel" destination="Hrl-jo-7tZ" id="Mtv-Wd-OU4"/>
                         <outlet property="confirmPwTextField" destination="6PR-hB-y66" id="W8C-6B-zeq"/>
                         <outlet property="idTextField" destination="LZP-s1-KCJ" id="Q22-xV-UAu"/>
+                        <outlet property="imgTopLayout" destination="lEk-co-EMj" id="ogC-LX-xmf"/>
                         <outlet property="indicator" destination="ynL-60-cri" id="jef-m4-6uk"/>
                         <outlet property="manCheckBox" destination="4RE-k1-2ft" id="gOB-ua-Kck"/>
                         <outlet property="nameTextField" destination="x2i-Ob-Osd" id="0SW-7i-UPs"/>
