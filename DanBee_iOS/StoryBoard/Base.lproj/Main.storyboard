@@ -1239,6 +1239,7 @@
                         <outlet property="contentTextView" destination="t25-85-fqo" id="hgX-Gp-X0F"/>
                         <outlet property="indicator" destination="23q-0f-thN" id="xN5-pi-Rhe"/>
                         <outlet property="segmentControl" destination="81W-PZ-vBK" id="ntp-cC-pUe"/>
+                        <outlet property="segmentTopLayout" destination="nEX-Na-XWX" id="QSq-NL-qLz"/>
                         <outlet property="titleTextView" destination="usr-UC-2OU" id="mav-Wh-biB"/>
                     </connections>
                 </viewController>

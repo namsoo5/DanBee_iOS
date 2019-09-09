@@ -8,23 +8,57 @@
 
 import UIKit
 
-class NoticeWriteViewController: UIViewController {
+class NoticeWriteViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var titleTextView: UITextView!
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet var segmentTopLayout: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        contentTextView.delegate = self
         uiSet()
         
+    
+        //observer등록
+        NotificationCenter.default.addObserver(self, selector: #selector(textViewMoveUp), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(textViewMoveDown), name: UIResponder.keyboardWillHideNotification, object: nil)
         
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        //observer해제
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func textViewMoveUp(_ notification: NSNotification){
+        
+//        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            //-keyboardSize.height
+            UIView.animate(withDuration: 0.3, animations: {
+                self.segmentTopLayout.transform = CGAffineTransform(translationX: 0, y: -190)
+            })
+            
+//        }
+    }
+    
+    @objc func textViewMoveDown(_ notification: NSNotification){
+            self.segmentTopLayout.transform = .identity
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+
 }
 
-extension NoticeWriteViewController{
+extension NoticeWriteViewController {
     func uiSet(){
         let textView: [UITextView] = [titleTextView, contentTextView]
         for view in textView {
@@ -58,6 +92,5 @@ extension NoticeWriteViewController{
             self.indicator.stopAnimating()
         }
     }
-    
     
 }
