@@ -55,7 +55,7 @@ class KickBoardService {
         }
     }
     //킥보드 위치통신
-    func getGPSResult(completion: @escaping (_: Bool, _ : [KickBoard]...)->Void){
+    func getGPSResult(completion: @escaping (_: Bool, _ : [KickBoard])->Void){
         
         let url = DanBeeAPI.kickGPSURL
         
@@ -76,17 +76,17 @@ class KickBoardService {
                         let lng = data["lng"].stringValue
                         let battery = data["battery"].intValue
                         
-                        kicks.append(KickBoard(id: id, lat: lat, lng: lng, battery: battery))
+                        kicks.append(KickBoard(id: id, lat: Double(lat)!, lng: Double(lng)!, battery: battery))
                     }
                     
                     completion(true, kicks)
                 }else{
-                    completion(false)
+                    completion(false, [KickBoard]())
                 }
                 
                 
             default:
-                completion(false)
+                completion(false, [KickBoard]())
                 
             }
             

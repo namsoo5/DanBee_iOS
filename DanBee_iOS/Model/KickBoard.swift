@@ -11,8 +11,8 @@ import Foundation
 struct KickBoard {
     
     let id: Int
-    let lat: String
-    let lng: String
+    let lat: Double
+    let lng: Double
     let battery: Int
     
 }

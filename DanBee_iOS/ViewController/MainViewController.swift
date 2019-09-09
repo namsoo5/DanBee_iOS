@@ -14,7 +14,7 @@ import RxCocoa
 
 class MainViewController: UIViewController, NMFMapViewDelegate, CLLocationManagerDelegate {
     
-   
+    var danbeeKickBoard = [KickBoard]()
     
     @IBOutlet weak var borrowStateView: MaterialCard!
     @IBOutlet weak var naverMap: NMFNaverMapView!
@@ -36,6 +36,7 @@ class MainViewController: UIViewController, NMFMapViewDelegate, CLLocationManage
         autoLogin()
         borrowViewSet()
         bind()
+        refreshButtonSet()
     }
 
     @IBAction func lendButtonClick(_ sender: Any) {
@@ -103,9 +104,29 @@ extension MainViewController {
         .bind(to: self.timeLabel.rx.text)
         .disposed(by: disposeBag)
     }
+    //MARK: - 킥보드위치
+    //새로고침버튼생성
+    func refreshButtonSet(){
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refreshButtonClick))
+    }
+    
+    @objc func refreshButtonClick(){
+        kickGPSRequest()
+    }
+    
+    func kickGPSRequest(){
+        KickBoardService.shared.getGPSResult(){
+            (b, kicks) in
+            if b {
+                self.danbeeKickBoard = kicks
+                self.markerSet()
+            }
+        }
+    }
     
 }
 
+//MARK: - 네이버지도
 extension MainViewController {
     
     //위치 초기화
@@ -138,7 +159,7 @@ extension MainViewController {
         naverMap.positionMode = .normal
         self.locationOverlay = self.naverMap.mapView.locationOverlay
         
-        
+        self.kickGPSRequest()
         
 //        let marker = NMFMarker()
 //        marker.position = NMGLatLng(lat: 37.5670135, lng: 126.9783740)
@@ -147,5 +168,18 @@ extension MainViewController {
 //        marker.iconImage = NMF_MARKER_IMAGE_BLACK
 //        marker.iconTintColor = UIColor.red
 //        marker.iconPerspectiveEnabled = true
+    }
+    
+    func markerSet(){
+        
+        for danbee in danbeeKickBoard{
+            let marker = NMFMarker()
+            marker.width = 40
+            marker.height = 40
+            marker.position = NMGLatLng(lat: danbee.lat, lng: danbee.lng)
+            marker.mapView = naverMap.mapView
+            marker.iconImage = NMFOverlayImage(name: "danbeeMarker")
+            marker.iconPerspectiveEnabled = true
+        }
     }
 }
