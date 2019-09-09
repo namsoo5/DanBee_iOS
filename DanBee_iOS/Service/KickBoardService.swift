@@ -13,7 +13,7 @@ import SwiftyJSON
 class KickBoardService {
     private init() { }
     static let shared = KickBoardService()
-    
+    //QR통신, 대여통신
     func getQRCodeResult(suburl: String, completion: @escaping (_: Int) -> Void){
         
         let url = suburl + "/\(UserInfo.shared.userid)"
@@ -35,7 +35,7 @@ class KickBoardService {
             }
         }
     }
-    
+    //반납통신
     func getLendResult(completion: @escaping (_: Int) -> Void){
         
         let url = DanBeeAPI.lendURL + "\(UserInfo.shared.userid)"
@@ -52,6 +52,44 @@ class KickBoardService {
             default:
                 return
             }
+        }
+    }
+    //킥보드 위치통신
+    func getGPSResult(completion: @escaping (_: Bool, _ : [KickBoard]...)->Void){
+        
+        let url = DanBeeAPI.kickGPSURL
+        
+        Alamofire.request(url).responseJSON{
+            response in
+            switch response.result{
+            case .success(let value):
+                let json = JSON(value)
+                let result = json["result"].intValue
+                
+                if result == 777{
+                
+                let datas = json["data"].arrayValue
+                    var kicks = [KickBoard]()
+                    for data in datas{
+                        let id = data["id"].intValue
+                        let lat = data["lat"].stringValue
+                        let lng = data["lng"].stringValue
+                        let battery = data["battery"].intValue
+                        
+                        kicks.append(KickBoard(id: id, lat: lat, lng: lng, battery: battery))
+                    }
+                    
+                    completion(true, kicks)
+                }else{
+                    completion(false)
+                }
+                
+                
+            default:
+                completion(false)
+                
+            }
+            
         }
     }
 }
