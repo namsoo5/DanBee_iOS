@@ -36,7 +36,7 @@ struct SearchUserService {
                 }
                 
             default:
-                return
+                completion("")
             }
         }
     }
@@ -59,7 +59,7 @@ struct SearchUserService {
                 }
                 
             default:
-                return
+                completion(false)
             }
         }
     }

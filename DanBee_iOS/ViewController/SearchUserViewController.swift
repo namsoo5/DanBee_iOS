@@ -36,6 +36,11 @@ class SearchUserViewController: UIViewController {
     }
     
     @IBAction func searchButtonClick(_ sender: Any) {
+        if emptyCheck(){
+            self.simpleAlert(title: "실패", msg: "빈칸이 존재합니다!!")
+            return
+        }
+        
         guard let name = self.nameTextField.text else {return}
         guard let phone = self.phoneTextField.text else {return}
         
@@ -45,7 +50,7 @@ class SearchUserViewController: UIViewController {
             SearchUserService.shared.getSearchIdResult(name: name, phone: phone){
                 id in
                 self.indicator.stopAnimating()
-                if id == "" {
+                if id != "" {
                     self.simpleAlert(title: "아이디", msg: id)
                 }else {
                     self.simpleAlert(title: "실패", msg: "다시 한 번 확인해주세요.")
@@ -94,5 +99,27 @@ extension SearchUserViewController{
                 }
             })
         .disposed(by: disposeBag)
+    }
+    
+    //빈칸체크 true시 빈칸존재
+    func emptyCheck() -> Bool{
+    
+        if self.nameTextField.text == "" {
+            return true
+        }
+        if self.phoneTextField.text == "" {
+            return true
+        }
+        if self.segmentButton.selectedSegmentIndex == 0{
+            return false
+        }
+        
+        if self.idTextField.text == "" {
+            return true
+        }
+        if self.birthTextField.text == "" {
+            return true
+        }
+        return false
     }
 }
