@@ -94,7 +94,7 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     }
     
     func found(code: String) {
-        
+       
         KickBoardService.shared.getQRCodeResult(suburl: code) { result in
             
             switch result {

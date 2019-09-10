@@ -40,23 +40,28 @@ class MainViewController: UIViewController, NMFMapViewDelegate, CLLocationManage
     }
 
     @IBAction func lendButtonClick(_ sender: Any) {
-        KickBoardService.shared.getLendResult{ result in
-            
-            switch result {
-            case 777:
-                UserInfo.shared.stateViewVisibleObservable.onNext(true)
-                UserInfo.shared.kickid = -1
-                self.simpleAlert(title: "반납성공", msg: """
+        
+        self.choiceAlert(title: "확인", msg: "정말 반납하시겠습니까?", okHandler: {
+            _ in
+            KickBoardService.shared.getLendResult{ result in
+                
+                switch result {
+                case 777:
+                    UserInfo.shared.stateViewVisibleObservable.onNext(true)
+                    UserInfo.shared.kickid = -1
+                    self.simpleAlert(title: "반납성공", msg: """
 성공적으로 반납하였습니다.
 단비를 이용해주셔서 감사합니다.
 """)
-            default:
-                UserInfo.shared.stateViewVisibleObservable.onNext(false)
-                self.simpleAlert(title: "반납실패", msg:"반납하는 도중 알 수 없는 오류가 발생했습니다.")
+                default:
+                    UserInfo.shared.stateViewVisibleObservable.onNext(false)
+                    self.simpleAlert(title: "반납실패", msg:"반납하는 도중 알 수 없는 오류가 발생했습니다.")
+                    
+                }
                 
             }
-            
-        }
+        })
+        
         
     }
 }
@@ -100,22 +105,9 @@ extension MainViewController {
             .bind(to: self.borrowStateView.rx.isHidden)
             .disposed(by: disposeBag)
         
-        UserInfo.shared.stateViewVisibleObservable
-            .subscribe(onNext: {
-                b in
-                if b {
-                    UIView.animate(withDuration: 0.3, animations: {
-                        self.borrowStateView.transform = CGAffineTransform(translationX: 0, y: -100)
-                    })
-                }else{
-                    self.borrowStateView.transform = .identity
-                }
-            })
-        .disposed(by: disposeBag)
-        
         UserInfo.shared.timeTextObservable
-        .bind(to: self.timeLabel.rx.text)
-        .disposed(by: disposeBag)
+            .bind(to: self.timeLabel.rx.text)
+            .disposed(by: disposeBag)
     }
     //MARK: - 킥보드위치
     //새로고침버튼생성
