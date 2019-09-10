@@ -100,6 +100,19 @@ extension MainViewController {
             .bind(to: self.borrowStateView.rx.isHidden)
             .disposed(by: disposeBag)
         
+        UserInfo.shared.stateViewVisibleObservable
+            .subscribe(onNext: {
+                b in
+                if b {
+                    UIView.animate(withDuration: 0.3, animations: {
+                        self.borrowStateView.transform = CGAffineTransform(translationX: 0, y: -100)
+                    })
+                }else{
+                    self.borrowStateView.transform = .identity
+                }
+            })
+        .disposed(by: disposeBag)
+        
         UserInfo.shared.timeTextObservable
         .bind(to: self.timeLabel.rx.text)
         .disposed(by: disposeBag)
