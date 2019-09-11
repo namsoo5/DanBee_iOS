@@ -21,6 +21,7 @@ class MainViewController: UIViewController, NMFMapViewDelegate, CLLocationManage
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var lendButton: UIButton!
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     let locationManager = CLLocationManager()
     var locationOverlay: NMFLocationOverlay!
     
@@ -116,6 +117,7 @@ extension MainViewController {
     }
     
     @objc func refreshButtonClick(){
+        self.indicator.startAnimating()
         kickGPSRequest()
     }
     
@@ -125,7 +127,9 @@ extension MainViewController {
             if b {
                 self.danbeeKickBoard = kicks
                 self.markerSet()
+                
             }
+            self.indicator.stopAnimating()
         }
     }
     

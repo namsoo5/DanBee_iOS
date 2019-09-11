@@ -63,14 +63,20 @@
                                     <constraint firstItem="KVk-uk-4O0" firstAttribute="top" secondItem="Fdq-YN-66j" secondAttribute="bottom" constant="5" id="lM3-ZZ-oZj"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="rsH-Iy-ds4">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="3LJ-o9-yZo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0Jl-qn-CiK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3LJ-o9-yZo" secondAttribute="trailing" id="7b9-iH-oYb"/>
                             <constraint firstItem="KKO-tA-ryY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7c4-Cx-Nkd"/>
+                            <constraint firstItem="rsH-Iy-ds4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7ew-uJ-d2y"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KKO-tA-ryY" secondAttribute="bottom" id="RUr-yV-35C"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KKO-tA-ryY" secondAttribute="trailing" id="cNh-zq-QJk"/>
+                            <constraint firstItem="rsH-Iy-ds4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fWv-zO-YuL"/>
                             <constraint firstItem="KKO-tA-ryY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jge-xF-97Y"/>
                             <constraint firstItem="3LJ-o9-yZo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q72-Tb-MqP"/>
                             <constraint firstItem="3LJ-o9-yZo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="qwA-Mj-mb8"/>
@@ -80,6 +86,7 @@
                     <navigationItem key="navigationItem" id="8b2-Ol-5C5"/>
                     <connections>
                         <outlet property="borrowStateView" destination="3LJ-o9-yZo" id="Uc1-3U-Yj9"/>
+                        <outlet property="indicator" destination="rsH-Iy-ds4" id="nJF-uU-a7m"/>
                         <outlet property="lendButton" destination="8qr-lM-HTc" id="CUs-b9-2nh"/>
                         <outlet property="naverMap" destination="KKO-tA-ryY" id="YBq-Hr-0QV"/>
                         <outlet property="timeLabel" destination="KVk-uk-4O0" id="77P-Oi-t0s"/>
