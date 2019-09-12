@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var birthLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +55,7 @@ extension ProfileViewController {
         idLabel.text = UserInfo.shared.userid
         birthLabel.text = UserInfo.shared.birth
         phoneLabel.text = UserInfo.shared.phone
+        nameLabel.text = UserInfo.shared.name
     }
     
 }

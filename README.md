@@ -40,7 +40,5 @@
 <br>
 
 ## 앱시연
-<img src="/READMEImg/회원가입.gif" width="350" height="600">
-<img src="/READMEImg/메뉴.gif" width="350" height="600">
-<img src="/READMEImg/관리자공지사항.gif" width="350" height="600">
-<img src="/READMEImg/단비위치.gif" width="350" height="600">
+<img src="/READMEImg/처음.gif" width="300" height="600">
+<img src="/READMEImg/메뉴.gif" width="300" height="600">

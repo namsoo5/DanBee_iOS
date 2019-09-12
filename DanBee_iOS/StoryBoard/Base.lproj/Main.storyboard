@@ -1462,6 +1462,7 @@ ElFS7L2U65Oc66W8IOyduOyLne2VtOyjvOyEuOyalA
                     <connections>
                         <outlet property="birthLabel" destination="kwQ-F6-kbu" id="gc9-Jx-Ohc"/>
                         <outlet property="idLabel" destination="gZf-5e-nqK" id="dIU-3T-TvF"/>
+                        <outlet property="nameLabel" destination="rcx-qc-Pxy" id="jUV-Cq-gUF"/>
                         <outlet property="phoneLabel" destination="xx2-hk-Gpq" id="uzz-Um-sUv"/>
                         <outlet property="userImg" destination="a4T-vY-mec" id="fVA-6V-bcR"/>
                     </connections>
