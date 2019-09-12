@@ -40,7 +40,7 @@ class NoticeWriteViewController: UIViewController, UITextViewDelegate {
 //        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             //-keyboardSize.height
             UIView.animate(withDuration: 0.3, animations: {
-                self.segmentTopLayout.transform = CGAffineTransform(translationX: 0, y: -190)
+                self.segmentTopLayout.transform = CGAffineTransform(translationX: 0, y: -100)
             })
             
 //        }
