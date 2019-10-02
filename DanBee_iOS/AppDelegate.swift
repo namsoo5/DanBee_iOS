@@ -18,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         NMFAuthManager.shared().clientId = NaverAPIKey.shared.key
+        
+        if #available(iOS 13.0, *){
+            self.window?.overrideUserInterfaceStyle = .light
+        }
         return true
     }
 

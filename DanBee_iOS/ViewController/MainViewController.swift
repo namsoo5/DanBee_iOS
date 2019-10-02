@@ -76,6 +76,7 @@ extension MainViewController {
     
     @objc func openSideMenu(){
         guard let sideMenuVC = self.storyboard?.instantiateViewController(withIdentifier: "sideMenu") else { return }
+        sideMenuVC.modalPresentationStyle = .fullScreen
         self.present(sideMenuVC, animated: true, completion: nil)
     }
     

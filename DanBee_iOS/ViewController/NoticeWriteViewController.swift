@@ -67,7 +67,12 @@ extension NoticeWriteViewController {
             
         }
         
-        self.segmentControl.tintColor = UIColor.danbeeColor1
+        
+        if #available(iOS 13.0, *) {
+            self.segmentControl.selectedSegmentTintColor = UIColor.danbeeColor1
+        } else {
+            self.segmentControl.tintColor = UIColor.danbeeColor1
+        }
         let textAttribute = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.segmentControl.setTitleTextAttributes(textAttribute, for: .normal)
         

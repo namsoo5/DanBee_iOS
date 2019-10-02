@@ -76,7 +76,11 @@ class SearchUserViewController: UIViewController {
 extension SearchUserViewController{
     
     func uiSet() {
-        self.segmentButton.tintColor = UIColor.danbeeColor1
+        if #available(iOS 13.0, *){
+            self.segmentButton.selectedSegmentTintColor = UIColor.danbeeColor1
+        }else{
+            self.segmentButton.tintColor = UIColor.danbeeColor1
+        }
         let textAttribute = [NSAttributedString.Key.foregroundColor: UIColor.black]
         self.segmentButton.setTitleTextAttributes(textAttribute, for: .normal)
     }

@@ -62,7 +62,13 @@ class NoticeViewController: UIViewController {
 
 extension NoticeViewController {
     func uiSet() {
-        self.segmentControl.tintColor = UIColor.danbeeColor1
+        
+        
+        if #available(iOS 13.0, *) {
+            self.segmentControl.selectedSegmentTintColor = UIColor.danbeeColor1
+        } else {
+            self.segmentControl.tintColor = UIColor.danbeeColor1
+        }
         let textAttribute = [NSAttributedString.Key.foregroundColor: UIColor.black]
         self.segmentControl.setTitleTextAttributes(textAttribute, for: .normal)
         
