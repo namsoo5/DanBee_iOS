@@ -241,10 +241,10 @@
             </objects>
             <point key="canvasLocation" x="2586" y="27"/>
         </scene>
-        <!--Search User View Controller-->
+        <!--아이디 / 비밀번호 찾기-->
         <scene sceneID="j3s-9l-h85">
             <objects>
-                <viewController id="iFW-8f-HFX" customClass="SearchUserViewController" customModule="DanBee_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="아이디 / 비밀번호 찾기" id="iFW-8f-HFX" customClass="SearchUserViewController" customModule="DanBee_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dFf-Pw-hOh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -437,10 +437,10 @@
             </objects>
             <point key="canvasLocation" x="3953" y="424"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--회원가입-->
         <scene sceneID="opp-qB-7wa">
             <objects>
-                <viewController id="DlH-9z-jwL" customClass="SignUpViewController" customModule="DanBee_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="회원가입" id="DlH-9z-jwL" customClass="SignUpViewController" customModule="DanBee_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lEk-co-EMj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -818,10 +818,10 @@
             </objects>
             <point key="canvasLocation" x="1009" y="706"/>
         </scene>
-        <!--History View Controller-->
+        <!--이용내역-->
         <scene sceneID="bth-zt-kgg">
             <objects>
-                <viewController storyboardIdentifier="History" id="tMV-5S-mtM" customClass="HistoryViewController" customModule="DanBee_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="History" title="이용내역" id="tMV-5S-mtM" customClass="HistoryViewController" customModule="DanBee_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="79e-8f-7GA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1013,10 +1013,10 @@
             </objects>
             <point key="canvasLocation" x="3135" y="1422"/>
         </scene>
-        <!--Item-->
+        <!--공지사항 / FAQ-->
         <scene sceneID="yRe-xn-Zt4">
             <objects>
-                <viewController storyboardIdentifier="Notice" id="06m-iW-NSH" customClass="NoticeViewController" customModule="DanBee_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Notice" title="공지사항 / FAQ" id="06m-iW-NSH" customClass="NoticeViewController" customModule="DanBee_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g3p-wL-ris">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
