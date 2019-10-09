@@ -85,7 +85,7 @@ extension MainViewController {
             if let pw = UserDefaults.standard.string(forKey: "pw") {
                 LoginService.shared.getLoginResult(userid: userid, pw: pw){ b in
                     if b {
-                        print("auto login")
+//                        print("auto login")
                     }
                 }
             }
@@ -148,7 +148,7 @@ extension MainViewController {
         locationManager.startUpdatingLocation()    //위치정보 업데이트시작
         let lat = self.locationManager.location?.coordinate.latitude
         let lng = self.locationManager.location?.coordinate.longitude
-        print("lat:\(String(describing: lat)), lng:\(String(describing: lng))")
+//        print("lat:\(String(describing: lat)), lng:\(String(describing: lng))")
         
         let latlng = NMGLatLng(lat: lat ?? 37.487241, lng: lng ?? 126.825390)
         let cameraUpdate = NMFCameraUpdate(scrollTo: latlng)
@@ -160,7 +160,7 @@ extension MainViewController {
         let locate = locations[locations.count - 1]
         let lat = locate.coordinate.latitude
         let lng = locate.coordinate.longitude
-        print("update! lat:\(lat), lng:\(lng)")
+//        print("update! lat:\(lat), lng:\(lng)")
         
         locationOverlay.location = NMGLatLng(lat: lat, lng: lng)
     }
