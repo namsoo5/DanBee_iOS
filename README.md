@@ -11,6 +11,13 @@
 
 <br>
 
+## 소개
+<img src="./READMEImg/단비포스터.png" width="350" height="300">
+<img src="./READMEImg/아키텍쳐.png" width="600" height="500"><img src="./READMEImg/아두이노회로.png" width="550" height="300">
+
+
+<br>
+
 ## 개발환경
 
 * Xcode 12.4
